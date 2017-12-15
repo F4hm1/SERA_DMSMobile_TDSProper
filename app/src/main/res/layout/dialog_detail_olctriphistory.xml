@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/history_detail_requestdate"
+        android:textColor="@color/colorAccentDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:text="Pengajuan Tanggal 23-07-2017"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/history_detail_requestdate"
+        android:layout_height="wrap_content">
+
+        <!--Transaction Type-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/history_detail_title_transtype"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/history_detail_transtype"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--Date OLC/Trip-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/history_detail_title_dateolctrip"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/history_detail_dateolctrip"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--TripCount-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/history_detail_title_tripcount"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/history_detail_tripcount"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--OLC Status-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/history_detail_title_olctstatus"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/history_detail_olctstatus"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--Status-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/history_detail_title_requeststatus"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/history_detail_requeststatus"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--Approval By-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/history_detail_title_approvalby"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/history_detail_approvalby"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+    </TableLayout>
+</RelativeLayout>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.serasiautoraya.tdsproper">
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <application
+        android:name=".util.AppInit"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".Login.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Dashboard.DashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".JourneyOrder.Activity.ActivityDetailActivity"
+            android:label="Detail Aktifitas" />
+        <activity
+            android:name=".Profiling.ProfileActivity"
+            android:label="Profil" />
+        <activity
+            android:name=".ChangePassword.ChangePasswordActivity"
+            android:label="Ganti Kata Sandi" />
+        <activity
+            android:name=".NotificatonList.NotificationListActivity"
+            android:label="Daftar Pemberitahuan" />
+        <activity
+            android:name=".Fatigue.FatigueActivity"
+            android:label="Tes Fatigue" />
+        <activity
+            android:name=".JourneyOrder.DocumentCapture.DocumentCaptureActivity"
+            android:label="Pengambilan Bukti Aktifitas"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+        <activity android:name=".JourneyOrder.DocumentCapture.SigningActivity" />
+        <activity
+            android:name=".OrderHistory.OrderHistoryDetail.OrderHistoryDetailActivity"
+            android:label="Riwayat Order" />
+        <activity
+            android:name=".TrainingQuestionnaire.QuestionnaireActivity"
+            android:label="Kuisioner Training" />
+        <activity
+            android:name=".JourneyOrder.PodSubmit.PodSubmitActivity"
+            android:label="Pengambilan Bukti POD" />
+
+        <!-- <activity android:name="com.serasiautoraya.tdsproper.activity.DashboardActivity" android:theme="@style/AppTheme.NoActionBar"/> -->
+        <!-- <activity android:name="com.serasiautoraya.tdsproper.activity.EvidenceCaptureActivity"/> -->
+        <!-- <activity android:name="com.serasiautoraya.tdsproper.activity.ExpanseCaptureActivity"/> -->
+        <!-- <activity android:name="com.serasiautoraya.tdsproper.activity.OrderDetailActivity"/> -->
+        <!-- <activity android:name="com.serasiautoraya.tdsproper.activity.ChangePasswordActivity"/> -->
+        <!-- <activity android:name="com.serasiautoraya.tdsproper.activity.FatigueInterviewActivity"/> -->
+        <!-- <activity android:name="com.serasiautoraya.tdsproper.activity.ProveActivity"/> -->
+        <!-- <activity android:name="com.serasiautoraya.tdsproper.activity.SignatureActivity"/> -->
+        <!-- <activity android:name="com.serasiautoraya.tdsproper.activity.ProfileActivity"/> -->
+        <!-- <activity android:name="com.serasiautoraya.tdsproper.activity.ActionActivityActivity"/> -->
+
+        <service
+            android:name=".util.GPSTracker"
+            android:enabled="true"
+            android:exported="false"
+            android:label="LocationService" />
+        <service android:name=".util.FCMMessageService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".util.FirebaseInstanceIdServiceUtil">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- <receiver android:name=".util.FCMMessageRestartServiceReceiver" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="FCMReceiver" > -->
+        <!-- </action> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+        <service android:name=".util.GPSTrackerService"></service>
+
+        <receiver android:name=".util.GPSTrackerServiceReceiver" />
+
+        <!-- <receiver -->
+        <!-- android:name=".util.NetworkChangeReceiver" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps"></activity>
+    </application>
+
+</manifest>

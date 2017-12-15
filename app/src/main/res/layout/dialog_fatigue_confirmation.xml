@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/title_fi_dialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/acknowledge_dialog_ordercode"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:text="Perhatian!"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:text="Anda yakin sudah menjawab pertanyaan berikut dengan benar dan sesuai kondisi saat ini yang sesungguhnya."
+            android:paddingBottom="10dp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/title_fi_dialog"
+        android:layout_height="wrap_content">
+
+
+        <!--dialog_q_1-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:weightSum="2"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/fi_dialog_quest_1"
+                android:layout_weight="1.6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/dialog_fi_ans1" android:text="Tidak"
+                android:textColor="@color/colorTextPrimary"
+                android:layout_weight="0.4"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--dialog_q_2-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:weightSum="2"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/fi_dialog_quest_2"
+                android:layout_weight="1.6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/dialog_fi_ans2" android:text="Tidak"
+                android:textColor="@color/colorTextPrimary"
+                android:layout_weight="0.4"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--dialog_q_3-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:weightSum="2"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/fi_dialog_quest_3"
+                android:layout_weight="1.6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/dialog_fi_ans3" android:text="Tidak"
+                android:textColor="@color/colorTextPrimary"
+                android:layout_weight="0.4"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--dialog_q_4-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:weightSum="2"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/fi_dialog_quest_4"
+                android:layout_weight="1.6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/dialog_fi_ans4" android:text="Tidak"
+                android:textColor="@color/colorTextPrimary"
+                android:layout_weight="0.4"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--dialog_q_5-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:weightSum="2"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/fi_dialog_quest_5"
+                android:layout_weight="1.6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:id="@+id/dialog_fi_ans5" android:text="Tidak"
+                android:textColor="@color/colorTextPrimary"
+                android:layout_weight="0.4"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+    </TableLayout>
+
+</RelativeLayout>

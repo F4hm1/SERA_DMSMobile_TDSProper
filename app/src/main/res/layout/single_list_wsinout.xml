@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5.5">
+
+            <TextView
+                android:transitionName="trans_order_code"
+                android:id="@+id/single_wsinout_wsin"
+                android:textColor="@android:color/holo_green_dark"
+                android:text="Jadwal Masuk: 07:45"
+                android:layout_alignParentTop="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/single_wsinout_wsout"
+                android:layout_below="@id/single_wsinout_wsin"
+                android:textColor="@android:color/holo_red_dark"
+                android:text="Jadwal Pulang: 17:45"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="4.5">
+
+
+            <TextView
+                android:id="@+id/single_wsinout_date"
+                android:textColor="@color/colorAccentDark"
+                android:text="Tanggal 23-07-2017"
+                android:layout_marginBottom="6dp"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/single_wsinout_keterangan"
+                android:layout_below="@+id/single_wsinout_date"
+                android:textColor="@color/colorAccentDark"
+                android:textSize="7sp"
+                android:text="Clock In | Clock Out | Tidak hadir"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,311 @@
+<resources>
+    <string name="app_name">TDS Proper</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_logout">Keluar</string>
+    <string name="warn_msg_exit">Apakah anda yakin akan keluar aplikasi?</string>
+
+    <string name="bulan_01">Januari</string>
+    <string name="bulan_02">Februari</string>
+    <string name="bulan_03">Maret</string>
+    <string name="bulan_04">April</string>
+    <string name="bulan_05">Mei</string>
+    <string name="bulan_06">Juni</string>
+    <string name="bulan_07">Juli</string>
+    <string name="bulan_08">Agustus</string>
+    <string name="bulan_09">September</string>
+    <string name="bulan_10">Oktober</string>
+    <string name="bulan_11">November</string>
+    <string name="bulan_12">Desember</string>
+
+
+    <!--Progress Dialog-->
+    <string name="prog_msg_wait">Harap Tunggu...</string>
+    <string name="prog_msg_uploading">Uploading data...</string>
+    <string name="prog_msg_downloading">Downloading data...</string>
+    <string name="prog_msg_cp">Mengganti kata sandi...</string>
+    <string name="prog_msg_cico">Menyimpan data clock in/out...</string>
+    <string name="prog_msg_absence">Menyimpan data ketidakhadiran...</string>
+    <string name="prog_msg_expense_submit">Menyimpan data expense...</string>
+    <string name="prog_msg_expense">Mencari data order...</string>
+    <string name="prog_msg_olctrip">Menyimpan data OLC/Trip...</string>
+    <string name="prog_msg_report">Mengambil data...</string>
+    <string name="prog_msg_cancel_request">Membatalkan pengajuan...</string>
+    <string name="prog_msg_foto">Mengambil foto profil...</string>
+    <string name="prog_msg_loadingjam">Mengambil data waktu...</string>
+    <string name="prog_msg_overtime">Melakukan transaksi...</string>
+
+
+    <!--Permission-->
+    <string name="err_msg_general">Terjadi kesalahan, harap periksa koneksi anda, kemudian coba kembali</string>
+
+    <!--Menu Tittle-->
+    <string name="title_active_order">Order Aktif</string>
+    <string name="title_order_history">Riwayat Order</string>
+    <string name="title_cico_request">Pengajuan Clock In/Out</string>
+    <string name="title_absence_request">Pengajuan Ketidakhadiran</string>
+    <string name="title_olctrip_request">Pengajuan OLC/Trip</string>
+    <string name="title_overtime_request">Pengajuan Lembur</string>
+    <string name="title_expense_request">Pengajuan Biaya</string>
+    <string name="title_ws_history">Riwayat Kehadiran</string>
+    <string name="title_history_attendance">Riwayat Kehadiran</string>
+    <string name="title_ganti_password">Ganti Kata Sandi</string>
+    <string name="title_notification_list">Riwayat Notifikasi</string>
+    <string name="title_logout">Keluar</string>
+
+    <!--ContentFragment-->
+    <string name="content_active_order_empty">Tidak ada order yang aktif</string>
+    <string name="content_history_order_empty">History order kosong</string>
+    <string name="content_history_absence_empty">History absence kosong</string>
+    <string name="content_history_cico_empty">History clock in/out kosong</string>
+
+    <!--Login -->
+
+    <!--Login Validation-->
+    <string name="err_msg_empty_username">Harap isi username</string>
+    <string name="err_msg_empty_password">Harap isi kata sandi</string>
+    <string name="err_msg_wrong_login">Username dan Kata Sandi tidak cocok</string>
+    <string name="err_msg_not_authorizad">Tidak bisa masuk, anda tidak memiliki akses.</string>
+    <string name="success_msg_login">Berhasil masuk aplikasi, harap tunggu.</string>
+
+    <!--Login Progress-->
+    <string name="warn_msg_memuatdata">Memuat data, harap tunggu</string>
+    <string name="progress_msg_login">Melakukan Verifikasi...</string>
+    <string name="progress_msg_loaddata">Loading data...</string>
+
+    <!--Order Details -->
+    <string name="order_title">Detail Order</string>
+    <string name="order_title_code">Nomor Order</string>
+    <string name="order_title_activityname">Nama Aktifitas</string>
+    <string name="order_title_activitytype">Tipe Aktifitas</string>
+    <string name="order_title_origin">Asal</string>
+    <string name="order_title_dest">Tujuan</string>
+    <string name="order_title_etd">Perkiraan Keberangkatan</string>
+    <string name="order_title_eta">Perkiraan Tiba</string>
+    <string name="order_title_customer">Customer</string>
+    <string name="order_title_locationtarget">Lokasi Aktifitas</string>
+    <string name="order_title_timetarget">Waktu Target</string>
+    <string name="order_title_timebaseline">Waktu Baseline</string>
+    <string name="order_title_timeactual">Waktu Aktual</string>
+    <string name="order_title_cargotype">Tipe Muatan</string>
+    <string name="order_title_unitmodel">Model Unit</string>
+    <string name="order_title_unitnumber">NoPol Unit</string>
+    <string name="order_title_documentneed">Lampiran Dibutuhkan</string>
+    <string name="order_title_nextlocationtarget">Lokasi Aktifitas Selanjutnya</string>
+    <string name="order_title_loadingeta">Loading ET</string>
+    <string name="order_title_loadingtime">Loading Time</string>
+    <string name="order_title_unloadingloc">Unloading Location</string>
+    <string name="order_title_unloadinget">Unloading ET</string>
+    <string name="order_title_unloadingtime">Unloading Time</string>
+    <string name="order_button_loading">Loading</string>
+    <string name="order_button_unloading">Unloading</string>
+    <string name="order_button_stoporder">Stop Order</string>
+    <string name="order_button_checkpoint">Checkpoint</string>
+    <string name="order_button_endorder">End Order</string>
+
+    <!--Cico-->
+    <string name="cico_button_clockin">Clock In</string>
+    <string name="cico_button_clockout">Clock Out</string>
+    <string name="cico_label_transactiontype">Tipe Transaksi</string>
+    <string name="cico_label_date">Tanggal</string>
+    <string name="cico_label_time">Waktu</string>
+    <string name="cico_label_reason">Alasan</string>
+    <string name="cico_label_submit">Kirim</string>
+    <string name="success_msg_cico_req">Pengajuan clock in/out sukses, menunggu persetujuan.</string>
+    <string name="success_msg_cico_req_delete">Pengajuan Clock In/Out berhasil dibatalkan.</string>
+    <string name="success_msg_cico">Clock In/Out sukses.</string>
+    <string name="err_msg_empty_cico_keterangan">Harap isi kolom alasan</string>
+    <string name="err_msg_empty_cico_transactiontype">Harap pilih tipe transaksi</string>
+    <string name="err_msg_empty_cico_reason">Harap pilih alasan anda</string>
+    <string name="err_msg_empty_cico_date">Harap isi tanggal</string>
+    <string name="err_msg_empty_cico_time">Harap isi waktu</string>
+    <string name="err_msg_wrong_cico_date">Tanggal tidak valid atau melebihi max hari request</string>
+    <string name="err_msg_wrong_cico_time">Waktu tidak valid atau melebihi waktu saat ini</string>
+    <string name="err_msg_fail_delete_cico_request">Gagal membatalkan pengajuan clock in/out, silahkan coba kembali.</string>
+    <string-array name="cico_tipe_array">
+        <item>Pilih</item>
+        <item>Clock In</item>
+        <item>Clock Out</item>
+    </string-array>
+    <string-array name="cico_tipe_array_val">
+        <item>-1</item>
+        <item>TRXCC_01</item>
+        <item>TRXCC_02</item>
+    </string-array>
+    <string-array name="cico_reason_choice">
+        <item>Pilih</item>
+        <item>Kendala Operasional</item>
+        <item>Kendala Teknologi</item>
+        <item>Kendala Pribadi</item>
+    </string-array>
+
+    <string name="cico_notes_1">Clock In adalah waktu bapak berada di pool untuk siap bekerja</string>
+    <string name="cico_notes_2">Clock Out adalah waktu bapak berada di pool untuk selesai bekerja atau waktu pulang</string>
+
+    <!--Absence-->
+    <string name="absence_label_startdate">Tanggal Mulai</string>
+    <string name="absence_label_enddate">Tanggal Selesai</string>
+    <string name="absence_label_reason">Alasan</string>
+    <string name="absence_label_absencetype">Tipe Absen</string>
+    <string name="absence_label_submit">Kirim</string>
+    <string name="success_msg_absent">Pengajuan ketidakhadiran sukses, menunggu persetujuan.</string>
+    <string name="success_msg_absence_req_delete">Pengajuan ketidakhadiran berhasil dibatalkan.</string>
+    <string name="err_msg_empty_absent_keterangan">Harap isi kolom alasan</string>
+    <string name="err_msg_empty_absent_absenttype">Harap pilih tipe absen</string>
+    <string name="err_msg_empty_absent_dateberakhir">Harap isi tanggal selesai</string>
+    <string name="err_msg_empty_absent_datemulai">Harap isi tanggal mulai</string>
+    <string name="err_msg_wrong_absent_date">Tanggal selesai tidak boleh kurang dari tanggal mulai</string>
+    <string name="err_msg_wrong_absent_datemulai">Tanggal mulai tidak valid atau melebihi max hari request</string>
+    <string name="err_msg_wrong_absent_dateberakhir">Tanggal selesai tidak valid atau melebihi max hari request</string>
+    <string name="err_msg_fail_delete_absence_request">Gagal membatalkan pengajuan ketidakhadiran, silahkan coba kembali.</string>
+    <string-array name="absence_tipe_array">
+        <item>Pilih Tipe Absen</item>
+        <item>Cuti</item>
+        <item>Off</item>
+    </string-array>
+    <string-array name="absence_tipe_array_val">
+        <item>-1</item>
+        <item>9001</item>
+        <item>9000</item>
+    </string-array>
+
+    <string name="absence_notes_1">Cuti adalah keadaan tidak masuk kerja yang diijinkan dalam jangka waktu tertentu</string>
+    <string name="absence_notes_2">Off adalah keadaan tidak masuk kerja yang diijinkan atas keadaan tertentu</string>
+    <string name="absence_notes_3">Setelah pengajuan cuti dan off mohon menghubungi koordinator untuk penjelasan lebih lanjut</string>
+
+    <!--Change Password-->
+    <string name="cp_label_old">Kata sandi lama</string>
+    <string name="cp_label_pass">Kata sandi baru</string>
+    <string name="cp_label_passconf">Ulangi kata sandi baru</string>
+    <string name="cp_label_submit">Kirim</string>
+    <string name="success_msg_cp">Kata sandi anda berhasil diganti</string>
+    <string name="err_msg_wrong_cp_passlamasalah">Kata sandi lama anda salah</string>
+    <string name="err_msg_wrong_cp_passbarunotmatch">Kata sandi baru anda tidak cocok</string>
+    <string name="err_msg_empty_cp_oldpass">Harap isi kata sandi lama anda</string>
+    <string name="err_msg_empty_cp_pass">Harap isi kata sandi baru anda</string>
+    <string name="err_msg_empty_cp_confpass">Harap isi kembali kata sandi baru anda</string>
+
+    <!--Fatigue Interview-->
+    <string name="fi_quest_1">Apakah anda <b>dalam kondisi sehat</b>?</string>
+    <string name="fi_quest_2">Apakah anda <b>tidak dalam pengaruh obat / sedang mengkonsumsi obat</b> yang menyebabkan mengantuk (misalnya obat flu/batuk)?</string>
+    <string name="fi_quest_3">Apakah anda <b>tidak mengkonsumsi alkohol</b>?</string>
+    <string name="fi_quest_4">Apakah anda <b>tidak mengkonsumsi obat-obatan terlarang</b> (Narkoba)?</string>
+    <string name="fi_quest_5">Apakah anda <b>siap untuk bertugas mengemudi</b>?</string>
+    <string name="fi_dialog_quest_1">Dalam kondisi sehat</string>
+    <string name="fi_dialog_quest_2">Tidak dalam pengaruh obat / sedang mengkonsumsi obat yang menyebabkan mengantuk</string>
+    <string name="fi_dialog_quest_3">Tidak mengkonsumsi alkohol</string>
+    <string name="fi_dialog_quest_4">Tidak mengkonsumsi obat-obatan terlarang (Narkoba)</string>
+    <string name="fi_dialog_quest_5">Siap untuk bertugas mengemudi</string>
+    <string name="progress_msg_fatigue">Menyimpan data fatigue</string>
+
+    <!--Expanse Capture-->
+    <string name="expanse_label_type">Tipe Expanse</string>
+    <string name="expanse_label_amount">Jumlah Pengeluaran</string>
+    <string name="expanse_label_submit">Simpan</string>
+    <string-array name="expenses_tipe_array">
+        <item>Pilih Tipe Expenses</item>
+        <item>Bensin</item>
+        <item>Toll dan Parkir</item>
+        <item>Escort</item>
+        <item>ASDP</item>
+        <item>Portal</item>
+        <item>BM dan SPSI</item>
+    </string-array>
+    <string-array name="expenses_tipe_array_val">
+        <item>-1</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>4000</item>
+        <item>5000</item>
+        <item>6000</item>
+    </string-array>
+
+    <!--OLC/Trip-->
+    <string name="olctrip_label_date">Tanggal OLC\Trip</string>
+    <string name="olctrip_label_olc">OLC</string>
+    <string name="olctrip_label_tripamount">Jumlah Trip</string>
+    <string name="olctrip_label_reason">Alasan/Keterangan</string>
+    <string name="olctrip_label_submit">Kirim</string>
+    <string name="err_msg_empty_olctrip_keterangan">Harap isi kolom alasan</string>
+    <string name="err_msg_empty_olctrip_olc">Harap pilih apakah anda OLC atau tidak</string>
+    <string name="err_msg_empty_olctrip_date">Harap pilih tanggal</string>
+    <string name="err_msg_empty_olctrip_trip">Harap masukan jumlah trip (ketik 0 jika tidak melakukan)</string>
+    <string name="err_msg_wrong_olctrip_date">Tanggal tidak valid atau melebihi max hari request</string>
+    <string-array name="olctrip_olc_array">
+        <item>Pilih</item>
+        <item>Ya</item>
+        <item>Tidak</item>
+    </string-array>
+
+    <string-array name="olctrip_olc_array_val">
+        <item>-1</item>
+        <item>1</item>
+        <item>0</item>
+    </string-array>
+
+    <!--Overtime-->
+    <string name="overtime_label_datechoice">Tanggal Lembur</string>
+    <string name="overtime_label_type">Tipe Lembur</string>
+    <string name="overtime_label_reason">Alasan/Keterangan</string>
+    <string name="overtime_label_starttime">Waktu Mulai</string>
+    <string name="overtime_label_endtime">Waktu Selesai</string>
+    <string name="overtime_label_startdate">Tanggal Mulai</string>
+    <string name="overtime_label_enddate">Tanggal Selesai</string>
+    <string name="overtime_label_submit">Kirim</string>
+    <string name="overtime_label_sd">.sd.</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="order_history_detail_activity_code">Kode Aktifitas</string>
+    <string name="order_history_detail_activity_type">Tipe Aktifitas</string>
+    <string name="order_history_detail_time_target">Waktu Target</string>
+    <string name="order_history_detail_time_baseline">Waktu Baseline</string>
+    <string name="order_history_detail_time_actual">Waktu Aktual</string>
+    <string name="order_history_detail_location_target">Target Lokasi</string>
+    <string name="pod_guide_label">Petunjuk pengambilan foto bukti POD:</string>
+
+    <string name="ws_dialog_title_wsin">Jadwal Masuk</string>
+    <string name="ws_dialog_title_wsout">Jadwal Keluar</string>
+    <string name="ws_dialog_title_clockin">Clock In</string>
+    <string name="ws_dialog_title_clockout">Clock Out</string>
+    <string name="ws_dialog_title_absence">Ketidakhadiran</string>
+
+
+    <string name="history_detail_title_transtype">Tipe pengajuan</string>
+    <string name="history_detail_title_datestart">Tanggal mulai</string>
+    <string name="history_detail_title_dateend">Tanggal akhir</string>
+    <string name="history_detail_title_absencetype">Jenis ketidakhadiran</string>
+    <string name="history_detail_title_requeststatus">Status pengajuan</string>
+    <string name="history_detail_title_approvalby">Pengajuan kepada</string>
+    <string name="history_detail_title_datecico">Tanggal Ci/Co</string>
+    <string name="history_detail_title_dateolctrip">Tanggal OLC/Trip</string>
+    <string name="history_detail_title_tripcount">Jumlah trip</string>
+    <string name="history_detail_title_olctstatus">Terdapat OLC</string>
+    <string name="history_detail_title_overtimestart">Tanggal mulai</string>
+    <string name="history_detail_title_overtimeend">Tanggal berakhir</string>
+    <string name="history_detail_title_overtimetype">Jenis lembur</string>
+    <string name="expense_label_availableorder">Order tersedia</string>
+    <string name="order_title_assignment">Nomor Penugasan</string>
+    <string name="capture_pickfrom_camera">Kamera</string>
+    <string name="capture_pickfrom_gallery">Galeri Foto</string>
+    <string name="order_button_notactive">Anda belum bisa memulai perjalanan untuk order ini</string>
+    <string name="order_title_nextlocationaddress">Alamat Aktifitas Selanjutnya</string>
+    <string name="order_title_locationtargetaddress">Alamat Aktifitas</string>
+    <string name="order_title_notes">Catatan</string>
+    <string name="order_title_cargodesc">Deskripsi Kargo</string>
+
+    <string name="documents_podreason_spinner_reason">Alasan tidak melampirkan bukti foto POD:</string>
+    <string name="err_msg_empty_overtime_keterangan">Harap isi dengan alasa/keterangan anda lembur</string>
+    <string-array name="documents_podreason_array">
+        <item>Pilih</item>
+        <item>Tertahan oleh customer</item>
+    </string-array>
+
+    <string-array name="documents_podreason_array_val">
+        <item>-1</item>
+        <item>Postpone by Customer</item>
+    </string-array>
+    <string name="title_activity_maps">Map</string>
+</resources>

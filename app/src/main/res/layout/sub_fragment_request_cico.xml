@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingBottom="30dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+            <!--Input Tipe Transaksi (Spinner)-->
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cico_label_transactiontype" />
+            <Spinner
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner_cico_transaction_type" />
+
+            <!--Input Date-->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textil_layout_cico_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edittext_cico_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="@string/cico_label_date"
+                    android:focusable="false"
+                    android:textColor="@color/colorTextSecondary"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <!--Input Time-->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/textil_layout_cico_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/edittext_cico_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:singleLine="true"
+                    android:hint="@string/cico_label_time"
+                    android:focusable="false"
+                    android:textColor="@color/colorTextSecondary"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <!--Input Pilihan Alasan (Spinner)-->
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cico_label_reason" />
+            <Spinner
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/spinner_cico_reason_choice" />
+
+            <!--Input Alasan-->
+            <!--<android.support.design.widget.TextInputLayout-->
+                <!--android:id="@+id/textil_layout_cico_reason"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:paddingBottom="40dp">-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/edittext_cico_reason"-->
+                    <!--android:inputType="textMultiLine"-->
+                    <!--android:lines="8"-->
+                    <!--android:minLines="4"-->
+                    <!--android:gravity="top|left"-->
+                    <!--android:maxLines="10"-->
+                    <!--android:scrollbars="vertical"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="@string/cico_label_reason" />-->
+
+            <!--</android.support.design.widget.TextInputLayout>-->
+
+            <!--Submit-->
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/btn_cico_submit"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="50dp"
+                    android:drawablePadding="10dp"
+                    android:textColor="@color/colorTextIcon"
+                    android:text="@string/cico_label_submit"
+                    android:gravity="left|center_vertical"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/shape_rounded_corner"
+                    android:drawableLeft="@drawable/ic_submit_24dp"
+                    />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

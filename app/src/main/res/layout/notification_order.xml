@@ -1,0 +1,207 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:background="@color/cardview_dark_background"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/acknowledge_dialog_ordercode"
+        android:textColor="@color/colorTextIcon"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:text="Order Code 173652"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/acknowledge_dialog_ordercode"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <!--order_title_hub-->
+        <LinearLayout
+            android:weightSum="2"
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_dest"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textStyle="bold"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_destination" android:text="Surabaya"
+                android:textStyle="bold"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--order_title_hub-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_activityname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_hub" android:text="Yes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--order_title_nextdriver-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_activitytype"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_nextdriver" android:text="Badai Samoedra"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--order_title_origin-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_origin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_origin" android:text="Jakarta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--order_title_etd-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_etd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_etd" android:text="15/11/2016 08:00:00"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--order_title_eta-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_eta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_eta" android:text="16/11/2016 18:00:00"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--order_title_customer-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_customer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_customer" android:text="HMS"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+
+        <!--order_title_unit-->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_locationtarget"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_unit" android:text="B 1916 TOW"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

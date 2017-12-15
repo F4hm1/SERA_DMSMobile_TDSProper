@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/ws_dialog_date"
+        android:textColor="@color/colorAccentDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="10dp"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:text="Tanggal 23-07-2017"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/ws_dialog_date"
+        android:layout_height="wrap_content">
+
+
+        <!--WsIn-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/ws_dialog_title_wsin"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/ws_dialog_wsin"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--WsOut-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/ws_dialog_title_wsout"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/ws_dialog_wsout"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--Clock In-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/ws_dialog_title_clockin"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/ws_dialog_clockin"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--Clock Out-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/ws_dialog_title_clockout"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/ws_dialog_clockout"
+                android:text="-"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--Absence-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/ws_dialog_title_absence"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/ws_dialog_absence"
+                android:text=""
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+    </TableLayout>
+</RelativeLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_active_order"
+            android:icon="@drawable/ic_active_order_24dp"
+            android:title="@string/title_active_order" />
+        <item
+            android:id="@+id/nav_cico_request"
+            android:icon="@drawable/ic_attendance_24dp"
+            android:title="@string/title_cico_request" />
+        <item
+            android:id="@+id/nav_absence_request"
+            android:icon="@drawable/ic_person_pin_black_24dp"
+            android:title="@string/title_absence_request" />
+        <item
+            android:id="@+id/nav_olctrip_request"
+            android:icon="@drawable/ic_olctrip_black_24dp"
+            android:title="@string/title_olctrip_request" />
+        <item
+            android:id="@+id/nav_overtime_request"
+            android:icon="@drawable/ic_overtime_black_24dp"
+            android:title="@string/title_overtime_request" />
+        <item
+            android:id="@+id/nav_expense_request"
+            android:icon="@drawable/ic_expense_black_24dp"
+            android:title="@string/title_expense_request" />
+        <item
+            android:id="@+id/nav_ws_history"
+            android:icon="@drawable/ic_ws_24dp"
+            android:title="@string/title_ws_history" />
+        <item
+            android:id="@+id/nav_attendance_history"
+            android:icon="@drawable/ic_history_24dp"
+            android:title="@string/title_history_attendance" />
+        <item
+            android:id="@+id/nav_order_history"
+            android:icon="@drawable/ic_riwayat_order_24_black"
+            android:title="@string/title_order_history" />
+    </group>
+
+    <item android:title="Setting">
+        <menu>
+            <item
+                android:id="@+id/nav_notification_list"
+                android:icon="@drawable/ic_warning_black_24dp"
+                android:title="@string/title_notification_list" />
+            <item
+                android:id="@+id/nav_change_pass"
+                android:icon="@drawable/ic_change_pass_24dp"
+                android:title="@string/title_ganti_password" />
+            <item
+                android:id="@+id/nav_logout"
+                android:icon="@drawable/ic_logout_black_24dp"
+                android:title="@string/title_logout" />
+
+            <!--<item-->
+                <!--android:id="@+id/nav_temp_confirmation"-->
+                <!--android:icon="@drawable/ic_logout_black_24dp"-->
+                <!--android:title="(Sample) Konfirmasi Order" />-->
+        </menu>
+    </item>
+
+</menu>
+
+
+
+
+
+
+
+
+<!--<?xml version="1.0" encoding="utf-8"?>-->
+<!--<menu xmlns:android="http://schemas.android.com/apk/res/android">-->
+
+<!--<group android:checkableBehavior="single">-->
+    <!--<item-->
+        <!--android:id="@+id/nav_active_order"-->
+        <!--android:icon="@drawable/ic_active_order_24dp"-->
+        <!--android:title="@string/title_active_order" />-->
+    <!--<item-->
+        <!--android:id="@+id/nav_cico_request"-->
+        <!--android:icon="@drawable/ic_attendance_24dp"-->
+        <!--android:title="@string/title_cico_request" />-->
+    <!--<item-->
+        <!--android:id="@+id/nav_absence_request"-->
+        <!--android:icon="@drawable/ic_person_pin_black_24dp"-->
+        <!--android:title="@string/title_absence_request" />-->
+    <!--<item-->
+        <!--android:id="@+id/nav_order_history"-->
+        <!--android:icon="@drawable/ic_history_24dp"-->
+        <!--android:title="@string/title_order_history" />-->
+<!--</group>-->
+
+<!--<item android:title="Setting">-->
+    <!--<menu>-->
+        <!--<item-->
+            <!--android:id="@+id/nav_change_pass"-->
+            <!--android:icon="@drawable/ic_change_pass_24dp"-->
+            <!--android:title="@string/title_ganti_password" />-->
+        <!--<item-->
+            <!--android:id="@+id/nav_logout"-->
+            <!--android:icon="@drawable/ic_logout_black_24dp"-->
+            <!--android:title="@string/title_logout" />-->
+
+        <!--<item-->
+            <!--android:id="@+id/nav_temp_confirmation"-->
+            <!--android:icon="@drawable/ic_logout_black_24dp"-->
+            <!--android:title="(Sample) Konfirmasi Order" />-->
+    <!--</menu>-->
+<!--</item>-->
+
+<!--</menu>-->
+

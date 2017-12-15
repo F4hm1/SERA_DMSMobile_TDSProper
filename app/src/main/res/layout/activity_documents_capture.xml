@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:animateLayoutChanges="true"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:isScrollContainer="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/documents_card_photos"
+                card_view:contentPadding="6dp"
+                android:layout_marginBottom="8dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:id="@+id/documents_lin_photos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:text="Foto Bukti Aktifitas"/>
+
+                    <LinearLayout
+                        android:weightSum="3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.CardView
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_marginRight="6dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            card_view:cardUseCompatPadding="true"
+                            card_view:cardElevation="3dp"
+                            card_view:cardCornerRadius="2dp">
+
+                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                                android:id="@+id/documents_iv_capture1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/no_preview_available2"
+                                android:scaleType="centerCrop"/>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_marginRight="6dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            card_view:cardUseCompatPadding="true"
+                            card_view:cardElevation="3dp"
+                            card_view:cardCornerRadius="2dp">
+
+                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                                android:id="@+id/documents_iv_capture2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/no_preview_available2"
+                                android:scaleType="centerCrop"/>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_marginLeft="6dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            card_view:cardUseCompatPadding="true"
+                            card_view:cardElevation="3dp"
+                            card_view:cardCornerRadius="2dp">
+
+                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                                android:id="@+id/documents_iv_capture3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/no_preview_available2"
+                                android:scaleType="centerCrop"/>
+
+                        </android.support.v7.widget.CardView>
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/documents_card_POD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:contentPadding="6dp"
+                android:layout_marginBottom="8dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:id="@+id/documents_lin_POD"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:text="Foto Bukti POD (Prove of Delivery)"/>
+
+                    <TextView
+                        android:id="@+id/documents_tv_podguide"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        android:textColor="@color/colorAccentDark"
+                        android:text="Panduan POD Disiniii, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. "/>
+
+                    <LinearLayout
+                        android:weightSum="3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.CardView
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_marginRight="6dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            card_view:cardUseCompatPadding="true"
+                            card_view:cardElevation="3dp"
+                            card_view:cardCornerRadius="2dp">
+
+                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                                android:id="@+id/documents_iv_capPOD1"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/no_preview_available2"
+                                android:scaleType="centerCrop"/>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_marginRight="6dp"
+                            android:layout_marginLeft="6dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            card_view:cardUseCompatPadding="true"
+                            card_view:cardElevation="3dp"
+                            card_view:cardCornerRadius="2dp">
+
+                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                                android:id="@+id/documents_iv_capPOD2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/no_preview_available2"
+                                android:scaleType="centerCrop"/>
+
+                        </android.support.v7.widget.CardView>
+
+                        <android.support.v7.widget.CardView
+                            xmlns:android="http://schemas.android.com/apk/res/android"
+                            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                            android:layout_marginLeft="6dp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            card_view:cardUseCompatPadding="true"
+                            card_view:cardElevation="3dp"
+                            card_view:cardCornerRadius="2dp">
+
+                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                                android:id="@+id/documents_iv_capPOD3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/no_preview_available2"
+                                android:scaleType="centerCrop"/>
+
+                        </android.support.v7.widget.CardView>
+
+                    </LinearLayout>
+
+                    <!--Input Alasan (Spinner)-->
+                    <TextView
+                        android:layout_marginTop="10dp"
+                        android:paddingLeft="6dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/documents_podreason_spinner_reason" />
+                    <Spinner
+                        android:layout_marginBottom="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/documents_spinner_podreason" />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/documents_card_expenses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:contentPadding="6dp"
+                android:layout_marginBottom="8dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardElevation="3dp"
+                card_view:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:id="@+id/documents_lin_expenses"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:text="Expenses"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.8"
+                                android:textSize="16sp"
+                                android:text="Bahan Bakar"/>
+
+                            <!--<EditText-->
+                                <!--android:id="@+id/documents_et_fuel"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.2"-->
+                                <!--android:textSize="15sp"-->
+                                <!--android:inputType="number"-->
+                                <!--android:text="Rp0,-"/>-->
+
+                            <EditText
+                                android:id="@+id/documents_et_fuel"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:textSize="15sp"
+                                android:inputType="number"
+                                android:hint="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.8"
+                                android:textSize="16sp"
+                                android:text="Tol dan Parkir"/>
+
+                            <!--<EditText-->
+                                <!--android:id="@+id/documents_et_tollparking"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.2"-->
+                                <!--android:textSize="15sp"-->
+                                <!--android:inputType="number"-->
+                                <!--android:text="Rp0,-"/>-->
+                            <EditText
+                                android:id="@+id/documents_et_tollparking"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:textSize="15sp"
+                                android:inputType="number"
+                                android:hint="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.8"
+                                android:textSize="16sp"
+                                android:text="Escort"/>
+
+                            <!--<EditText-->
+                                <!--android:id="@+id/documents_et_escort"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.2"-->
+                                <!--android:textSize="15sp"-->
+                                <!--android:inputType="number"-->
+                                <!--android:text="Rp0,-"/>-->
+
+                            <EditText
+                                android:id="@+id/documents_et_escort"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:textSize="15sp"
+                                android:inputType="number"
+                                android:hint="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.8"
+                                android:textSize="16sp"
+                                android:hint="ASDP"/>
+
+                            <!--<EditText-->
+                                <!--android:id="@+id/documents_et_asdp"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.2"-->
+                                <!--android:textSize="15sp"-->
+                                <!--android:inputType="number"-->
+                                <!--android:text="Rp0,-"/>-->
+
+                            <EditText
+                                android:id="@+id/documents_et_asdp"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:textSize="15sp"
+                                android:inputType="number"
+                                android:hint="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.8"
+                                android:textSize="16sp"
+                                android:hint="Portal"/>
+
+                            <!--<EditText-->
+                                <!--android:id="@+id/documents_et_portal"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.2"-->
+                                <!--android:textSize="15sp"-->
+                                <!--android:inputType="number"-->
+                                <!--android:text="Rp0,-"/>-->
+
+                            <EditText
+                                android:id="@+id/documents_et_portal"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:textSize="15sp"
+                                android:inputType="number"
+                                android:hint="0"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:weightSum="2">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="0.8"
+                                android:textSize="16sp"
+                                android:hint="BMSPSI"/>
+
+                            <!--<EditText-->
+                                <!--android:id="@+id/documents_et_bmspsi"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:layout_weight="1.2"-->
+                                <!--android:textSize="15sp"-->
+                                <!--android:inputType="number"-->
+                                <!--android:text="Rp0,-"/>-->
+
+                            <EditText
+                                android:id="@+id/documents_et_bmspsi"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1.2"
+                                android:textSize="15sp"
+                                android:inputType="number"
+                                android:hint="0"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/documents_card_signature"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:contentPadding="6dp"
+                android:layout_marginBottom="8dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardElevation="3dp"
+                card_view:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:id="@+id/documents_lin_signature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:text="Tanda Tangan"/>
+
+                    <android.support.v7.widget.CardView
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        card_view:cardUseCompatPadding="true"
+                        card_view:cardElevation="3dp"
+                        card_view:cardCornerRadius="2dp">
+
+                        <ImageView
+                            android:id="@+id/documents_iv_signature"
+                            android:layout_width="match_parent"
+                            android:src="@drawable/no_preview_available"
+                            android:layout_height="wrap_content"
+                            android:scaleType="centerCrop"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/documents_card_verificationcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                card_view:contentPadding="6dp"
+                android:layout_marginBottom="8dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardElevation="3dp"
+                card_view:cardCornerRadius="2dp">
+
+                <LinearLayout
+                    android:id="@+id/documents_lin_verificationcode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="6dp"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorTextPrimary"
+                        android:text="Kode Verifikasi"/>
+
+                    <!--<android.support.v7.widget.CardView-->
+                    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+                    <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--card_view:cardUseCompatPadding="true"-->
+                    <!--card_view:cardElevation="3dp"-->
+                    <!--card_view:cardCornerRadius="2dp"-->
+                    <!--android:layout_marginLeft="16dp"-->
+                    <!--android:layout_marginRight="16dp">-->
+
+                    <EditText
+                        android:id="@+id/documents_et_verificationcode"
+                        android:layout_gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="34sp"
+                        android:singleLine="true"
+                        android:hint="masukan kode"
+                        android:inputType="number"
+                        android:gravity="center"
+                        android:textAlignment="center"
+                        android:textStyle="bold"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:background="@drawable/shape_round_box"/>
+
+                    <!--</android.support.v7.widget.CardView>-->
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardElevation="3dp"
+                card_view:cardCornerRadius="2dp">
+
+                <Button
+                    android:id="@+id/documents_btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="28dp"
+                    android:paddingBottom="28dp"
+                    android:textSize="24sp"
+                    android:text="ACTIVITY NAME"
+                    android:background="@drawable/button_bg_clickable"
+                    android:textColor="@color/colorTextIcon">
+
+                </Button>
+
+            </android.support.v7.widget.CardView>
+
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:gravity="center"-->
+                    <!--android:paddingBottom="24dp"-->
+                    <!--android:paddingTop="24dp"-->
+                    <!--android:textSize="24sp"-->
+                    <!--android:textStyle="bold"-->
+                    <!--android:textColor="@color/colorTextIcon"-->
+            <!--android:text="ACTIVITY NAME"/>-->
+
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>

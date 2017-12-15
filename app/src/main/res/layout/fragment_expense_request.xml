@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/expense_lin_availablegroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp"
+        android:paddingBottom="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+            <!--android:id="@+id/expense_card_searchgroup"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--card_view:contentPadding="6dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--card_view:cardUseCompatPadding="true"-->
+            <!--card_view:cardElevation="3dp"-->
+            <!--card_view:cardCornerRadius="2dp">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:weightSum="10"-->
+                <!--android:layout_height="wrap_content">-->
+
+                <!--<EditText-->
+                    <!--android:id="@+id/expense_et_searchfield"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_weight="6"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="@string/expanse_label_searchfield"/>-->
+
+                <!--<LinearLayout-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_weight="1"-->
+                    <!--android:layout_height="wrap_content"></LinearLayout>-->
+
+                <!--<Button-->
+                    <!--android:id="@+id/expense_btn_search"-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_weight="3"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:textColor="@color/colorTextIcon"-->
+                    <!--android:background="@drawable/shape_rounded_corner"-->
+                    <!--android:text="@string/expanse_label_searchsubmit"/>-->
+
+
+            <!--</LinearLayout>-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!--Order Selection (Spinner)-->
+            <TextView
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/expense_label_availableorder" />
+            <Spinner
+                android:layout_marginBottom="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/expense_spinner_available" />
+        </LinearLayout>
+
+        <!--</android.support.v7.widget.CardView>-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/expense_lin_requestgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="30dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+
+        <!--<TextView-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:text="@string/expanse_label_type" />-->
+
+        <!--<Spinner-->
+            <!--android:id="@+id/expense_spinner_type"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="20dp" />-->
+
+        <!--<EditText-->
+            <!--android:id="@+id/expense_et_amount"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginBottom="20dp"-->
+            <!--android:inputType="number"-->
+            <!--android:hint="@string/expanse_label_amount"/>-->
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+            <!--xmlns:card_view="http://schemas.android.com/apk/res-auto"-->
+            <!--android:id="@+id/documents_card_expenses"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--card_view:contentPadding="6dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--card_view:cardUseCompatPadding="true"-->
+            <!--card_view:cardElevation="3dp"-->
+            <!--card_view:cardCornerRadius="2dp">-->
+
+            <LinearLayout
+                android:id="@+id/documents_lin_expenses"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="6dp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorTextPrimary"
+                    android:text="Masukan jumlah pengeluaran"/>
+
+                <LinearLayout
+                    android:id="@+id/expense_lin_inputgroup"
+                    android:paddingLeft="20dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        <!--</android.support.v7.widget.CardView>-->
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/expense_btn_submit"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/shape_rounded_corner"
+                android:drawableLeft="@drawable/ic_submit_24dp"
+                android:drawablePadding="10dp"
+                android:gravity="left|center_vertical"
+                android:paddingLeft="50dp"
+                android:text="@string/expanse_label_submit"
+                android:textColor="@color/colorTextIcon" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <include
+        android:id="@+id/layout_empty_info"
+        layout="@layout/single_empty_info"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

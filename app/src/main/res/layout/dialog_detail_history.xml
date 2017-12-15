@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/acknowledge_dialog_ordercode"
+        android:textColor="@color/colorAccentDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:text="Order Code 173652"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/acknowledge_dialog_ordercode"
+        android:layout_height="wrap_content">
+
+        <!--order_title_hub-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_dest"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:textStyle="bold"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_destination" android:text="Surabaya"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_hub-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_activityname"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_hub" android:text="Yes"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_origin-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_origin"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_origin" android:text="Jakarta"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_etd-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_etd"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_etd" android:text="15/11/2016 08:00:00"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_eta-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_eta"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_eta" android:text="16/11/2016 18:00:00"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_customer-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_customer"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_customer" android:text="HMS"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_unit-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_locationtarget"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_unit" android:text="B 1916 TOW"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--Not shown?-->
+        <!--order_title_cargotype-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_cargotype"
+                android:layout_weight="1"
+
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/order_title_cargotype"
+                android:text="Chemical"
+                android:layout_weight="1"
+
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_quantity-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_unitmodel"
+                android:layout_weight="1"
+
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/order_title_quantity" android:text="2000 m3"
+                android:layout_weight="1"
+
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_checkpoint-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_unitnumber"
+                android:layout_weight="1"
+
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip"/>
+
+            <TextView
+                android:id="@+id/order_title_checkpoint" android:text="Cirebon"
+                android:layout_weight="1"
+
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_loadingloc-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_nextlocationtarget"
+                android:layout_weight="1"
+
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/order_title_loadingloc" android:text="Karawang"
+                android:layout_weight="1"
+
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_loading time-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_loadingtime"
+                android:layout_weight="1"
+
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/order_title_loadingtime" android:text="15/11/2016 09:00:00"
+                android:layout_weight="1"
+
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_unloadingloc-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_unloadingloc"
+                android:layout_weight="1"
+
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/order_title_unloadingloc" android:text="Berbek"
+                android:layout_weight="1"
+
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_unloading time-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_unloadingtime"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/order_title_unloadingtime" android:text="16/11/2016 15:00:00"
+                android:layout_weight="1"
+
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_laststatus-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_timeactual"
+                android:layout_weight="1"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/order_title_timeactual" android:text="Order selesai"
+                android:layout_weight="1"
+                android:textColor="@color/colorPrimaryDark"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+
+
+    </TableLayout>
+</RelativeLayout>

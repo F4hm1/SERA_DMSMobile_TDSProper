@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/table_bottom_border_transparent"
+    android:gravity="left"
+    android:weightSum="11">
+
+    <TextView
+        android:id="@+id/destactivity_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_column="0"
+        android:layout_weight="11"
+        android:paddingBottom="5dip"
+        android:paddingLeft="4dp"
+        android:paddingTop="5dip"
+        android:text="Row 3 column " />
+</TableRow>

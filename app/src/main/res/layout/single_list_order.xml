@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:clickable="true"
+    android:background="?android:attr/selectableItemBackground"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/acknowledge_dialog_ordercode"
+        android:textColor="@color/colorAccentDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:text="Order Code 1213"
+        android:layout_height="wrap_content"/>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/acknowledge_dialog_ordercode"
+        android:layout_height="wrap_content">
+
+        <!--order_title_hub-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:layout_marginRight="100dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_activityname"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_hub" android:text="Row 3 column 2"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_nextdriver-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:layout_marginRight="100dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_activitytype"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_nextdriver" android:text="Row 3 column 2"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_origin-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:layout_marginRight="100dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_origin"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_origin" android:text="Row 3 column 2"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_etd-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:layout_marginRight="100dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_etd"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_etd" android:text="Row 3 column 2"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_eta-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:layout_marginRight="100dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_eta"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_eta" android:text="Row 3 column 2"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_customer-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:layout_marginRight="100dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_customer"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_customer" android:text="Row 3 column 2"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+
+        <!--order_title_unit-->
+        <TableRow
+            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:background="@drawable/table_bottom_border"
+            android:layout_marginRight="100dp"
+            android:gravity="left">
+            <TextView
+                android:text="@string/order_title_locationtarget"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+
+            <TextView
+                android:id="@+id/acknowledge_dialog_unit" android:text="Row 3 column 2"
+                android:layout_weight="1"
+                android:paddingBottom="2dip"
+                android:paddingTop="2dip" />
+        </TableRow>
+    </TableLayout>
+
+
+    <TextView
+        android:id="@+id/single_list_dest"
+        android:textColor="@color/colorAccentDark"
+        android:layout_width="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="Destination: Surabaya"
+        android:layout_height="wrap_content"
+        android:textSize="14sp" />
+</RelativeLayout>

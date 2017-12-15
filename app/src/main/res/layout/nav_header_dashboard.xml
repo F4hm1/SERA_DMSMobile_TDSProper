@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/view_container"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:background="@color/colorDivider"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <ImageView
+        android:id="@+id/img_header_bg"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logoselog"
+        android:layout_alignParentRight="true"
+        android:paddingTop="20dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/nav_header_img"
+            android:layout_width="@dimen/profile_width"
+            android:layout_height="@dimen/profile_height"
+            android:cropToPadding="true"
+            android:adjustViewBounds="false"
+            app:srcCompat="@drawable/ic_person_black_24dp"
+
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/imageview_border"
+            android:elevation="10dp"
+            android:padding="4dp"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:id="@+id/nav_header_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/nav_header_vertical_spacing"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textColor="@color/colorTextPrimary"
+            android:text="Driver Name Here"
+            android:textStyle="bold"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/nav_header_posisi"
+            android:layout_width="wrap_content"
+            android:textColor="@color/colorTextPrimary"
+            android:layout_height="wrap_content"
+            android:text="Driver Position Here" />
+
+    </LinearLayout>
+</RelativeLayout>

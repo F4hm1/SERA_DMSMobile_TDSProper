@@ -1,0 +1,663 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/documents_card_photos"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:animateLayoutChanges="true"
+    card_view:cardCornerRadius="2dp"
+    card_view:cardUseCompatPadding="true"
+    card_view:contentPadding="6dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <GridLayout
+                android:id="@+id/pod_grid_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:columnCount="3"
+                android:rowCount="10">
+
+                <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:layout_rowWeight="1">
+
+                    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/pod_card_container_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardElevation="2dp">
+
+                        <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            android:id="@+id/pod_iv_prove_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_rowWeight="1"
+                            android:background="@color/colorDeepOn"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add_foto_pod" />
+
+                        <TextView
+                            android:id="@+id/pod_tv_progress_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/black_transparent"
+                            android:gravity="center"
+                            android:text="75%"
+                            android:textColor="@color/colorDeepOn"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/pod_pb_progress_1"
+                            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_gravity="bottom"
+                            android:progress="36"
+                            android:visibility="gone" />
+
+                    </android.support.v7.widget.CardView>
+
+                </com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout>
+
+                <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:layout_rowWeight="1">
+
+                    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/pod_card_container_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardElevation="2dp">
+
+                        <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            android:id="@+id/pod_iv_prove_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_rowWeight="1"
+                            android:background="@color/colorDeepOn"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add_foto_pod" />
+
+                        <TextView
+                            android:id="@+id/pod_tv_progress_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/black_transparent"
+                            android:gravity="center"
+                            android:text="75%"
+                            android:textColor="@color/colorDeepOn"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/pod_pb_progress_2"
+                            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_gravity="bottom"
+                            android:progress="36"
+                            android:visibility="gone" />
+
+                        <ImageButton
+                            android:id="@+id/pod_ib_close_2"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_close"
+                            android:background="@android:color/transparent"
+                            android:adjustViewBounds="true"
+                            android:layout_gravity="right|top"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout>
+
+                <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:layout_rowWeight="1">
+
+                    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/pod_card_container_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardElevation="2dp">
+
+                        <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            android:id="@+id/pod_iv_prove_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_rowWeight="1"
+                            android:background="@color/colorDeepOn"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add_foto_pod" />
+
+                        <TextView
+                            android:id="@+id/pod_tv_progress_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/black_transparent"
+                            android:gravity="center"
+                            android:text="75%"
+                            android:textColor="@color/colorDeepOn"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/pod_pb_progress_3"
+                            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_gravity="bottom"
+                            android:progress="36"
+                            android:visibility="gone" />
+
+                        <ImageButton
+                            android:id="@+id/pod_ib_close_3"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_close"
+                            android:background="@android:color/transparent"
+                            android:adjustViewBounds="true"
+                            android:layout_gravity="right|top"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout>
+
+                <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:layout_rowWeight="1">
+
+                    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/pod_card_container_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardElevation="2dp">
+
+                        <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            android:id="@+id/pod_iv_prove_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_rowWeight="1"
+                            android:background="@color/colorDeepOn"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add_foto_pod" />
+
+                        <TextView
+                            android:id="@+id/pod_tv_progress_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/black_transparent"
+                            android:gravity="center"
+                            android:text="75%"
+                            android:textColor="@color/colorDeepOn"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/pod_pb_progress_4"
+                            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_gravity="bottom"
+                            android:progress="36"
+                            android:visibility="gone" />
+
+                        <ImageButton
+                            android:id="@+id/pod_ib_close_4"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_close"
+                            android:background="@android:color/transparent"
+                            android:adjustViewBounds="true"
+                            android:layout_gravity="right|top"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout>
+
+                <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:layout_rowWeight="1">
+
+                    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/pod_card_container_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardElevation="2dp">
+
+                        <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            android:id="@+id/pod_iv_prove_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_rowWeight="1"
+                            android:background="@color/colorDeepOn"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add_foto_pod" />
+
+                        <TextView
+                            android:id="@+id/pod_tv_progress_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/black_transparent"
+                            android:gravity="center"
+                            android:text="75%"
+                            android:textColor="@color/colorDeepOn"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/pod_pb_progress_5"
+                            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_gravity="bottom"
+                            android:progress="36"
+                            android:visibility="gone" />
+
+                        <ImageButton
+                            android:id="@+id/pod_ib_close_5"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_close"
+                            android:background="@android:color/transparent"
+                            android:adjustViewBounds="true"
+                            android:layout_gravity="right|top"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout>
+
+                <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:layout_rowWeight="1">
+
+                    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/pod_card_container_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardElevation="2dp">
+
+                        <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            android:id="@+id/pod_iv_prove_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_rowWeight="1"
+                            android:background="@color/colorDeepOn"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add_foto_pod" />
+
+                        <TextView
+                            android:id="@+id/pod_tv_progress_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/black_transparent"
+                            android:gravity="center"
+                            android:text="75%"
+                            android:textColor="@color/colorDeepOn"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/pod_pb_progress_6"
+                            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_gravity="bottom"
+                            android:progress="36"
+                            android:visibility="gone" />
+
+                        <ImageButton
+                            android:id="@+id/pod_ib_close_6"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_close"
+                            android:background="@android:color/transparent"
+                            android:adjustViewBounds="true"
+                            android:layout_gravity="right|top"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout>
+
+                <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:layout_rowWeight="1">
+
+                    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/pod_card_container_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardElevation="2dp">
+
+                        <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            android:id="@+id/pod_iv_prove_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_rowWeight="1"
+                            android:background="@color/colorDeepOn"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add_foto_pod" />
+
+                        <TextView
+                            android:id="@+id/pod_tv_progress_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/black_transparent"
+                            android:gravity="center"
+                            android:text="75%"
+                            android:textColor="@color/colorDeepOn"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/pod_pb_progress_7"
+                            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_gravity="bottom"
+                            android:progress="36"
+                            android:visibility="gone" />
+
+                        <ImageButton
+                            android:id="@+id/pod_ib_close_7"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_close"
+                            android:background="@android:color/transparent"
+                            android:adjustViewBounds="true"
+                            android:layout_gravity="right|top"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout>
+
+                <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:layout_rowWeight="1">
+
+                    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/pod_card_container_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardElevation="2dp">
+
+                        <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            android:id="@+id/pod_iv_prove_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_rowWeight="1"
+                            android:background="@color/colorDeepOn"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add_foto_pod" />
+
+                        <TextView
+                            android:id="@+id/pod_tv_progress_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/black_transparent"
+                            android:gravity="center"
+                            android:text="75%"
+                            android:textColor="@color/colorDeepOn"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/pod_pb_progress_8"
+                            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_gravity="bottom"
+                            android:progress="36"
+                            android:visibility="gone" />
+
+                        <ImageButton
+                            android:id="@+id/pod_ib_close_8"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_close"
+                            android:background="@android:color/transparent"
+                            android:adjustViewBounds="true"
+                            android:layout_gravity="right|top"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout>
+
+                <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:layout_rowWeight="1">
+
+                    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/pod_card_container_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardElevation="2dp">
+
+                        <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            android:id="@+id/pod_iv_prove_9"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_rowWeight="1"
+                            android:background="@color/colorDeepOn"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add_foto_pod" />
+
+                        <TextView
+                            android:id="@+id/pod_tv_progress_9"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/black_transparent"
+                            android:gravity="center"
+                            android:text="75%"
+                            android:textColor="@color/colorDeepOn"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/pod_pb_progress_9"
+                            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_gravity="bottom"
+                            android:progress="36"
+                            android:visibility="gone" />
+
+                        <ImageButton
+                            android:id="@+id/pod_ib_close_9"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_close"
+                            android:background="@android:color/transparent"
+                            android:adjustViewBounds="true"
+                            android:layout_gravity="right|top"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout>
+
+                <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:layout_rowWeight="1">
+
+                    <android.support.v7.widget.CardView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/pod_card_container_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:animateLayoutChanges="true"
+                        app:cardUseCompatPadding="true"
+                        card_view:cardElevation="2dp">
+
+                        <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            android:id="@+id/pod_iv_prove_10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_rowWeight="1"
+                            android:background="@color/colorDeepOn"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/add_foto_pod" />
+
+                        <TextView
+                            android:id="@+id/pod_tv_progress_10"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@color/black_transparent"
+                            android:gravity="center"
+                            android:text="75%"
+                            android:textColor="@color/colorDeepOn"
+                            android:textStyle="bold"
+                            android:visibility="gone" />
+
+                        <ProgressBar
+                            android:id="@+id/pod_pb_progress_10"
+                            style="@android:style/Widget.Material.ProgressBar.Horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="9dp"
+                            android:layout_gravity="bottom"
+                            android:progress="36"
+                            android:visibility="gone" />
+
+                        <ImageButton
+                            android:id="@+id/pod_ib_close_10"
+                            android:visibility="gone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_close"
+                            android:background="@android:color/transparent"
+                            android:adjustViewBounds="true"
+                            android:layout_gravity="right|top"/>
+
+                    </android.support.v7.widget.CardView>
+
+                </com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareRelativeLayout>
+
+
+            </GridLayout>
+
+            <android.support.v7.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                card_view:cardUseCompatPadding="true"
+                android:layout_below="@+id/pod_grid_content"
+                android:layout_centerHorizontal="true"
+                card_view:cardElevation="3dp"
+                card_view:cardCornerRadius="2dp">
+
+                <Button
+                    android:id="@+id/pod_btn_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="28dp"
+                    android:paddingBottom="28dp"
+                    android:textSize="24sp"
+                    android:text="ACTIVITY NAME"
+                    android:background="@drawable/button_bg_clickable"
+                    android:textColor="@color/colorTextIcon">
+
+                </Button>
+
+            </android.support.v7.widget.CardView>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</android.support.v7.widget.CardView>

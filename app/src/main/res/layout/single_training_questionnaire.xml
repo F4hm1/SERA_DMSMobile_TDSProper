@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingTop="10dp">
+
+    <TextView
+        android:id="@+id/questionnaire_tv_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Question here"
+        android:textColor="@color/colorTextPrimary"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/questionnaire_rg_answers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/questionnaire_rb_option_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="left|center_vertical"
+            android:text="Tidak Jawablah pertanyaan dibawah ini dengan tepat. Jawablah pertanyaan dibawah ini dengan tepat.Jawablah pertanyaan dibawah ini dengan tepat."
+            android:textColor="@color/colorTextPrimary" />
+
+        <RadioButton
+            android:id="@+id/questionnaire_rb_option_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="left|center_vertical"
+            android:text="Tidak Jawablah pertanyaan dibawah ini dengan tepa."
+            android:textColor="@color/colorTextPrimary" />
+
+        <RadioButton
+            android:id="@+id/questionnaire_rb_option_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="left|center_vertical"
+            android:text="Tidak Jawablah pertanyaan dibawah ini dengan tepat. Jawablah pertanyaan dibawah ini "
+            android:textColor="@color/colorTextPrimary" />
+
+        <RadioButton
+            android:id="@+id/questionnaire_rb_option_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="12dp"
+            android:gravity="left|center_vertical"
+            android:text="Tidak Jawablah pertanyaan dibawah ini dengan tepat. Jawablah pertanyaan "
+            android:textColor="@color/colorTextPrimary" />
+
+    </RadioGroup>
+
+</LinearLayout>
