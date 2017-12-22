@@ -52,6 +52,41 @@ public class AssignedOrderResponseModel extends Model{
     @Expose
     public String CargoDescription;
 
+    @SerializedName("PassengerName")
+    @Expose
+    public String PassengerName;
+
+    @SerializedName("PhoneNumber")
+    @Expose
+    public String PassengerNoHP;
+
+    @SerializedName("TotalPassenger")
+    @Expose
+    public Integer TotalPassenger;
+
+    @SerializedName("Email")
+    @Expose
+    public String PassengerEmail;
+
+    @SerializedName("JourneyId")
+    @Expose
+    public String JourneyId;
+
+    @SerializedName("FirstActivityId")
+    @Expose
+    public Integer FirstActivityId;
+
+    @SerializedName("LastActivityId")
+    @Expose
+    public Integer LastActivityId;
+
+    @SerializedName("ProductType")
+    @Expose
+    public String ProductType;
+
+    @SerializedName("RentDuration")
+    @Expose
+    public Integer RentDuration;
 
     public AssignedOrderResponseModel(String orderID, Integer assignmentId, Integer status, String customer, String origin, String destination, String ETA, String ETD, String currentActivity, String active, String acknowledge, String notes, String cargoDescription) {
         OrderID = orderID;
@@ -68,6 +103,7 @@ public class AssignedOrderResponseModel extends Model{
         Notes = notes;
         CargoDescription = cargoDescription;
     }
+
 
     public String getOrderID() {
         return OrderID;
@@ -183,5 +219,77 @@ public class AssignedOrderResponseModel extends Model{
 
     public void setCargoDescription(String cargoDescription) {
         CargoDescription = cargoDescription;
+    }
+
+    public String getPassengerName() {
+        return PassengerName;
+    }
+
+    public void setPassengerName(String passengerName) {
+        PassengerName = passengerName;
+    }
+
+    public String getPassengerNoHP() {
+        return PassengerNoHP;
+    }
+
+    public void setPassengerNoHP(String passengerNoHP) {
+        PassengerNoHP = passengerNoHP;
+    }
+
+    public Integer getTotalPassenger() {
+        return TotalPassenger;
+    }
+
+    public void setTotalPassenger(Integer totalPassenger) {
+        TotalPassenger = totalPassenger;
+    }
+
+    public String getPassengerEmail() {
+        return PassengerEmail;
+    }
+
+    public void setPassengerEmail(String passengerEmail) {
+        PassengerEmail = passengerEmail;
+    }
+
+    public String getJourneyId() {
+        return JourneyId;
+    }
+
+    public void setJourneyId(String journeyId) {
+        JourneyId = journeyId;
+    }
+
+    public Integer getFirstActivityId() {
+        return FirstActivityId;
+    }
+
+    public void setFirstActivityId(Integer firstActivityId) {
+        FirstActivityId = firstActivityId;
+    }
+
+    public Integer getLastActivityId() {
+        return LastActivityId;
+    }
+
+    public void setLastActivityId(Integer lastActivityId) {
+        LastActivityId = lastActivityId;
+    }
+
+    public String getProductType() {
+        return ProductType;
+    }
+
+    public void setProductType(String productType) {
+        ProductType = productType;
+    }
+
+    public Integer getRentDuration() {
+        return RentDuration;
+    }
+
+    public void setRentDuration(Integer rentDuration) {
+        RentDuration = rentDuration;
     }
 }

@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "535675786955",
-    "firebase_url": "https://dm-non-sli.firebaseio.com",
-    "project_id": "dm-non-sli",
-    "storage_bucket": "dm-non-sli.appspot.com"
+    "project_number": "419856762431",
+    "firebase_url": "https://fms-dm.firebaseio.com",
+    "project_id": "fms-dm",
+    "storage_bucket": "fms-dm.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:535675786955:android:5e87e862415962a4",
+        "mobilesdk_app_id": "1:419856762431:android:5e87e862415962a4",
         "android_client_info": {
           "package_name": "com.serasiautoraya.tdsproper"
         }
       },
       "oauth_client": [
         {
-          "client_id": "535675786955-vuemot7e64jdk9gao0qg5ac175ifgba0.apps.googleusercontent.com",
+          "client_id": "419856762431-070tqq0tjkm8llp5iklbefqre5vi8gid.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDpCl9YCEN2IeJb062C2cfpk1PGcZoTttc"
+          "current_key": "AIzaSyAokqDb_157sD5XNyIBXOPmpaMbVZSvppw"
         }
       ],
       "services": {

@@ -93,7 +93,7 @@ public class ProfilePresenter extends TiPresenter<ProfileView> {
             public void callBackOnSuccess(JSONObject response) {
                 try {
                     profileView.toggleProgressDriverStatusUpdate(false);
-                    profileView.toggleDriverStatus(!currentStatus);
+                    profileView.toggleDriverStatus(currentStatus);
                     profileView.showToast(response.getString("responseText"));
                 } catch (JSONException e) {
                     e.printStackTrace();

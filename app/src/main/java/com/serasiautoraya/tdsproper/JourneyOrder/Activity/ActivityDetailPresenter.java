@@ -1,8 +1,10 @@
 package com.serasiautoraya.tdsproper.JourneyOrder.Activity;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.android.volley.error.VolleyError;
+import com.google.android.gms.maps.model.LatLng;
 import com.serasiautoraya.tdsproper.BaseInterface.RestCallBackInterfaceModel;
 import com.serasiautoraya.tdsproper.BaseInterface.RestCallbackInterfaceJSON;
 import com.serasiautoraya.tdsproper.BaseInterface.TimeRestCallBackInterface;
@@ -62,9 +64,9 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                     String[] timeSplitActivity = HelperBridge.sAssignedOrderResponseModel.getETD().split(" ");
                     String dateServer = timeSplitServer[0];
                     String dateActivity = timeSplitActivity[0];
-                    if(HelperUtil.isDateBeforeOrEqual(HelperUtil.getUserFormDate(dateServer), HelperUtil.getUserFormDate(dateActivity))){
+                    if (HelperUtil.isDateBeforeOrEqual(HelperUtil.getUserFormDate(dateServer), HelperUtil.getUserFormDate(dateActivity))) {
                         onActionDateValid();
-                    }else{
+                    } else {
                         getView().showStandardDialog("Anda hanya bisa memulai perjalanan pada hari keberangkatan", "Perhatian");
                     }
                     getView().toggleLoading(false);
@@ -186,13 +188,34 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
         });
     }
 
-    public void loadDetailOrderData(String orderCode) {
+    public void loadDetailOrderData(final String orderCode) {
 
         /*
         * TODO change this lines code below
         * */
+        getView().toggleLoading(true);
+        final ActivityDetailView view = getView();
+        mRestConnection.getServerTime(new TimeRestCallBackInterface() {
+            @Override
+            public void callBackOnSuccess(TimeRESTResponseModel timeRESTResponseModel, String latitude, String longitude, String address) {
+                view.toggleLoading(false);
+                double lat = 0;
+                double lng = 0;
+                try {
+                    lat = Double.valueOf(latitude);
+                    lng = Double.valueOf(longitude);
+                } catch (Exception ex) {
+                    Log.d("Exception_c", ex.getMessage());
+                }
+                setViewDetailData(orderCode, lat, lng, address);
+            }
 
-        setViewDetailData(orderCode);
+            @Override
+            public void callBackOnFail(String message) {
+                view.toggleLoading(false);
+                view.showStandardDialog(message, "Perhatian");
+            }
+        });
 
 //        getView().toggleLoading(true);
 //        ActivityDetailSendModel activityDetailSendModel = new ActivityDetailSendModel(orderCode, HelperBridge.sModelLoginResponse.getPersonalId());
@@ -224,7 +247,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 //        });
     }
 
-    private void setViewDetailData(String orderCode) {
+    private void setViewDetailData(String orderCode, double fromLat, double fromLng, String fromAddress) {
         String cargoType = "";
         String[] cargoTypeArr = HelperBridge.sActivityDetailResponseModel.getCargoType();
         for (int i = 0; i < cargoTypeArr.length; i++) {
@@ -286,7 +309,6 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
         }
 
 
-
         getView().setDetailData(
                 "Order " + HelperBridge.sTempSelectedOrderCode,
                 HelperBridge.sTempSelectedOrderCode,
@@ -298,7 +320,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 //                HelperBridge.sAssignedOrderResponseModel.getETD(),
                 dateEta.length > 1 ? HelperUtil.getUserFormDate(dateEta[0]) + ", " + dateEta[1] : HelperBridge.sAssignedOrderResponseModel.getETA(),
 //                HelperBridge.sAssignedOrderResponseModel.getETA(),
-                HelperBridge.sAssignedOrderResponseModel.getCustomer(),
+                HelperBridge.sAssignedOrderResponseModel.getPassengerName(),
                 HelperBridge.sActivityDetailResponseModel.getLocationTargetText(),
                 dateTimeTargetUI.split("-")[0].equalsIgnoreCase("1900") ? "-" : dateTimeTargetUI,
 //                HelperBridge.sActivityDetailResponseModel.getTimeTarget(),
@@ -327,7 +349,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 //        getView().setButtonColor(HelperBridge.sActivityDetailResponseModel.getButtonActivityColor());
         getView().setButtonColor("#1976D2");
         getView().setButtonText(HelperBridge.sActivityDetailResponseModel.getActivityName());
-        if(HelperBridge.isClickedFromPlanOrder){
+        if (HelperBridge.isClickedFromPlanOrder) {
             if (
                     (HelperBridge.sActivityDetailResponseModel.getJourneyActivityId() != HelperTransactionCode.ACTIVITY_ID_FORBIDDEN_UPDATE) &&
                             (HelperBridge.sActiveOrdersList.size() < 1) &&
@@ -337,17 +359,43 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
             } else {
                 getView().toggleButtonAction(false);
             }
-        }else{
+        } else {
             getView().toggleButtonAction(true);
         }
+        setMapRoute(fromLat, fromLng, fromAddress);
+        getView().setPhoneNumber(HelperBridge.sAssignedOrderResponseModel.getPassengerNoHP());
+        getView().setDestinationDuration(
+                HelperBridge.sAssignedOrderResponseModel.getRentDuration() > 0,
+                HelperBridge.sAssignedOrderResponseModel.getRentDuration() > 0 ?
+                        HelperBridge.sAssignedOrderResponseModel.getRentDuration() + " Jam" :
+                        HelperBridge.sAssignedOrderResponseModel.getDestination()
+        );
+    }
+
+    private void setMapRoute(double fromLat, double fromLng, String fromAddress) {
+        double toLat = 0;
+        double toLng = 0;
+        try {
+            if (!HelperBridge.sActivityDetailResponseModel.getLocationTargetLat().equalsIgnoreCase("") &&
+                    HelperBridge.sActivityDetailResponseModel.getLocationTargetLat() != null) {
+                toLat = Double.valueOf(HelperBridge.sActivityDetailResponseModel.getNextActivityLocationLat());
+                toLng = Double.valueOf(HelperBridge.sActivityDetailResponseModel.getNextActivityLocationLng());
+            } else {
+                toLat = Double.valueOf(HelperBridge.sActivityDetailResponseModel.getLocationTargetLat());
+                toLng = Double.valueOf(HelperBridge.sActivityDetailResponseModel.getLocationTargetLng());
+            }
+        } catch (Exception ex) {
+            Log.d("Exception_c", ex.getMessage());
+        }
+        getView().setMapFromData(new LatLng(fromLat, fromLng), new LatLng(toLat, toLng), fromAddress, HelperBridge.sActivityDetailResponseModel.getLocationTargetText());
     }
 
     private String[] getSeparatedDestination(String destination) {
-        if(destination.equalsIgnoreCase("")){
+        if (destination.equalsIgnoreCase("")) {
             String[] resZero = new String[1];
             resZero[0] = "-";
             return resZero;
-        }else{
+        } else {
             return destination.split(HelperKey.SEPARATOR_PIPE);
         }
     }

@@ -342,9 +342,10 @@ public class RestConnection {
                     @Override
                     public void onResponse(BaseResponseModel response) {
                         if (mStatusCode == 200) {
-                            restcall.callBackOnSuccess(response);
-                            Log.d("FAIL_API", "SUCCESS:" + response.getResponseText());
-
+                            if(response !=null) {
+                                restcall.callBackOnSuccess(response);
+                                Log.d("FAIL_API", "SUCCESS:" + response.getResponseText());
+                            }
                         } else {
                             restcall.callBackOnFail(response.getResponseText());
                             Log.d("FAIL_API", "FAIL:" + response.getResponseText());

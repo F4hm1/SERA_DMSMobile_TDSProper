@@ -17,11 +17,13 @@ public interface PlanOrderView extends BaseViewInterface{
     void showAcknowledgeDialog(
             String ordercode,
             Integer assignmentId,
-            String[] destination,
             String origin,
             String etd,
             String eta,
-            String customer
+            String passangerName,
+            String totalPassanger,
+            String destinationDuration,
+            boolean isTimeBased
     );
 
     void refreshAllData();

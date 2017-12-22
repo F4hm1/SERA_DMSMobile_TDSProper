@@ -124,7 +124,7 @@ public class PlanOrderFragment extends TiFragment<PlanOrderPresenter, PlanOrderV
     }
 
     @Override
-    public void showAcknowledgeDialog(String ordercode, final Integer assignmentId, String[] destination, String origin, final String etd, final String eta, String customer) {
+    public void showAcknowledgeDialog(String ordercode, final Integer assignmentId, String origin, final String etd, final String eta, String passangerName, String totalPassanger, String destinationDuration, boolean isTimeBased) {
         final String fOrderCode = ordercode;
         final Integer fAssignmentId = assignmentId;
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
@@ -141,14 +141,19 @@ public class PlanOrderFragment extends TiFragment<PlanOrderPresenter, PlanOrderV
         dialog.setCancelable(false);
         dialog.setCanceledOnTouchOutside(false);
         dialog.show();
+
+        TextView tvDestDurationLabel = (TextView) dialog.findViewById(R.id.acknowledge_dialog_destination_label);
+        if(isTimeBased){
+            tvDestDurationLabel.setText("Durasi");
+        }else{
+            tvDestDurationLabel.setText("Tujuan");
+        }
+
         TextView tvOrderCode = (TextView) dialog.findViewById(R.id.acknowledge_dialog_ordercode);
         tvOrderCode.setText(ordercode);
 
         TextView tvDestination = (TextView) dialog.findViewById(R.id.acknowledge_dialog_destination);
-        tvDestination.setText(destination[0]);
-
-        TableLayout tlDestination = (TableLayout) dialog.findViewById(R.id.acknowledge_tl_destination);
-        this.generateDestination(destination, tlDestination);
+        tvDestination.setText(destinationDuration);
 
         TextView tvOrigin= (TextView) dialog.findViewById(R.id.acknowledge_dialog_origin);
         tvOrigin.setText(origin);
@@ -156,11 +161,12 @@ public class PlanOrderFragment extends TiFragment<PlanOrderPresenter, PlanOrderV
         TextView tvEtd= (TextView) dialog.findViewById(R.id.acknowledge_dialog_etd);
         tvEtd.setText(etd);
 
-        TextView tvEta= (TextView) dialog.findViewById(R.id.acknowledge_dialog_eta);
-        tvEta.setText(eta);
-
         TextView tvCustomer = (TextView) dialog.findViewById(R.id.acknowledge_dialog_customer);
-        tvCustomer.setText(customer);
+        tvCustomer.setText(passangerName);
+
+        TextView tvTotalPassanger = (TextView) dialog.findViewById(R.id.acknowledge_dialog_totalpassanger);
+        tvTotalPassanger.setText(totalPassanger);
+
     }
 
     @Override

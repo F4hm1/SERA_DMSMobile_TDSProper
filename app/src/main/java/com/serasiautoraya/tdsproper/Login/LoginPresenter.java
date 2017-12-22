@@ -1,6 +1,7 @@
 package com.serasiautoraya.tdsproper.Login;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
@@ -47,6 +48,7 @@ public class LoginPresenter extends TiPresenter<LoginView> {
         mPermissionsHelper.requestLocationPermission();
     }
 
+    @SuppressLint("MissingPermission")
     public void onLogin(String username, String password) {
         if (mPermissionsHelper.isAllPermissionsGranted()) {
             if (mPermissionsHelper.isAllPermissionsGranted()) {
@@ -62,7 +64,10 @@ public class LoginPresenter extends TiPresenter<LoginView> {
                 deviceID = mTelephonyManager.getDeviceId();
             }
 
-//            deviceID = "353381079168024";
+            /*
+            * TODO Important: delete this
+            * */
+            deviceID = "00";
 
 //            getView().showToast("DEVICE-ID: "+deviceID);
 
@@ -71,7 +76,7 @@ public class LoginPresenter extends TiPresenter<LoginView> {
                 tokenFCM = FirebaseInstanceId.getInstance().getToken();
             }
 
-            LoginSendModel loginSendModel = new LoginSendModel(username, password, tokenFCM, deviceID);
+            LoginSendModel loginSendModel = new LoginSendModel(username, password, tokenFCM, deviceID, HelperKey.APPTYPE_TRAC);
             getView().toggleLoading(true);
             mRestConnection.postData("", HelperUrl.POST_LOGIN, loginSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
                 @Override

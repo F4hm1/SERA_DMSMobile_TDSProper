@@ -1,10 +1,8 @@
-package com.serasiautoraya.tdsproper;
+package com.serasiautoraya.tdsproper.CustomView;
 
+import android.content.Context;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
-import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
@@ -19,11 +17,13 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.serasiautoraya.tdsproper.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,53 +34,60 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLoadedCallback {
+/**
+ * Created by randidwinandra on 18/12/17.
+ */
+
+public class MapJourneyOrder implements OnMapReadyCallback, GoogleMap.OnMapLoadedCallback {
 
     private GoogleMap mMap;
     private Polyline line;
     private RequestQueue mRequestQueue;
     private LatLngBounds bounds;
-    private LatLng giLatLng;
-    private LatLng seraLatLng;
+    private LatLng mToLatLng;
+    private LatLng mFromLatLng;
+    private SupportMapFragment mapFragment;
+    private Context context;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-        mapFragment.getMapAsync(this);
+    public MapJourneyOrder(SupportMapFragment mapFragment, Context context) {
+        this.context = context;
+        this.mapFragment = mapFragment;
+        this.mapFragment.getMapAsync(this);
         if (this.mRequestQueue == null) {
-            this.mRequestQueue = Volley.newRequestQueue(this);
+            this.mRequestQueue = Volley.newRequestQueue(this.context);
         }
-        giLatLng = new LatLng(-6.1951641, 106.8175655);
-        seraLatLng = new LatLng(-6.1498806, 106.8829404);
     }
 
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     * SERA: -6.1498806,106.8829404
-     * GI: -6.1951641,106.8175655
-     */
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-        mMap.addMarker(new MarkerOptions().position(seraLatLng).title("Marker in SERA"));
-        mMap.addMarker(new MarkerOptions().position(giLatLng).title("Marker in GI"));
-        if (ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-
+//        generateRoute(
+//                new LatLng(-6.1498806, 106.8829404),
+//                new LatLng(-6.1951641, 106.8175655),
+//                "Grha SERA, Jl. Mitra Sunter Bulevard No.90",
+//                "Grand Indonesia, Jalan M.H. Thamrin No.1, Menteng, Kebon Melati"
+//        );
+        mMap.setOnMapLoadedCallback(this);
+        if (ActivityCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(context, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            //TODO request permission here
         } else {
             mMap.setMyLocationEnabled(true);
         }
-        generateDirection(seraLatLng, giLatLng);
-        mMap.setOnMapLoadedCallback(this);
+    }
+
+    public void generateRoute(LatLng fromLatlng, LatLng toLatlng, String fromTitle, String toTitle) {
+        mToLatLng = toLatlng;
+        mFromLatLng = fromLatlng;
+        mMap.clear();
+        mMap.addMarker(new MarkerOptions()
+                .position(mToLatLng)
+                .title(toTitle)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ROSE)));
+        mMap.addMarker(new MarkerOptions()
+                .position(mFromLatLng)
+                .title(fromTitle)
+                .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
+        generateDirection(mFromLatLng, mToLatLng);
     }
 
     private void generateDirection(LatLng start, LatLng end) {
@@ -172,19 +179,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             line.remove();
         }
 
-        PolylineOptions options = new PolylineOptions().width(12).color(ContextCompat.getColor(this, R.color.colorPrimary)).geodesic(true);
+        PolylineOptions options = new PolylineOptions().width(13).color(ContextCompat.getColor(context, R.color.colorPrimary)).geodesic(true);
         for (int i = 0; i < pointsList.size(); i++) {
             LatLng point = pointsList.get(i);
             options.add(point);
         }
         line = mMap.addPolyline(options);
+        if (mFromLatLng != null && mFromLatLng != null) {
+            zoomToBounds();
+        }
     }
 
     @Override
     public void onMapLoaded() {
+
+    }
+
+    private void zoomToBounds() {
         LatLngBounds.Builder builder = new LatLngBounds.Builder();
-        builder.include(seraLatLng);
-        builder.include(giLatLng);
+        builder.include(mFromLatLng);
+        builder.include(mToLatLng);
         bounds = builder.build();
         mMap.animateCamera(CameraUpdateFactory.newLatLngBounds(bounds, 100));
     }

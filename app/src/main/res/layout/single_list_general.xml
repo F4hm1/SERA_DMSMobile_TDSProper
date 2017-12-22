@@ -11,30 +11,44 @@
     android:background="?android:attr/selectableItemBackground"
     android:orientation="vertical">
 
-    <TextView
-        android:transitionName="trans_order_code"
-        android:id="@+id/single_list_his_title"
-        android:textColor="@color/colorTextPrimary"
-        android:textSize="16dp"
-        android:textStyle="bold"
-        android:text="Tittle"
-        android:layout_alignParentTop="true"
+    <LinearLayout
+        android:id="@+id/lin_top"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="10">
+
+        <TextView
+            android:transitionName="trans_order_code"
+            android:id="@+id/single_list_his_title"
+            android:textColor="@color/colorTextPrimary"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:text="Order LT312017111800534"
+            android:layout_alignParentTop="true"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:gravity="top"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/single_list_his_status"
+            android:textColor="@color/colorAccentDark"
+            android:text="Datang di Lokasi Tujuan"
+            android:layout_width="0dp"
+            android:layout_weight="4"
+            android:gravity="top|right"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/single_list_his_information"
-        android:layout_below="@id/single_list_his_title"
+        android:layout_below="@id/lin_top"
         android:textColor="@color/colorTextSecondary"
-        android:text="Information"
+        android:text="CP - SAT_DC Semarang --- MEH >> SDB >> GTH >> POL >> IKL"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/single_list_his_status"
-        android:textColor="@color/colorAccentDark"
-        android:text="Status"
-        android:layout_width="wrap_content"
-        android:layout_alignParentRight="true"
         android:layout_height="wrap_content"/>
 </RelativeLayout>

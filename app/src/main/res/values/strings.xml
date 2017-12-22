@@ -308,4 +308,7 @@
         <item>Postpone by Customer</item>
     </string-array>
     <string name="title_activity_maps">Map</string>
+    <string name="order_title_passanger">Nama Penumpang</string>
+    <string name="order_title_totalpassanger">Total Penumpang</string>
+    <string name="order_title_pickuplocation">Asal Penjemputan</string>
 </resources>

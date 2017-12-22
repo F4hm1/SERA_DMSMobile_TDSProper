@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
                 android:gravity="left"
-                android:weightSum="10">
+                android:weightSum="11">
 
                 <TextView
                     android:layout_width="0dp"
@@ -47,31 +47,36 @@
                     android:layout_weight="4"
                     android:paddingBottom="2dip"
                     android:paddingTop="2dip"
-                    android:text="@string/order_title_origin"
-                    android:textStyle="bold" />
+                    android:text="@string/order_title_pickuplocation" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    />
 
                 <TextView
                     android:id="@+id/acknowledge_dialog_origin"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
+                    android:layout_column="2"
                     android:layout_weight="6"
                     android:paddingBottom="2dip"
                     android:paddingTop="2dip"
-                    android:text="Jakarta"
-                    android:textStyle="bold" />
+                    android:text="Jakarta" />
             </TableRow>
 
             <!--order_title_dest-->
             <TableRow
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
                 android:gravity="left"
-                android:weightSum="10">
+                android:weightSum="11">
 
                 <TextView
+                    android:id="@+id/acknowledge_dialog_destination_label"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
@@ -80,11 +85,18 @@
                     android:paddingTop="2dip"
                     android:text="@string/order_title_dest" />
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    />
+
                 <TextView
                     android:id="@+id/acknowledge_dialog_destination"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
+                    android:layout_column="2"
                     android:layout_weight="6"
                     android:paddingBottom="2dip"
                     android:paddingTop="2dip"
@@ -93,11 +105,12 @@
 
             <!--order_title_destinationlist-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
                 android:gravity="left"
-                android:weightSum="10">
+                android:weightSum="11">
 
                 <TextView
                     android:layout_width="0dp"
@@ -108,11 +121,18 @@
                     android:paddingTop="2dip"
                     android:text="@string/order_title_dest" />
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    />
+
                 <TableLayout
                     android:id="@+id/acknowledge_tl_destination"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
+                    android:layout_column="2"
                     android:layout_weight="6"
                     android:paddingBottom="2dip"
                     android:paddingTop="2dip"
@@ -129,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
                 android:gravity="left"
-                android:weightSum="10">
+                android:weightSum="11">
 
                 <TextView
                     android:layout_width="0dp"
@@ -140,11 +160,18 @@
                     android:paddingTop="2dip"
                     android:text="@string/order_title_etd" />
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    />
+
                 <TextView
                     android:id="@+id/acknowledge_dialog_etd"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
+                    android:layout_column="2"
                     android:layout_weight="6"
                     android:paddingBottom="2dip"
                     android:paddingTop="2dip"
@@ -153,11 +180,12 @@
 
             <!--order_title_eta-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
                 android:gravity="left"
-                android:weightSum="10">
+                android:weightSum="11">
 
                 <TextView
                     android:layout_width="0dp"
@@ -168,11 +196,18 @@
                     android:paddingTop="2dip"
                     android:text="@string/order_title_eta" />
 
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    />
+
                 <TextView
                     android:id="@+id/acknowledge_dialog_eta"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
+                    android:layout_column="2"
                     android:layout_weight="6"
                     android:paddingBottom="2dip"
                     android:paddingTop="2dip"
@@ -185,7 +220,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
                 android:gravity="left"
-                android:weightSum="10">
+                android:weightSum="11">
 
                 <TextView
                     android:layout_width="0dp"
@@ -194,17 +229,59 @@
                     android:layout_weight="4"
                     android:paddingBottom="2dip"
                     android:paddingTop="2dip"
-                    android:text="@string/order_title_customer" />
+                    android:text="@string/order_title_passanger" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    />
 
                 <TextView
                     android:id="@+id/acknowledge_dialog_customer"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_column="1"
+                    android:layout_column="2"
                     android:layout_weight="6"
                     android:paddingBottom="2dip"
                     android:paddingTop="2dip"
                     android:text="" />
+            </TableRow>
+
+            <!--order_title_customer_count-->
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/table_bottom_border"
+                android:gravity="left"
+                android:weightSum="11">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="4"
+                    android:paddingBottom="2dip"
+                    android:paddingTop="2dip"
+                    android:text="@string/order_title_totalpassanger" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    />
+
+                <TextView
+                    android:id="@+id/acknowledge_dialog_totalpassanger"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_column="2"
+                    android:layout_weight="6"
+                    android:paddingBottom="2dip"
+                    android:paddingTop="2dip"
+                    android:text="20" />
             </TableRow>
 
         </TableLayout>

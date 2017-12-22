@@ -1,6 +1,6 @@
 package com.serasiautoraya.tdsproper.JourneyOrder.Assigned;
 
-import android.support.annotation.NonNull;
+import  android.support.annotation.NonNull;
 
 import com.android.volley.error.VolleyError;
 import com.serasiautoraya.tdsproper.BaseAdapter.SimpleAdapterModel;
@@ -81,11 +81,16 @@ public class PlanOrderPresenter extends TiPresenter<PlanOrderView> {
                 getView().showAcknowledgeDialog(
                         assignedOrderResponseModel.getOrderID(),
                         assignedOrderResponseModel.getAssignmentId(),
-                        getSeparatedDestination(assignedOrderResponseModel.getDestination()),
                         assignedOrderResponseModel.getOrigin(),
                         dateEtdUserFormat,
                         dateEtaUserFormat,
-                        assignedOrderResponseModel.getCustomer()
+                        assignedOrderResponseModel.getPassengerName(),
+                        assignedOrderResponseModel.getTotalPassenger()+""
+                        ,
+                        assignedOrderResponseModel.getRentDuration() > 0?
+                            assignedOrderResponseModel.getRentDuration()+" Jam":
+                            assignedOrderResponseModel.getDestination(),
+                        assignedOrderResponseModel.getRentDuration() > 0
                 );
                 break;
             }
@@ -116,11 +121,15 @@ public class PlanOrderPresenter extends TiPresenter<PlanOrderView> {
             getView().showAcknowledgeDialog(
                     assignedOrderResponseModel.getOrderID(),
                     assignedOrderResponseModel.getAssignmentId(),
-                    getSeparatedDestination(assignedOrderResponseModel.getDestination()),
                     assignedOrderResponseModel.getOrigin(),
                     dateEtdUserFormat,
                     dateEtaUserFormat,
-                    assignedOrderResponseModel.getCustomer()
+                    assignedOrderResponseModel.getPassengerName(),
+                    assignedOrderResponseModel.getTotalPassenger()+"",
+                    assignedOrderResponseModel.getRentDuration() > 0?
+                            assignedOrderResponseModel.getRentDuration()+" Jam":
+                            assignedOrderResponseModel.getDestination(),
+                    assignedOrderResponseModel.getRentDuration() > 0
             );
         } else {
             Integer assignmentId = assignedOrderResponseModel.getAssignmentId();

@@ -8,12 +8,23 @@
     android:weightSum="2"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+    <fragment
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_weight="1.1"
+        android:id="@+id/map_activitydetail"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:context="com.serasiautoraya.tdsproper.MapsActivity" />
+
+
+
     <ScrollView
         android:id="@+id/scv_orderdetail"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_above="@+id/scv_orderdetailbutton"
-        android:layout_weight="1.5">
+        android:layout_weight="0.6">
 
         <TableLayout
             android:layout_width="match_parent"
@@ -44,6 +55,8 @@
 
             <!--order_title_code-->
             <TableRow
+
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -74,6 +87,7 @@
 
             <!--order_title_code-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -100,9 +114,9 @@
                     android:paddingTop="10dip"
                     android:text="Row 3 column 2" />
             </TableRow>
-
             <!--order_title_hub-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -191,6 +205,7 @@
 
             <!--order_title_origin-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -221,7 +236,6 @@
 
             <!--order_title_dest-->
             <TableRow
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -229,6 +243,7 @@
                 android:weightSum="11">
 
                 <TextView
+                    android:id="@+id/order_title_dest_label"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_column="0"
@@ -252,6 +267,7 @@
 
             <!--order_title_destinationlist-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -287,6 +303,7 @@
 
             <!--order_title_etd-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -317,6 +334,7 @@
 
             <!--order_title_eta-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -361,7 +379,7 @@
                     android:paddingBottom="10dip"
                     android:paddingLeft="20dip"
                     android:paddingTop="10dip"
-                    android:text="@string/order_title_customer" />
+                    android:text="@string/order_title_passanger" />
 
                 <TextView
                     android:id="@+id/order_title_customer"
@@ -377,6 +395,7 @@
 
             <!--order_title_locationtarget-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -505,6 +524,7 @@
             <!--Not shown?-->
             <!--order_title_cargotype-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -535,6 +555,7 @@
 
             <!--order_title_cargodesc-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -565,6 +586,7 @@
 
             <!--order_title_quantity-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -595,6 +617,7 @@
 
             <!--order_title_checkpoint-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -625,6 +648,7 @@
 
             <!--order_title_documentneed-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -655,6 +679,7 @@
 
             <!--order_title_nextloc-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -685,6 +710,7 @@
 
             <!--order_title_nextloc-->
             <TableRow
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -751,10 +777,11 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_alignParentBottom="true"
-        android:layout_weight="0.5">
+        android:layout_weight="0.3">
 
         <Button
             android:id="@+id/order_button_action"
+            android:layout_alignParentBottom="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/button_all_border_red"
@@ -763,6 +790,7 @@
 
         <Button
             android:id="@+id/order_button_noaction"
+            android:layout_alignParentBottom="true"
             android:visibility="gone"
             android:enabled="false"
             android:layout_width="match_parent"

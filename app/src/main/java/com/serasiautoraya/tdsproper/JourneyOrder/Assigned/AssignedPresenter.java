@@ -59,7 +59,6 @@ public class AssignedPresenter extends TiPresenter<AssignedView> {
         mRestConnection.getData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.GET_ASSIGNED_ORDER, assignedOrderSendModel.getHashMapType(), new RestCallBackInterfaceModel() {
             @Override
             public void callBackOnSuccess(BaseResponseModel response) {
-                Log.d("SIT_FMS", "SUCCESS : "+response.getResponseText());
                 List<AssignedOrderResponseModel> assignedOrderResponseModels = new ArrayList<>();
                 for (int i = 0; i < response.getData().length; i++) {
                     assignedOrderResponseModels.add(Model.getModelInstance(response.getData()[i], AssignedOrderResponseModel.class));
@@ -164,6 +163,7 @@ public class AssignedPresenter extends TiPresenter<AssignedView> {
 //            HelperBridge.sActiveOrdersList.add(activeList);
 //            HelperBridge.sPlanOutstandingOrdersList.add(planOutlist);
 //        }
+
     }
 
 }

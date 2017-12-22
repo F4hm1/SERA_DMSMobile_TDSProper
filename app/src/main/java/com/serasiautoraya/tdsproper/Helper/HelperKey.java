@@ -40,4 +40,7 @@ public class HelperKey {
 
 
     public static final String SEPARATOR_PIPE = "\\|";
+
+    public static final String APPTYPE_SLI = "APP01";
+    public static final String APPTYPE_TRAC = "APP02";
 }

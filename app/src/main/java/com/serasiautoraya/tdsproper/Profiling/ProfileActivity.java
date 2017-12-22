@@ -28,22 +28,35 @@ import butterknife.ButterKnife;
 
 public class ProfileActivity extends TiActivity<ProfilePresenter, ProfileView> implements ProfileView {
 
-    @BindView(R.id.text_profile_name_fp) TextView mTvProfileNameFp;
-    @BindView(R.id.text_profile_posisi_fp) TextView mTvProfilePosisiFp;
-    @BindView(R.id.text_profile_company_fp) TextView mTvProfileCompanyFp;
-    @BindView(R.id.text_profile_poolname_fp) TextView mTvProfilePoolNameFp;
-    @BindView(R.id.text_profile_nrp) TextView mTvProfileNrp;
-    @BindView(R.id.text_profile_fullname) TextView mTvProfileFullname;
-//        @BindView(R.id.text_profile_training) TextView mTvProfileTraining;
-    @BindView(R.id.text_profile_usercostumer) TextView mTvProfileUsercostumer;
-    @BindView(R.id.text_profile_doo) TextView mTvProfileDoo;
-    @BindView(R.id.text_profile_ktpexp) TextView mTvProfileKTPExp;
-    @BindView(R.id.text_profile_simexp) TextView mTvProfileSIMExp;
-    @BindView(R.id.text_title_sim) TextView mTvTitleSIMExp;
-    @BindView(R.id.img_profile_photo) ImageView mIvProfilePhoto;
+    @BindView(R.id.text_profile_name_fp)
+    TextView mTvProfileNameFp;
+    @BindView(R.id.text_profile_posisi_fp)
+    TextView mTvProfilePosisiFp;
+    @BindView(R.id.text_profile_company_fp)
+    TextView mTvProfileCompanyFp;
+    @BindView(R.id.text_profile_poolname_fp)
+    TextView mTvProfilePoolNameFp;
+    @BindView(R.id.text_profile_nrp)
+    TextView mTvProfileNrp;
+    @BindView(R.id.text_profile_fullname)
+    TextView mTvProfileFullname;
+    //        @BindView(R.id.text_profile_training) TextView mTvProfileTraining;
+    @BindView(R.id.text_profile_usercostumer)
+    TextView mTvProfileUsercostumer;
+    @BindView(R.id.text_profile_doo)
+    TextView mTvProfileDoo;
+    @BindView(R.id.text_profile_ktpexp)
+    TextView mTvProfileKTPExp;
+    @BindView(R.id.text_profile_simexp)
+    TextView mTvProfileSIMExp;
+    @BindView(R.id.text_title_sim)
+    TextView mTvTitleSIMExp;
+    @BindView(R.id.img_profile_photo)
+    ImageView mIvProfilePhoto;
 
     private Switch mOnOffSwitch;
     private ProgressBar mPbUpdateDriverStatus;
+    private boolean onOffSwitchedByApps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,7 +83,11 @@ public class ProfileActivity extends TiActivity<ProfilePresenter, ProfileView> i
         mOnOffSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isOn) {
-                toggleDriverStatus(isOn);
+//                if (!onOffSwitchedByApps) {
+                    getPresenter().toggleDriverStatus(isOn);
+//                }else{
+//                    onOffSwitchedByApps = false;
+//                }
             }
         });
         return true;
@@ -82,7 +99,7 @@ public class ProfileActivity extends TiActivity<ProfilePresenter, ProfileView> i
     }
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item) {
         onBackPressed();
         return true;
     }
@@ -116,7 +133,7 @@ public class ProfileActivity extends TiActivity<ProfilePresenter, ProfileView> i
         return new ProfilePresenter(new RestConnection(this));
     }
 
-    private void initializeActionBar(){
+    private void initializeActionBar() {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
         actionBar.setTitle("Profile");
@@ -153,7 +170,7 @@ public class ProfileActivity extends TiActivity<ProfilePresenter, ProfileView> i
 
     @Override
     public void setProfilePhoto(String url) {
-        if(url != null) {
+        if (url != null) {
             if (!url.equalsIgnoreCase("")) {
                 Picasso.with(ProfileActivity.this).load(url).into(mIvProfilePhoto);
             }
@@ -162,20 +179,21 @@ public class ProfileActivity extends TiActivity<ProfilePresenter, ProfileView> i
 
     @Override
     public void toggleDriverStatus(boolean isOn) {
+        onOffSwitchedByApps = true;
         mOnOffSwitch.setChecked(isOn);
-        if(isOn){
+        if (isOn) {
             mOnOffSwitch.setText("Status On");
-        }else{
+        } else {
             mOnOffSwitch.setText("Status Off");
         }
     }
 
     @Override
     public void toggleProgressDriverStatusUpdate(boolean isUpdate) {
-        if(isUpdate){
+        if (isUpdate) {
             mOnOffSwitch.setVisibility(View.GONE);
             mPbUpdateDriverStatus.setVisibility(View.VISIBLE);
-        }else{
+        } else {
             mOnOffSwitch.setVisibility(View.VISIBLE);
             mPbUpdateDriverStatus.setVisibility(View.GONE);
         }

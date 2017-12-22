@@ -5,10 +5,13 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Html;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TableLayout;
@@ -16,6 +19,9 @@ import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.serasiautoraya.tdsproper.CustomView.MapJourneyOrder;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperKey;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
@@ -56,7 +62,7 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
     TextView mTvOrderAddressTarget;
     @BindView(R.id.order_title_timetarget)
     TextView mTvOrderTimeTarget;
-//    @BindView(R.id.order_title_timebaseline)
+    //    @BindView(R.id.order_title_timebaseline)
 //    TextView mTvOrderTimeBaseline;
 //    @BindView(R.id.order_title_timeactual)
 //    TextView mTvOrderTimeActual;
@@ -80,6 +86,9 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
     @BindView(R.id.order_title_notes)
     TextView mTvOrderNotes;
 
+    @BindView(R.id.order_title_dest_label)
+    TextView mTvOrderDestLabel;
+
     @BindView(R.id.order_tl_destination)
     TableLayout mTlOrderDestination;
 
@@ -91,6 +100,8 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
 
     private String mOrderCode;
     private ProgressDialog mProgressDialog;
+    private MapJourneyOrder mMapJourneyOrder;
+    private String mPhoneNumber = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +114,8 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
         if (bundle != null) {
             mOrderCode = bundle.getString(HelperKey.KEY_INTENT_ORDERCODE);
         }
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_activitydetail);
+        mMapJourneyOrder = new MapJourneyOrder(mapFragment, this);
     }
 
     @Override
@@ -118,6 +131,24 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
             mProgressDialog.dismiss();
         }
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_call_passanger, menu);
+
+        MenuItem itemSwitch = menu.findItem(R.id.menu_call_passanger);
+        itemSwitch.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                Uri call = Uri.parse("tel:" + mPhoneNumber);
+                Intent surfDialCall = new Intent(Intent.ACTION_DIAL, call);
+                startActivity(surfDialCall);
+                return true;
+            }
+        });
+        return true;
+    }
+
 
     @Override
     public void showToast(String text) {
@@ -232,28 +263,55 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
 
     @Override
     public void toggleButtonAction(boolean show) {
-        if(show){
+        if (show) {
             mTvButtonAction.setVisibility(View.VISIBLE);
             mTvButtonNoAction.setVisibility(View.GONE);
-        }else {
+        } else {
             mTvButtonAction.setVisibility(View.GONE);
             mTvButtonNoAction.setVisibility(View.VISIBLE);
         }
     }
 
+    /*
+    * For SLI Last Mile only, generate stores into list
+    * */
     @Override
     public void generateDestination(String[] arrDestination) {
         for (int i = 0; i < arrDestination.length; i++) {
             LayoutInflater inflater = (LayoutInflater) this.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             TableRow rowView;
-            if(i == (arrDestination.length - 1)){
-                rowView = (TableRow)inflater.inflate(R.layout.row_destination_activity_borderless, null);
-            }else{
-                rowView = (TableRow)inflater.inflate(R.layout.row_destination_activity, null);
+            if (i == (arrDestination.length - 1)) {
+                rowView = (TableRow) inflater.inflate(R.layout.row_destination_activity_borderless, null);
+            } else {
+                rowView = (TableRow) inflater.inflate(R.layout.row_destination_activity, null);
             }
             TextView tv = (TextView) rowView.findViewById(R.id.destactivity_text);
             tv.setText(arrDestination[i]);
             mTlOrderDestination.addView(rowView);
         }
     }
+
+    @Override
+    public void setMapFromData(LatLng fromLatLng, LatLng toLatLng, String fromAddress, String toAddress) {
+        mMapJourneyOrder.generateRoute(fromLatLng, toLatLng, fromAddress, toAddress);
+    }
+
+    @Override
+    public void setPhoneNumber(String phoneNumber){
+        if (phoneNumber!=null){
+            mPhoneNumber = phoneNumber;
+        }
+    }
+
+    @Override
+    public void setDestinationDuration(boolean isTimeBased, String textDest){
+        if(isTimeBased){
+            mTvOrderDestLabel.setText("Durasi");
+        }else{
+            mTvOrderDestLabel.setText("Tujuan");
+        }
+        mTvOrderDest.setText(textDest);
+    }
+
+
 }

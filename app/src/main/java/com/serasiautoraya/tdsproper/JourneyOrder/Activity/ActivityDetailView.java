@@ -2,6 +2,7 @@ package com.serasiautoraya.tdsproper.JourneyOrder.Activity;
 
 import android.view.View;
 
+import com.google.android.gms.maps.model.LatLng;
 import com.serasiautoraya.tdsproper.BaseInterface.BaseViewInterface;
 
 /**
@@ -54,4 +55,9 @@ public interface ActivityDetailView extends BaseViewInterface {
 
     void generateDestination(String[] arrDestination);
 
+    void setMapFromData(LatLng fromLatLng, LatLng toLatLng, String fromAddress, String toAddress);
+
+    void setPhoneNumber(String phoneNumber);
+
+    void setDestinationDuration(boolean isTimeBased, String textDest);
 }
