@@ -1,11 +1,8 @@
 package com.serasiautoraya.tdsproper.Login;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
-import android.content.pm.PackageManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
-import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
@@ -64,10 +61,7 @@ public class LoginPresenter extends TiPresenter<LoginView> {
                 deviceID = mTelephonyManager.getDeviceId();
             }
 
-            /*
-            * TODO Important: delete this
-            * */
-            deviceID = "00";
+//            deviceID = "867458032619258";
 
 //            getView().showToast("DEVICE-ID: "+deviceID);
 

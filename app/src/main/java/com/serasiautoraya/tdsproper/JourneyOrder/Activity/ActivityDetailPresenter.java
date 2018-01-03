@@ -367,7 +367,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
         getView().setDestinationDuration(
                 HelperBridge.sAssignedOrderResponseModel.getRentDuration() > 0,
                 HelperBridge.sAssignedOrderResponseModel.getRentDuration() > 0 ?
-                        HelperBridge.sAssignedOrderResponseModel.getRentDuration() + " Jam" :
+                        HelperBridge.sAssignedOrderResponseModel.getRentDuration() + " " + HelperBridge.sAssignedOrderResponseModel.getUom() :
                         HelperBridge.sAssignedOrderResponseModel.getDestination()
         );
     }
@@ -376,8 +376,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
         double toLat = 0;
         double toLng = 0;
         try {
-            if (!HelperBridge.sActivityDetailResponseModel.getLocationTargetLat().equalsIgnoreCase("") &&
-                    HelperBridge.sActivityDetailResponseModel.getLocationTargetLat() != null) {
+            if (!HelperBridge.sActivityDetailResponseModel.getNextActivityLocationLat().equalsIgnoreCase("") && HelperBridge.sActivityDetailResponseModel.getNextActivityLocationLat() != null) {
                 toLat = Double.valueOf(HelperBridge.sActivityDetailResponseModel.getNextActivityLocationLat());
                 toLng = Double.valueOf(HelperBridge.sActivityDetailResponseModel.getNextActivityLocationLng());
             } else {

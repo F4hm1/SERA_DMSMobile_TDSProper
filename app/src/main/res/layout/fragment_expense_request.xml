@@ -5,13 +5,15 @@
     android:orientation="vertical">
 
     <ScrollView
+        android:visibility="visible"
+        android:id="@+id/expense_sv_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:id="@+id/expense_lin_availablegroup"
@@ -39,9 +41,6 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="20dp" />
                 </LinearLayout>
-
-                <!--</android.support.v7.widget.CardView>-->
-
             </LinearLayout>
 
             <LinearLayout
@@ -75,8 +74,40 @@
                         android:orientation="vertical"
                         android:paddingLeft="20dp">
 
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:paddingLeft="20dp"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:id="@+id/expense_total_label"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.8"
+                            android:textSize="16sp"
+                            android:textColor="@color/solid_black"
+                            android:textStyle="bold"
+                            android:text="Total Expense"/>
+
+                        <EditText
+                            android:id="@+id/expense_total_et"
+                            android:textStyle="bold"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1.2"
+                            android:textColor="@color/solid_black"
+                            android:textSize="15sp"
+                            android:inputType="number"
+                            android:enabled="false"
+                            android:text="0"/>
 
                     </LinearLayout>
+
 
                 </LinearLayout>
 
@@ -102,9 +133,7 @@
                 </RelativeLayout>
 
             </LinearLayout>
-
         </LinearLayout>
-
     </ScrollView>
 
     <include

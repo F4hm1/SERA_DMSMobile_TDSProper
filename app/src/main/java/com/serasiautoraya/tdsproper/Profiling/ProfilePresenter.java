@@ -43,7 +43,7 @@ public class ProfilePresenter extends TiPresenter<ProfileView> {
         getView().initialize();
     }
 
-    public void loadProfileData(){
+    public void loadProfileData() {
         getView().setProfileContent(
                 HelperBridge.sModelLoginResponse.getFullname(),
                 "Transporter",
@@ -53,9 +53,9 @@ public class ProfilePresenter extends TiPresenter<ProfileView> {
                 HelperBridge.sModelLoginResponse.getFullname(),
                 HelperBridge.sModelLoginResponse.getPersonalApprovalName(),
                 HelperBridge.sModelLoginResponse.getPersonalCoordinatorName(),
-                HelperBridge.sModelLoginResponse.getKtpEndDate().equalsIgnoreCase("")?"-": HelperUtil.getUserFormDate(HelperBridge.sModelLoginResponse.getKtpEndDate()),
-                HelperBridge.sModelLoginResponse.getSIMEndDate().equalsIgnoreCase("")?"-": HelperUtil.getUserFormDate(HelperBridge.sModelLoginResponse.getSIMEndDate()),
-                "Tanggal Berakhir "+ HelperBridge.sModelLoginResponse.getSimType()
+                HelperBridge.sModelLoginResponse.getKtpEndDate().equalsIgnoreCase("") ? "-" : HelperUtil.getUserFormDate(HelperBridge.sModelLoginResponse.getKtpEndDate()),
+                HelperBridge.sModelLoginResponse.getSIMEndDate().equalsIgnoreCase("") ? "-" : HelperUtil.getUserFormDate(HelperBridge.sModelLoginResponse.getSIMEndDate()),
+                "Tanggal Berakhir " + HelperBridge.sModelLoginResponse.getSimType()
         );
         getView().setProfilePhoto(HelperBridge.sModelLoginResponse.getPhotoFront());
         getDriverStatus();
@@ -70,7 +70,7 @@ public class ProfilePresenter extends TiPresenter<ProfileView> {
 
                 DriverStatusSendModel driverStatusSendModel = new DriverStatusSendModel(
                         HelperBridge.sModelLoginResponse.getPersonalId(),
-                        isOn? HelperTransactionCode.TRUE_BINARY:HelperTransactionCode.FALSE_BINARY,
+                        isOn ? HelperTransactionCode.TRUE_BINARY : HelperTransactionCode.FALSE_BINARY,
                         dateTime
                 );
                 toggleDriverStatus(driverStatusSendModel, isOn);
@@ -85,8 +85,10 @@ public class ProfilePresenter extends TiPresenter<ProfileView> {
 
     }
 
-    public void toggleDriverStatus(DriverStatusSendModel driverStatusSendModel, final boolean currentStatus){
-        getView().toggleProgressDriverStatusUpdate(true);
+    public void toggleDriverStatus(DriverStatusSendModel driverStatusSendModel, final boolean currentStatus) {
+        if (getView() != null) {
+            getView().toggleProgressDriverStatusUpdate(true);
+        }
         final ProfileView profileView = getView();
         mRestConnection.putData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.PUT_DRIVER_STATUS, driverStatusSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
             @Override
@@ -112,13 +114,13 @@ public class ProfilePresenter extends TiPresenter<ProfileView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 profileView.toggleProgressDriverStatusUpdate(false);
-                profileView.showStandardDialog("Gagal melakukan ack order, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                profileView.showStandardDialog("Gagal melakukan perubahan status, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
             }
         });
     }
 
-    public void getDriverStatus(){
-        HashMap<String,String> sendMap = new HashMap<>();
+    public void getDriverStatus() {
+        HashMap<String, String> sendMap = new HashMap<>();
         sendMap.put("PersonalId", HelperBridge.sModelLoginResponse.getPersonalId());
         final ProfileView profileView = getView();
         mRestConnection.getData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.GET_DRIVER_STATUS, sendMap, new RestCallBackInterfaceModel() {
@@ -127,9 +129,9 @@ public class ProfilePresenter extends TiPresenter<ProfileView> {
                 if (response.getResponse().equalsIgnoreCase(HelperKey.RESPONSE_STATUS_SUCCESS_CODE)) {
                     profileView.toggleProgressDriverStatusUpdate(false);
                     DriverStatusResponseModel driverStatusResponseModel = Model.getModelInstance(response.getData()[0], DriverStatusResponseModel.class);
-                    if(driverStatusResponseModel.getStatus().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY)){
+                    if (driverStatusResponseModel.getStatus().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY)) {
                         profileView.toggleDriverStatus(true);
-                    }else{
+                    } else {
                         profileView.toggleDriverStatus(false);
                     }
                 } else {

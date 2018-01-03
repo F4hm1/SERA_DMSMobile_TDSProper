@@ -32,7 +32,7 @@ public class NotificationListPresenter extends TiPresenter<NotificationListView>
     }
 
     public void loadNotificationListData() {
-        Cursor res = mDbHelper.runRawQuery("select * from " + DBHelper.NOTIFICATION_TABLE_NAME);
+        Cursor res = mDbHelper.runRawQuery("select * from " + DBHelper.NOTIFICATION_TABLE_NAME + " ORDER BY " + DBHelper.NOTIFICATION_COLUMN_ID + " DESC");
         List<NotificationResponseModel> notificationResponseModels = new ArrayList<>();
         while (res.isAfterLast() == false) {
             NotificationResponseModel visitorModel = new NotificationResponseModel(

@@ -1,4 +1,5 @@
 <resources>
+    <!--<string name="app_name">TDS Proper Training Version</string>-->
     <string name="app_name">TDS Proper</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -46,9 +47,9 @@
     <string name="title_absence_request">Pengajuan Ketidakhadiran</string>
     <string name="title_olctrip_request">Pengajuan OLC/Trip</string>
     <string name="title_overtime_request">Pengajuan Lembur</string>
-    <string name="title_expense_request">Pengajuan Biaya</string>
+    <string name="title_expense_request">Penyelesaian Biaya</string>
     <string name="title_ws_history">Riwayat Kehadiran</string>
-    <string name="title_history_attendance">Riwayat Kehadiran</string>
+    <string name="title_history_attendance">Riwayat Pengajuan Kehadiran</string>
     <string name="title_ganti_password">Ganti Kata Sandi</string>
     <string name="title_notification_list">Riwayat Notifikasi</string>
     <string name="title_logout">Keluar</string>
@@ -222,7 +223,7 @@
     </string-array>
 
     <!--OLC/Trip-->
-    <string name="olctrip_label_date">Tanggal OLC\Trip</string>
+    <string name="olctrip_label_date">Tanggal OLC Trip</string>
     <string name="olctrip_label_olc">OLC</string>
     <string name="olctrip_label_tripamount">Jumlah Trip</string>
     <string name="olctrip_label_reason">Alasan/Keterangan</string>

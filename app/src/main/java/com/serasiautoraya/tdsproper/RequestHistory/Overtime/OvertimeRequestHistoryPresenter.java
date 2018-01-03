@@ -10,6 +10,7 @@ import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperUrl;
 import com.serasiautoraya.tdsproper.RequestHistory.RequestHistoryResponseModel;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
+import com.serasiautoraya.tdsproper.util.HelperUtil;
 import com.serasiautoraya.tdsproper.util.HttpsTrustManager;
 
 import net.grandcentrix.thirtyinch.TiPresenter;
@@ -89,8 +90,8 @@ public class OvertimeRequestHistoryPresenter extends TiPresenter<OvertimeRequest
     public void onDetailClicked(RequestHistoryResponseModel requestHistoryResponseModel) {
         getView().showDetailDialog(
                 requestHistoryResponseModel.getTransType(),
-                requestHistoryResponseModel.getTimeStart() + " | " + requestHistoryResponseModel.getDateStart(),
-                requestHistoryResponseModel.getTimeEnd() + " | " + requestHistoryResponseModel.getDateEnd(),
+                requestHistoryResponseModel.getTimeStart() + " | " + HelperUtil.getUserFormDate(requestHistoryResponseModel.getDateStart()),
+                requestHistoryResponseModel.getTimeEnd() + " | " + HelperUtil.getUserFormDate(requestHistoryResponseModel.getDateEnd()),
                 requestHistoryResponseModel.getOvertimeType(),
                 "Pengajuan Tanggal " + requestHistoryResponseModel.getRequestDate(),
                 requestHistoryResponseModel.getRequestStatus(),

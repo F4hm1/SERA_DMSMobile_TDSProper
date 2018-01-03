@@ -36,6 +36,7 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
     private ExpenseRequestSendModel mExpenseRequestSendModel;
     ExpenseAvailableResponseModel expenseAvailableResponseModel;
     private String selectedOrderCode;
+    private int curentTotalAmount = 0;
 
     private ArrayList<ExpenseAvailableOrderAdapter> expenseAvailableOrderAdapterList;
 
@@ -260,7 +261,7 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
     }
 
     public void loadNoActualExpense() {
-
+        curentTotalAmount = 0;
         getView().toggleLoading(true);
         final ExpenseRequestView expenseRequestView = getView();
         AssignedOrderSendModel assignedOrderSendModel = new AssignedOrderSendModel(
@@ -313,5 +314,15 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
                 expenseRequestView.toggleLoading(false);
             }
         });
+    }
+
+    public void calculateAmount(CharSequence charSequence) {
+        try {
+            int addedAmount = Integer.valueOf(charSequence.toString());
+            curentTotalAmount += addedAmount;
+            getView().setTotalExpense(curentTotalAmount + "");
+        } catch (Exception ex) {
+            getView().setTotalExpense("Angka yang anda masukan salah");
+        }
     }
 }

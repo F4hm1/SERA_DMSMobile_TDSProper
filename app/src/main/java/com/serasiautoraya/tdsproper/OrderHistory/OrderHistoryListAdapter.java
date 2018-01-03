@@ -33,7 +33,8 @@ public class OrderHistoryListAdapter extends RecyclerView.Adapter<SimpleListView
         OrderHistoryResponseModel simpleSingleList = mSimpleSingleLists.get(position);
         holder.getTitle().setText("Order "+simpleSingleList.getOrderCode());
         holder.getInformation().setText(simpleSingleList.getOrigin() +" - "+ simpleSingleList.getDestination());
-        holder.getStatus().setText(simpleSingleList.getStatus());
+//        holder.getStatus().setText(simpleSingleList.getStatus());
+        holder.getStatus().setText("");
     }
 
     @Override

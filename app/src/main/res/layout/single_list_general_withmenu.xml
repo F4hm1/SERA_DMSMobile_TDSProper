@@ -15,41 +15,62 @@
         android:paddingRight="16dp"
         android:paddingTop="10dp">
 
-        <TextView
-            android:transitionName="trans_order_code"
-            android:id="@+id/single_list_his_title"
-            android:textColor="@color/colorTextPrimary"
-            android:textSize="16dp"
-            android:textStyle="bold"
-            android:text="Tittle"
+        <LinearLayout
+            android:id="@+id/lin_title"
             android:layout_alignParentTop="true"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/single_list_his_information"
-            android:layout_below="@id/single_list_his_title"
-            android:textColor="@color/colorTextSecondary"
-            android:text="Information"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-        <TextView
-            android:id="@+id/single_list_his_status"
-            android:textColor="@color/colorAccentDark"
-            android:text="Status"
-            android:layout_width="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_height="wrap_content"/>
-
-        <ImageButton
-            android:id="@+id/single_list_his_option"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/ic_options_card_black_24dp"
-            android:layout_below="@+id/single_list_his_status"
-            android:layout_alignParentEnd="true" />
+            android:orientation="horizontal"
+            android:weightSum="10">
+
+            <TextView
+                android:transitionName="trans_order_code"
+                android:id="@+id/single_list_his_title"
+                android:textColor="@color/colorTextPrimary"
+                android:textSize="16dp"
+                android:textStyle="bold"
+                android:text="Order LT312017111800534"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                android:layout_weight="6"/>
+
+            <TextView
+                android:id="@+id/single_list_his_status"
+                android:textColor="@color/colorAccentDark"
+                android:gravity="top|right"
+                android:layout_gravity="top"
+                android:text="23 Desember 2017 14:34:21"
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"/>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/lin_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/single_list_his_information"
+                android:textColor="@color/colorTextSecondary"
+                android:layout_toLeftOf="@+id/single_list_his_option"
+                android:text="Information"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <ImageButton
+                android:id="@+id/single_list_his_option"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="-15dp"
+                android:layout_below="@id/single_list_his_information"
+                android:background="@drawable/ic_options_card_black_24dp" />
+
+        </RelativeLayout>
 
     </RelativeLayout>
 

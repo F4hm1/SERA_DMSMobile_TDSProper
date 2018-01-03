@@ -149,7 +149,7 @@ public class OvertimeRequestHistoryFragment extends TiFragment<OvertimeRequestHi
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
         LayoutInflater inflater = getActivity().getLayoutInflater();
 
-        builder.setView(inflater.inflate(R.layout.dialog_detail_olctriphistory, null))
+        builder.setView(inflater.inflate(R.layout.dialog_detail_overtimehistory, null))
                 .setPositiveButton("TUTUP", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {

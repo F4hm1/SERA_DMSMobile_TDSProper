@@ -88,6 +88,10 @@ public class AssignedOrderResponseModel extends Model{
     @Expose
     public Integer RentDuration;
 
+    @SerializedName("UOM")
+    @Expose
+    public String Uom;
+
     public AssignedOrderResponseModel(String orderID, Integer assignmentId, Integer status, String customer, String origin, String destination, String ETA, String ETD, String currentActivity, String active, String acknowledge, String notes, String cargoDescription) {
         OrderID = orderID;
         AssignmentId = assignmentId;
@@ -291,5 +295,16 @@ public class AssignedOrderResponseModel extends Model{
 
     public void setRentDuration(Integer rentDuration) {
         RentDuration = rentDuration;
+    }
+
+    public String getUom() {
+        if(Uom == null){
+            return "";
+        }
+        return Uom;
+    }
+
+    public void setUom(String uom) {
+        Uom = uom;
     }
 }

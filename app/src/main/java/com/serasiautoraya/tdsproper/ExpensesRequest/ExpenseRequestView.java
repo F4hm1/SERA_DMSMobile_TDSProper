@@ -17,23 +17,27 @@ import java.util.HashMap;
 
 public interface ExpenseRequestView extends BaseViewInterface, FormViewInterface{
 
-    @CallOnMainThread
-    @DistinctUntilChanged
-    void toggleLoadingSearchingOrder(boolean isLoading);
-
     void showConfirmationDialog();
 
     void onSubmitClicked(View view);
 
     void setExpenseInputForm(HashMap<String, ExpenseInputModel> expenseInputList, String[] typeCodeList);
 
-    @CallOnMainThread
-    @DistinctUntilChanged
-    void toggleLoadingInitialLoad(boolean isLoading);
-
     void setNoAvailableExpense();
 
     void initializeOvertimeDates(ArrayList<ExpenseAvailableOrderAdapter> expenseAvailableOrderResponseModelList);
 
     void showConfirmationSuccess(String message, String title);
+
+    @CallOnMainThread
+    @DistinctUntilChanged
+    void toggleLoadingInitialLoad(boolean isLoading);
+
+    @CallOnMainThread
+    @DistinctUntilChanged
+    void toggleLoadingSearchingOrder(boolean isLoading);
+
+    void setTotalExpense(String total);
+
+    void hideRequestGroupInput();
 }

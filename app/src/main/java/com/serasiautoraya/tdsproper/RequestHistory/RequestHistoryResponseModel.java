@@ -87,55 +87,55 @@ public class RequestHistoryResponseModel extends Model {
     }
 
     public String getId() {
-        return Id;
+        return Model.getNonNullable(Id);
     }
 
     public String getTransType() {
-        return TransType;
+        return Model.getNonNullable(TransType);
     }
 
     public String getDateStart() {
-        return DateStart;
+        return Model.getNonNullable(DateStart);
     }
 
     public String getDateEnd() {
-        return DateEnd;
+        return Model.getNonNullable(DateEnd);
     }
 
     public String getTimeStart() {
-        return TimeStart;
+        return Model.getNonNullable(TimeStart);
     }
 
     public String getTimeEnd() {
-        return TimeEnd;
+        return Model.getNonNullable(TimeEnd);
     }
 
     public String getOvertimeType() {
-        return OvertimeType;
+        return Model.getNonNullable(OvertimeType);
     }
 
     public String getAbsenceType() {
-        return AbsenceType;
+        return Model.getNonNullable(AbsenceType);
     }
 
     public String getTripCount() {
-        return TripCount;
+        return Model.getNonNullable(TripCount);
     }
 
     public String getOLCStatus() {
-        return OLCStatus;
+        return Model.getNonNullable(OLCStatus);
     }
 
     public String getRequestDate() {
-        return RequestDate;
+        return Model.getNonNullable(RequestDate);
     }
 
     public String getRequestStatus() {
-        return RequestStatus;
+        return Model.getNonNullable(RequestStatus);
     }
 
     public String getApprovalBy() {
-        return ApprovalBy;
+        return Model.getNonNullable(ApprovalBy);
     }
 
 }

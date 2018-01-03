@@ -586,7 +586,7 @@
 
             <!--order_title_quantity-->
             <TableRow
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
@@ -617,7 +617,7 @@
 
             <!--order_title_checkpoint-->
             <TableRow
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/table_bottom_border"
