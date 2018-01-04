@@ -61,10 +61,6 @@ public class LoginPresenter extends TiPresenter<LoginView> {
                 deviceID = mTelephonyManager.getDeviceId();
             }
 
-//            deviceID = "867458032619258";
-
-//            getView().showToast("DEVICE-ID: "+deviceID);
-
             String tokenFCM = mSharedPrefsModel.get(HelperKey.KEY_TOKEN_SAVED, "token-not-defined");
             if(tokenFCM.equalsIgnoreCase("token-not-defined")){
                 tokenFCM = FirebaseInstanceId.getInstance().getToken();

@@ -94,20 +94,24 @@ public class CiCoRequestFragment extends TiFragment<CiCoRequestPresenter, CiCoRe
 
         if(TextUtils.isEmpty(mEtDate.getText().toString())){
             focusView = mEtDate;
+            errText = getResources().getString(R.string.err_msg_empty_cico_date);
             showToast(errText);
             result = false;
         }else if(!mDatePickerToEditTextDialog.isInMaxRequest() || !mDatePickerToEditTextDialog.isBeforeToday()){
             focusView = mEtDate;
+            errText = getResources().getString(R.string.err_msg_wrong_cico_date);
             showToast(errText);
             result = false;
         }
 
         if(TextUtils.isEmpty(mEtTime.getText().toString())){
             focusView = mEtTime;
+            errText = getResources().getString(R.string.err_msg_empty_cico_time);
             showToast(errText);
             result = false;
         }else if(mDatePickerToEditTextDialog.isToday() && !mTimePickerToEditTextDialog.isBeforeCurrentTime()){
             focusView = mEtTime;
+            errText = getResources().getString(R.string.err_msg_wrong_cico_time);
             showToast(errText);
             result = false;
         }
