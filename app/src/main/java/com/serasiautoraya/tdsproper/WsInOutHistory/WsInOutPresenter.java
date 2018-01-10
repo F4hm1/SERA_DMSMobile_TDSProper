@@ -95,14 +95,6 @@ public class WsInOutPresenter extends TiPresenter<WsInOutView> {
 
         getView().toggleLoading(true);
 
-//        setDummyData();
-//
-//        if (!wsInOutResponseModels.isEmpty()) {
-//            getView().toggleEmptyInfo(false);
-//        } else {
-//            getView().toggleEmptyInfo(true);
-//        }
-
         final WsInOutView orderHistoryView = getView();
         WsInOutSendModel assignedOrderSendModel = new WsInOutSendModel(HelperBridge.sModelLoginResponse.getPersonalId(), startDate, endDate);
         mRestConnection.getData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.GET_WSINOUT_HISTORY, assignedOrderSendModel.getHashMapType(), new RestCallBackInterfaceModel() {

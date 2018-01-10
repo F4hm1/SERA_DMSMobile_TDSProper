@@ -156,7 +156,7 @@ public class  CiCoRealtimePresenter extends TiPresenter<CiCoRealtimeView> {
                 );
                 mUrlSubmit = HelperUrl.POST_CICO_REALTIME;
                 getView().toggleLoading(false);
-                getView().showConfirmationDialog("Clock In", timeZoneId, dateMessage, monthMessage, yearMessage, time);
+                getView().showConfirmationDialog("Clock Out", timeZoneId, dateMessage, monthMessage, yearMessage, time);
             }
 
             @Override

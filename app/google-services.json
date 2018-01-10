@@ -36,6 +36,99 @@
           "status": 2
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419856762431:android:f4e588479af8916b",
+        "android_client_info": {
+          "package_name": "com.serasiautoraya.slimobiledrivertracking_training"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419856762431-070tqq0tjkm8llp5iklbefqre5vi8gid.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAokqDb_157sD5XNyIBXOPmpaMbVZSvppw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419856762431:android:cf26988665ddaf54",
+        "android_client_info": {
+          "package_name": "com.serasiautoraya.slimobiledrivertracking_trainingexpense"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419856762431-070tqq0tjkm8llp5iklbefqre5vi8gid.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAokqDb_157sD5XNyIBXOPmpaMbVZSvppw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:419856762431:android:abbb58c81024682c",
+        "android_client_info": {
+          "package_name": "com.serasiautoraya.tdsproper_training"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "419856762431-070tqq0tjkm8llp5iklbefqre5vi8gid.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAokqDb_157sD5XNyIBXOPmpaMbVZSvppw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
     }
   ],
   "configuration_version": "1"

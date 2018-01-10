@@ -33,18 +33,28 @@ public class WsInOutHistoryListAdapter extends RecyclerView.Adapter<WsInOutSingl
         WsInOutResponseModel simpleSingleList = mSimpleSingleLists.get(position);
         holder.getDate().setText(HelperUtil.getUserFormDate(simpleSingleList.getDate()));
         String keterangan = "";
+        String clockInActual = simpleSingleList.getClockIn();
+        String clockOutActual = simpleSingleList.getClockOut();
 
-        if (!simpleSingleList.getClockIn().equalsIgnoreCase("")) {
-            String clockInDate = simpleSingleList.getClockIn().split("-")[0];
+        holder.getWsin().setText("Clock In      : -");
+        if (!clockInActual.equalsIgnoreCase("")) {
+            String clockInDate = clockInActual.split("-")[0];
             if (!clockInDate.equalsIgnoreCase("0001")) {
                 keterangan += " Clock In |";
+
+                String clockInTimeVal = clockInActual.split(" ")[1];
+                holder.getWsin().setText("Clock In      : " + clockInTimeVal);
             }
         }
 
-        if (!simpleSingleList.getClockOut().equalsIgnoreCase("")) {
-            String clockOutDate = simpleSingleList.getClockOut().split("-")[0];
+        holder.getWsout().setText("Clock Out   : -");
+        if (!clockOutActual.equalsIgnoreCase("")) {
+            String clockOutDate = clockOutActual.split("-")[0];
             if (!clockOutDate.equalsIgnoreCase("0001")) {
                 keterangan += " Clock Out |";
+
+                String clockOutTimeVal = clockOutActual.split(" ")[1];
+                holder.getWsout().setText("Clock Out   : "+ clockOutTimeVal);
             }
         }
 
@@ -65,8 +75,6 @@ public class WsInOutHistoryListAdapter extends RecyclerView.Adapter<WsInOutSingl
         }
 
         holder.getKeterangan().setText(keterangan);
-        holder.getWsin().setText("Jadwal Masuk: " + simpleSingleList.getScheduleIn());
-        holder.getWsout().setText("Jadwal Keluar: " + simpleSingleList.getScheduleOut());
     }
 
     @Override

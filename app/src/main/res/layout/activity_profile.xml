@@ -76,7 +76,7 @@
             android:layout_alignParentTop="true"
             android:background="@drawable/imageview_border"
             android:scaleType="centerCrop"
-            android:src="@drawable/fotosample"
+            android:src="@drawable/ic_person_black_24dp"
             android:cropToPadding="true"
             android:adjustViewBounds="false" />
     </RelativeLayout>
