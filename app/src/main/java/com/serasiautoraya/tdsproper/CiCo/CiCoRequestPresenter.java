@@ -29,13 +29,20 @@ public class CiCoRequestPresenter extends TiPresenter<CiCoRequestView> {
     protected void onAttachView(@NonNull final CiCoRequestView view) {
         super.onAttachView(view);
         getView().initialize();
+        int daysMinRequest = 0;
+        try {
+            daysMinRequest = Math.round(Float.valueOf(HelperBridge.sModelLoginResponse.getMaxHariRequestDriver()));
+        } catch (Exception ex) {
+
+        }
+        getView().initializePickerDialog(-(daysMinRequest));
     }
 
     public CiCoRequestPresenter(RestConnection mRestConnection) {
         this.mRestConnection = mRestConnection;
     }
 
-    public void onSubmitClicked(String date, String time, String reason, String cicoType){
+    public void onSubmitClicked(String date, String time, String reason, String cicoType) {
         mCicoRequestSendModel = new CiCoRequestSendModel(
                 Model.getNonNullable(HelperBridge.sModelLoginResponse.getPersonalId()),
                 Model.getNonNullable(HelperBridge.sModelLoginResponse.getPersonalId()),
@@ -56,7 +63,7 @@ public class CiCoRequestPresenter extends TiPresenter<CiCoRequestView> {
         getView().showConfirmationDialog();
     }
 
-    public void onRequestSubmitted(){
+    public void onRequestSubmitted() {
         getView().toggleLoading(true);
 //        Log.d("TAGSS", mCicoRequestSendModel.getHashMapType().toString());
         Log.d("TAGSS", mCicoRequestSendModel.getJSONType(mCicoRequestSendModel));

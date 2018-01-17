@@ -10,14 +10,19 @@ import com.serasiautoraya.tdsproper.BaseModel.Model;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperUrl;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
+import com.serasiautoraya.tdsproper.util.HelperKey;
 import com.serasiautoraya.tdsproper.util.HelperUtil;
 import com.serasiautoraya.tdsproper.util.HttpsTrustManager;
 
 import net.grandcentrix.thirtyinch.TiPresenter;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -111,7 +116,7 @@ public class WsInOutPresenter extends TiPresenter<WsInOutView> {
                     orderHistoryView.toggleEmptyInfo(true);
                 }
                 wsInOutResponseModels = wsInOutResponseModelsTemp;
-                mSimpleAdapterModel.setItemList(wsInOutResponseModels);
+                mSimpleAdapterModel.setItemList(getSortedOrderByDate(wsInOutResponseModels));
                 orderHistoryView.refreshRecyclerView();
                 orderHistoryView.toggleLoading(false);
             }
@@ -133,21 +138,27 @@ public class WsInOutPresenter extends TiPresenter<WsInOutView> {
 
     }
 
-    private void setDummyData() {
-        List<WsInOutResponseModel> wsInOutResponseModelsTemp = new ArrayList<>();
-//        for (int i = 0; i < 12; i++) {
-//            if (i % 3 == 0) {
-        wsInOutResponseModelsTemp.add(new WsInOutResponseModel("22" + "-07-2017", "08:" + "00", "17:" + "00", "07:" + "56", "18:" + "23", "", "", "", "", ""));
-//            } else if (i % 2 == 0) {
-        wsInOutResponseModelsTemp.add(new WsInOutResponseModel("19" + "-07-2017", "08:" + "00", "17:" + "00", "07:" + "38", "", "", "", "", "", ""));
-//            } else {
-        wsInOutResponseModelsTemp.add(new WsInOutResponseModel("09" + "-07-2017", "08:" + "00", "17:" + "00", "", "", "09-07-2017", "", "", "", ""));
-//            }
-//        }
-        wsInOutResponseModels = wsInOutResponseModelsTemp;
-        mSimpleAdapterModel.setItemList(wsInOutResponseModels);
-        getView().refreshRecyclerView();
-        getView().toggleLoading(false);
+    private List<WsInOutResponseModel> getSortedOrderByDate(List<WsInOutResponseModel> listWsInOut) {
+        Collections.sort(listWsInOut, new Comparator<WsInOutResponseModel>() {
+            @Override
+            public int compare(WsInOutResponseModel o1, WsInOutResponseModel o2) {
+                SimpleDateFormat sdfServer = new SimpleDateFormat(HelperKey.SERVER_DATE_FORMAT);
+                try {
+                    Date dateWs1 = sdfServer.parse(o1.getDate());
+                    Date dateWs2 = sdfServer.parse(o2.getDate());
 
+                    if (dateWs1.before(dateWs2)) {
+                        return -1;
+                    } else {
+                        return 1;
+                    }
+
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                    return 1;
+                }
+            }
+        });
+        return listWsInOut;
     }
 }

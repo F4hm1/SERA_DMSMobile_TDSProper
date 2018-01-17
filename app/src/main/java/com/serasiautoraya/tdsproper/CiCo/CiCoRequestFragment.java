@@ -32,10 +32,14 @@ import butterknife.OnClick;
 
 public class CiCoRequestFragment extends TiFragment<CiCoRequestPresenter, CiCoRequestView> implements CiCoRequestView {
 
-    @BindView(R.id.spinner_cico_transaction_type) Spinner mSpinnerTransactionType;
-    @BindView(R.id.spinner_cico_reason_choice) Spinner mSpinnerReason;
-    @BindView(R.id.edittext_cico_date) EditText mEtDate;
-    @BindView(R.id.edittext_cico_time) EditText mEtTime;
+    @BindView(R.id.spinner_cico_transaction_type)
+    Spinner mSpinnerTransactionType;
+    @BindView(R.id.spinner_cico_reason_choice)
+    Spinner mSpinnerReason;
+    @BindView(R.id.edittext_cico_date)
+    EditText mEtDate;
+    @BindView(R.id.edittext_cico_time)
+    EditText mEtTime;
     private DatePickerToEditTextDialog mDatePickerToEditTextDialog;
     private TimePickerToEditTextDialog mTimePickerToEditTextDialog;
     private ProgressDialog mProgressDialog;
@@ -50,14 +54,14 @@ public class CiCoRequestFragment extends TiFragment<CiCoRequestPresenter, CiCoRe
     @Override
     public void initialize() {
         this.initializeSpinnersContent();
-        this.initializePickerDialog();
+//        this.initializePickerDialog();
     }
 
     @Override
     public void toggleLoading(boolean isLoading) {
-        if(isLoading){
-            mProgressDialog = ProgressDialog.show(getContext(), getResources().getString(R.string.prog_msg_cico),getResources().getString(R.string.prog_msg_wait),true,false);
-        }else{
+        if (isLoading) {
+            mProgressDialog = ProgressDialog.show(getContext(), getResources().getString(R.string.prog_msg_cico), getResources().getString(R.string.prog_msg_wait), true, false);
+        } else {
             mProgressDialog.dismiss();
         }
     }
@@ -78,45 +82,46 @@ public class CiCoRequestFragment extends TiFragment<CiCoRequestPresenter, CiCoRe
         String errText = "";
         View focusView = null;
 
-        if(mSpinnerReason.getSelectedItem().toString().equalsIgnoreCase("Pilih")){
+        if (mSpinnerReason.getSelectedItem().toString().equalsIgnoreCase("Pilih")) {
             focusView = mSpinnerReason;
             errText = getResources().getString(R.string.err_msg_empty_cico_reason);
             showToast(errText);
             result = false;
         }
 
-        if(mSpinnerTransactionType.getSelectedItem().toString().equalsIgnoreCase("Pilih")){
+        if (mSpinnerTransactionType.getSelectedItem().toString().equalsIgnoreCase("Pilih")) {
             focusView = mSpinnerTransactionType;
             errText = getResources().getString(R.string.err_msg_empty_cico_transactiontype);
             showToast(errText);
             result = false;
         }
 
-        if(TextUtils.isEmpty(mEtDate.getText().toString())){
+        if (TextUtils.isEmpty(mEtDate.getText().toString())) {
             focusView = mEtDate;
             errText = getResources().getString(R.string.err_msg_empty_cico_date);
             showToast(errText);
             result = false;
-        }else if(!mDatePickerToEditTextDialog.isInMaxRequest() || !mDatePickerToEditTextDialog.isBeforeToday()){
-            focusView = mEtDate;
-            errText = getResources().getString(R.string.err_msg_wrong_cico_date);
-            showToast(errText);
-            result = false;
         }
+//        else if (mDatePickerToEditTextDialog.isInMaxRequest()) {
+//            focusView = mEtDate;
+//            errText = getResources().getString(R.string.err_msg_wrong_cico_date);
+//            showToast(errText);
+//            result = false;
+//        }
 
-        if(TextUtils.isEmpty(mEtTime.getText().toString())){
+        if (TextUtils.isEmpty(mEtTime.getText().toString())) {
             focusView = mEtTime;
             errText = getResources().getString(R.string.err_msg_empty_cico_time);
             showToast(errText);
             result = false;
-        }else if(mDatePickerToEditTextDialog.isToday() && !mTimePickerToEditTextDialog.isBeforeCurrentTime()){
+        } else if (mDatePickerToEditTextDialog.isToday() && !mTimePickerToEditTextDialog.isBeforeCurrentTime()) {
             focusView = mEtTime;
             errText = getResources().getString(R.string.err_msg_wrong_cico_time);
             showToast(errText);
             result = false;
         }
 
-        if(result == false){
+        if (result == false) {
             focusView.requestFocus();
         }
 
@@ -131,9 +136,9 @@ public class CiCoRequestFragment extends TiFragment<CiCoRequestPresenter, CiCoRe
 
     @Override
     public void showConfirmationDialog() {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan melakukan pengajuan "+
-                "<b>"+mSpinnerTransactionType.getSelectedItem().toString()+"</b>"+" pada "+
-                "<b>"+ mEtDate.getText().toString()+", pukul "+ mEtTime.getText()+"</b>"+"?");
+        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan melakukan pengajuan " +
+                "<b>" + mSpinnerTransactionType.getSelectedItem().toString() + "</b>" + " pada " +
+                "<b>" + mEtDate.getText().toString() + ", pukul " + mEtTime.getText() + "</b>" + "?");
         HelperUtil.showConfirmationAlertDialog(textMsg, getContext(), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -145,7 +150,7 @@ public class CiCoRequestFragment extends TiFragment<CiCoRequestPresenter, CiCoRe
     @Override
     @OnClick(R.id.btn_cico_submit)
     public void onSubmitClicked(View view) {
-        if(getValidationForm()){
+        if (getValidationForm()) {
             String requestCicoCode = HelperUtil.getValueStringArrayXML(
                     getResources().getStringArray(R.array.cico_tipe_array),
                     getResources().getStringArray(R.array.cico_tipe_array_val),
@@ -158,7 +163,7 @@ public class CiCoRequestFragment extends TiFragment<CiCoRequestPresenter, CiCoRe
         }
     }
 
-    private void initializeSpinnersContent(){
+    private void initializeSpinnersContent() {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this.getContext(),
                 R.array.cico_tipe_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -170,8 +175,10 @@ public class CiCoRequestFragment extends TiFragment<CiCoRequestPresenter, CiCoRe
         mSpinnerReason.setAdapter(adapterReason);
     }
 
-    private void initializePickerDialog(){
-        mDatePickerToEditTextDialog = new DatePickerToEditTextDialog(mEtDate, getContext(), true, false);
+    @Override
+    public void initializePickerDialog(int dayMinRequest) {
+//        mDatePickerToEditTextDialog = new DatePickerToEditTextDialog(mEtDate, getContext(), true, false);
+        mDatePickerToEditTextDialog = new DatePickerToEditTextDialog(mEtDate, getContext(), true, false, dayMinRequest);
         mTimePickerToEditTextDialog = new TimePickerToEditTextDialog(mEtTime, getContext());
     }
 

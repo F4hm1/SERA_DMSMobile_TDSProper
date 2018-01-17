@@ -15,4 +15,6 @@ public interface CiCoRequestView extends BaseViewInterface, FormViewInterface {
 
     void onSubmitClicked(View view);
 
+    void initializePickerDialog(int dayMinRequest);
+
 }
