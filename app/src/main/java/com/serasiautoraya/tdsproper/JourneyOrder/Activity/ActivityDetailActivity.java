@@ -9,6 +9,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Html;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -98,7 +99,8 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
     @BindView(R.id.order_button_noaction)
     Button mTvButtonNoAction;
 
-    private String mOrderCode;
+    private String mOrderCode, mIsExpense;
+    private Integer mAssignmentId;
     private ProgressDialog mProgressDialog;
     private MapJourneyOrder mMapJourneyOrder;
     private String mPhoneNumber = "";
@@ -112,7 +114,9 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
         ButterKnife.bind(this);
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
+            mAssignmentId = Integer.valueOf(bundle.getString(HelperKey.KEY_INTENT_ASSIGNMENTID));
             mOrderCode = bundle.getString(HelperKey.KEY_INTENT_ORDERCODE);
+            mIsExpense = bundle.getString(HelperKey.KEY_INTENT_IS_EXPENSE);
         }
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_activitydetail);
         mMapJourneyOrder = new MapJourneyOrder(mapFragment, this);
@@ -170,7 +174,7 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
     @Override
     @OnClick(R.id.order_button_action)
     public void onActionClicked(View view) {
-        getPresenter().onActionClicked();
+        getPresenter().onActionClicked(mAssignmentId, mOrderCode, mIsExpense);
     }
 
     @Override
@@ -313,5 +317,16 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
         mTvOrderDest.setText(textDest);
     }
 
+    @Override
+    public void setTempFragmentTarget(int id) {
+        HelperBridge.sTempFragmentTarget = id;
+        Log.d("DASHBOARDSS", "ORHISTO: "+HelperBridge.sTempFragmentTarget);
+        finishActivity();
+    }
 
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
 }

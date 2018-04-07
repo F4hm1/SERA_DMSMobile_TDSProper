@@ -12,7 +12,7 @@ public interface PlanOrderView extends BaseViewInterface{
 
     void refreshRecyclerView();
 
-    void changeActivityAction(String key, String value, Class targetActivity);
+    void changeActivityAction(String[] key, String[] value, Class targetActivity);
 
     void showAcknowledgeDialog(
             String ordercode,

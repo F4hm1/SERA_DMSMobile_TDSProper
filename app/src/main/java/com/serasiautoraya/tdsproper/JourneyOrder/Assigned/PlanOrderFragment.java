@@ -115,10 +115,12 @@ public class PlanOrderFragment extends TiFragment<PlanOrderPresenter, PlanOrderV
     }
 
     @Override
-    public void changeActivityAction(String key, String value, Class targetActivity) {
+    public void changeActivityAction(String[] key, String[] value, Class targetActivity) {
         if (mParentActivity != null) {
             Intent intent = new Intent(mParentActivity, targetActivity);
-            intent.putExtra(key, value);
+            for (int i = 0; i < key.length; i++) {
+                intent.putExtra(key[i], value[i]);
+            }
             startActivity(intent);
         }
     }

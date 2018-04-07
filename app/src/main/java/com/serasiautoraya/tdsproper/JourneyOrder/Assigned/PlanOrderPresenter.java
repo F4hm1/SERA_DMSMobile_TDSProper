@@ -207,6 +207,11 @@ public class PlanOrderPresenter extends TiPresenter<PlanOrderView> {
     }
 
     private void loadDetailOrder(final String orderId, Integer assignmentId, final AssignedOrderResponseModel assignedOrderResponseModel) {
+
+        final String orderCode = assignedOrderResponseModel.getOrderID();
+
+
+
         ActivityDetailSendModel activityDetailSendModel =
                 new ActivityDetailSendModel(
                         HelperBridge.sModelLoginResponse.getPersonalId(), orderId, assignmentId);
@@ -219,7 +224,10 @@ public class PlanOrderPresenter extends TiPresenter<PlanOrderView> {
                 HelperBridge.sActivityDetailResponseModel = Model.getModelInstance(response.getData()[0], ActivityDetailResponseModel.class);
                 HelperBridge.sTempSelectedOrderCode = orderId;
                 HelperBridge.sAssignedOrderResponseModel = assignedOrderResponseModel;
-                planOrderView.changeActivityAction(HelperKey.KEY_INTENT_ORDERCODE, HelperBridge.sActivityDetailResponseModel.getAssignmentId() + "", ActivityDetailActivity.class);
+                String[] keywords = {HelperKey.KEY_INTENT_ASSIGNMENTID, HelperKey.KEY_INTENT_ORDERCODE,  HelperKey.KEY_INTENT_IS_EXPENSE};
+                String[] values = {HelperBridge.sActivityDetailResponseModel.getAssignmentId()+"", orderCode,  HelperBridge.sActivityDetailResponseModel.getIsExpense()+""};
+                //planOrderView.changeActivityAction(HelperKey.KEY_INTENT_ORDERCODE, HelperBridge.sActivityDetailResponseModel.getAssignmentId() + "", ActivityDetailActivity.class);
+                planOrderView.changeActivityAction(keywords, values, ActivityDetailActivity.class);
                 planOrderView.toggleLoading(false);
             }
 

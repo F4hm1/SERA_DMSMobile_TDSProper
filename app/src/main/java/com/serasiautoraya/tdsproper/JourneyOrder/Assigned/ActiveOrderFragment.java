@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import com.serasiautoraya.tdsproper.BaseAdapter.SimpleAdapterView;
 import com.serasiautoraya.tdsproper.CustomView.EmptyInfoView;
+import com.serasiautoraya.tdsproper.Dashboard.DashboardActivity;
+import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.R;
 import com.serasiautoraya.tdsproper.util.HelperUtil;
@@ -99,10 +101,12 @@ public class ActiveOrderFragment extends TiFragment<ActiveOrderPresenter, Active
     }
 
     @Override
-    public void changeActivityAction(String key, String value, Class targetActivity) {
+    public void changeActivityAction(String[] key, String[] value, Class targetActivity) {
         if (mParentActivity != null) {
             Intent intent = new Intent(mParentActivity, targetActivity);
-            intent.putExtra(key, value);
+            for (int i = 0; i < key.length; i++) {
+                intent.putExtra(key[i], value[i]);
+            }
             startActivity(intent);
         }
     }
@@ -126,6 +130,11 @@ public class ActiveOrderFragment extends TiFragment<ActiveOrderPresenter, Active
             mEmptyInfoView.setIcon(R.drawable.ic_close_grey);
             mEmptyInfoView.setText("Gagal mengambil daftar order, silahkan tekan tombol \"ulangi\" dibawah untuk mencoba kembali ");
         }
+    }
+
+    @Override
+    public void changeFragment() {
+        ((DashboardActivity)getActivity()).changeFragment(((DashboardActivity) getActivity()).getActiveFragment(R.id.nav_cico_request));
     }
 
 

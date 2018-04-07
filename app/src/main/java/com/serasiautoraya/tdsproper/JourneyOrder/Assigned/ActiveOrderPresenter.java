@@ -8,6 +8,7 @@ import com.serasiautoraya.tdsproper.BaseAdapter.SimpleAdapterModel;
 import com.serasiautoraya.tdsproper.BaseInterface.RestCallBackInterfaceModel;
 import com.serasiautoraya.tdsproper.BaseModel.BaseResponseModel;
 import com.serasiautoraya.tdsproper.BaseModel.Model;
+import com.serasiautoraya.tdsproper.Dashboard.DashboardActivity;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperKey;
 import com.serasiautoraya.tdsproper.Helper.HelperUrl;
@@ -66,15 +67,14 @@ public class ActiveOrderPresenter extends TiPresenter<ActiveOrderView> {
         * TODO change the way to 2nd alternative, call get activity detail here -> Parse the model value to static class -> if success, change to
          * detail activity view -> initialize all view/field wtith the model from static class before
         * */
+        /*
+        * TODO uncomment this to connect API
+        * */
 
         final AssignedOrderResponseModel assignedOrderResponseModel = (AssignedOrderResponseModel) mSimpleAdapterModel.getItem(position);
 //        String orderCode = assignedOrderResponseModel.getOrderID();
         final String orderCode = assignedOrderResponseModel.getOrderID();
 //        setdummydata(orderCode);
-
-        /*
-        * TODO uncomment this to connect API
-        * */
         ActivityDetailSendModel activityDetailSendModel =
                 new ActivityDetailSendModel(
                         HelperBridge.sModelLoginResponse.getPersonalId(), orderCode, assignedOrderResponseModel.getAssignmentId());
@@ -87,24 +87,20 @@ public class ActiveOrderPresenter extends TiPresenter<ActiveOrderView> {
                 HelperBridge.sTempSelectedOrderCode = orderCode;
                 HelperBridge.sAssignedOrderResponseModel = assignedOrderResponseModel;
                 HelperBridge.isClickedFromPlanOrder = false;
-                activeOrderView.changeActivityAction(HelperKey.KEY_INTENT_ORDERCODE, HelperBridge.sActivityDetailResponseModel.getAssignmentId()+"", ActivityDetailActivity.class);
+                String[] keywords = {HelperKey.KEY_INTENT_ASSIGNMENTID, HelperKey.KEY_INTENT_ORDERCODE, HelperKey.KEY_INTENT_IS_EXPENSE};
+                String[] values = {HelperBridge.sActivityDetailResponseModel.getAssignmentId()+"", orderCode, HelperBridge.sActivityDetailResponseModel.getIsExpense()+""};
+                activeOrderView.changeActivityAction(keywords, values, ActivityDetailActivity.class);
                 activeOrderView.toggleLoading(false);
             }
 
             @Override
             public void callBackOnFail(String response) {
-                /*
-                * TODO change this!
-                * */
                 activeOrderView.showToast(response);
                 activeOrderView.toggleLoading(false);
             }
 
             @Override
             public void callBackOnError(VolleyError error) {
-                /*
-                * TODO change this!
-                * */
                 activeOrderView.showToast("ERROR: " + error.toString());
                 activeOrderView.toggleLoading(false);
             }
@@ -119,6 +115,6 @@ public class ActiveOrderPresenter extends TiPresenter<ActiveOrderView> {
                 "Pool HMS Rungkut", "Pool HMS Karawang", "14.55 WIB (Senin, 15 Mei 2017)", "-", "PIC HM Sampoerna", "Raw Material",
                 "HINO 665SX", "B 1916 TOW", "ePOD", "Pool HMS Karawang", "14.55 WIB (Senin, 15 Mei 2017)"
         );
-        getView().changeActivityAction(HelperKey.KEY_INTENT_ORDERCODE, HelperBridge.sActivityDetailResponseModel.getAssignmentId(), ActivityDetailActivity.class);
+        getView().changeActivityAction(HelperKey.KEY_INTENT_ORDERCODE, HelperBridge.sActivityDetailResponseModel.getCheckingStatus(), ActivityDetailActivity.class);
     }*/
 }

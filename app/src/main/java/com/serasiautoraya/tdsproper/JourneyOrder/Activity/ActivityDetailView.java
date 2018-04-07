@@ -60,4 +60,6 @@ public interface ActivityDetailView extends BaseViewInterface {
     void setPhoneNumber(String phoneNumber);
 
     void setDestinationDuration(boolean isTimeBased, String textDest);
+
+    void setTempFragmentTarget(int id);
 }

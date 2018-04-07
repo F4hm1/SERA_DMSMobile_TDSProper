@@ -61,6 +61,8 @@ public class AssignedFragment extends TiFragment<AssignedPresenter, AssignedView
         }
     }
 
+
+
     @Override
     public void onResume() {
         super.onResume();

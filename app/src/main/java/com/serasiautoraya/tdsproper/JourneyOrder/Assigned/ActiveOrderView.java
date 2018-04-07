@@ -10,10 +10,12 @@ public interface ActiveOrderView extends BaseViewInterface {
 
     void refreshRecyclerView();
 
-    void changeActivityAction(String key, String value, Class targetActivity);
+    void changeActivityAction(String[] key, String[] value, Class targetActivity);
 
     void toggleEmptyInfo(boolean show);
 
     void setTextEmptyInfoStatus(boolean success);
+
+    void changeFragment();
 
 }
