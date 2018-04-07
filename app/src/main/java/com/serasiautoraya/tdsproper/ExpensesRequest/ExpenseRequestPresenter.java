@@ -218,25 +218,29 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
         });
     }
 
-    public void onOrderSelected(ExpenseAvailableOrderAdapter expenseAvailableOrderAdapter) {
+    public void onOrderSelected() {
         getView().toggleLoadingSearchingOrder(true);
-        final ExpenseAvailableSendModel expenseAvailableSendModel = new ExpenseAvailableSendModel(
-                expenseAvailableOrderAdapter.getExpenseAvailableOrderResponseModel().getAssignmentId()
-        );
+
+        final ExpenseCheckingTripSendModel expenseCheckingTripSendModel =
+                new ExpenseCheckingTripSendModel(HelperBridge.sTempExpenseAssignmentId);
 
 //        final String orderCode = expenseAvailableOrderAdapter.getExpenseAvailableOrderResponseModel().getOrderCode();
-        final String orderCode = expenseAvailableOrderAdapter.getExpenseAvailableOrderResponseModel().getAssignmentId()+"";
+        final String orderCode = HelperBridge.sTempExpenseAssignmentId;
         final ExpenseRequestView expenseRequestView = getView();
-        mRestConnection.getData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.GET_EXPENSE_INFO, expenseAvailableSendModel.getHashMapType(), new RestCallBackInterfaceModel() {
+        mRestConnection.getData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.GET_EXPENSE_INFO, expenseCheckingTripSendModel.getHashMapType(), new RestCallBackInterfaceModel() {
             @Override
             public void callBackOnSuccess(BaseResponseModel response) {
                 if(response.getData().length > 0) {
                     expenseAvailableResponseModel = Model.getModelInstance(response.getData()[0], ExpenseAvailableResponseModel.class);
                     generateExpenseInputValue(expenseAvailableResponseModel);
                     selectedOrderCode = orderCode;
+                    getView().showToast(expenseAvailableResponseModel.getExpenseTypeCode() + expenseAvailableResponseModel.getExpenseTypeName());
                 }else{
                     getView().showToast("Data Expense tidak ditemukan");
                 }
+                getView().hideRequestGroupInput();
+                getView().resetAmountView();
+
                 expenseRequestView.toggleLoadingSearchingOrder(false);
             }
 

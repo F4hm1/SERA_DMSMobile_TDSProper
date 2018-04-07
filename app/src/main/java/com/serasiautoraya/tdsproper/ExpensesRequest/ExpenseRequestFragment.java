@@ -95,7 +95,8 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
         mLinAvailableGroup.setVisibility(View.GONE);
         mSvContainer.setVisibility(View.VISIBLE);
         this.resetAmountView();
-        getPresenter().loadNoActualExpense();
+        //getPresenter().loadNoActualExpense();
+        getPresenter().onOrderSelected();
     }
 
     @Override
@@ -259,7 +260,7 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 hideRequestGroupInput();
                 resetAmountView();
-                getPresenter().onOrderSelected((ExpenseAvailableOrderAdapter) adapterView.getSelectedItem());
+                //getPresenter().onOrderSelected((ExpenseAvailableOrderAdapter) adapterView.getSelectedItem());
             }
 
             @Override
@@ -310,7 +311,7 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
         mLinRequestGroup.setVisibility(View.GONE);
     }
 
-    private void resetAmountView() {
+    public void resetAmountView() {
         for (final EditText et : etList) {
             et.setText("0");
         }

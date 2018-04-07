@@ -40,4 +40,7 @@ public interface ExpenseRequestView extends BaseViewInterface, FormViewInterface
     void setTotalExpense(String total);
 
     void hideRequestGroupInput();
+
+    void resetAmountView();
+
 }
