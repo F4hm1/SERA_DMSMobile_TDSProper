@@ -104,7 +104,6 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                         }
 
                     } else {
-                        getView().showToast("Mohon lengkapi penyelesaian Biaya Trip/OLC terlebih dahulu");
                         HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
                         HelperBridge.sTempSelectedOrderCode = orderCode;
                         getView().setTempFragmentTarget(R.id.nav_expense_request);

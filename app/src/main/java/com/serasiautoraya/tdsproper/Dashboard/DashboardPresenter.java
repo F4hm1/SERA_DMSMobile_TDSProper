@@ -8,6 +8,7 @@ import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperTransactionCode;
 import com.serasiautoraya.tdsproper.Login.LoginActivity;
 import com.serasiautoraya.tdsproper.Profiling.ProfileActivity;
+import com.serasiautoraya.tdsproper.R;
 
 import net.grandcentrix.thirtyinch.TiPresenter;
 
@@ -36,13 +37,15 @@ public class DashboardPresenter extends TiPresenter<DashboardView> {
                 HelperBridge.sModelLoginResponse.getReportOLCTrip().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY),
                 HelperBridge.sModelLoginResponse.getRequestOvertime().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY),
                 HelperBridge.sModelLoginResponse.getReportOvertime().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY),
-                HelperBridge.sModelLoginResponse.getReportServiceHour().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY)
+                HelperBridge.sModelLoginResponse.getReportServiceHour().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY),
+                HelperBridge.sModelLoginResponse.getRequestExpense().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY)
         );
 //        Calendar calendar = Calendar.getInstance();
 //        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(HelperKey.SERVER_DATE_FORMAT);
 //        String dateToday = simpleDateFormat.format(calendar.getTime());
 //        if(mSharedPrefsModel.get(HelperKey.KEY_LAST_CLOCKIN, "").equalsIgnoreCase(dateToday)
 //                && !mSharedPrefsModel.get(HelperKey.KEY_LAST_FATIGUE_INTERVIEW, "").equalsIgnoreCase(dateToday)){
+        //getView().changeFragment(getView().getActiveFragment(HelperBridge.sTempFragmentTarget));
         getView().changeFragment(getView().getActiveFragment(HelperBridge.sTempFragmentTarget));
         HelperBridge.sTempFragmentTarget = 0;
         getView().setDrawerProfile(HelperBridge.sModelLoginResponse.getFullname(), HelperBridge.sModelLoginResponse.getCompany(), HelperBridge.sModelLoginResponse.getPhotoFront());

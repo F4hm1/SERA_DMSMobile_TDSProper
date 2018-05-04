@@ -1,9 +1,16 @@
 package com.serasiautoraya.tdsproper.Overtime;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
+import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputLayout;
 import android.text.Html;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -12,20 +19,28 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.serasiautoraya.tdsproper.CustomView.EmptyInfoView;
+import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.R;
 import com.serasiautoraya.tdsproper.util.HelperUtil;
+import com.serasiautoraya.tdsproper.util.TimeWebRestAPI;
 
 import net.grandcentrix.thirtyinch.TiFragment;
 
+import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -47,8 +62,13 @@ public class OvertimeRequestFragment extends TiFragment<OvertimeRequestPresenter
     EditText mEtStartTime;
     @BindView(R.id.overtime_edittext_reason)
     EditText mEtReason;
+    @BindView(R.id.textil_layout_overtime_reason)
+    TextInputLayout llOvertime;
     @BindView(R.id.overtime_btn_submit)
     Button mButtonSubmit;
+
+    /*@BindView(R.id.overtime_btn_test)
+    Button mButtonTest;*/
 
     @BindView(R.id.overtime_lin_timerange)
     LinearLayout mLinearTimeRange;
@@ -89,6 +109,7 @@ public class OvertimeRequestFragment extends TiFragment<OvertimeRequestPresenter
         mSpinnerDateChoice.setVisibility(View.GONE);
         mTvLabelType.setVisibility(View.GONE);
         mSpinnerType.setVisibility(View.GONE);
+        llOvertime.setVisibility(View.GONE);
         mLinearTimeRange.setVisibility(View.GONE);
         mEtReason.setVisibility(View.GONE);
         mButtonSubmit.setVisibility(View.GONE);
@@ -130,7 +151,12 @@ public class OvertimeRequestFragment extends TiFragment<OvertimeRequestPresenter
 
     @Override
     public void showStandardDialog(String message, String Title) {
-        HelperUtil.showSimpleAlertDialogCustomTitle(message, getContext(), Title);
+        HelperUtil.showSimpleAlertDialogFromOvertime(message, getContext(), Title, new HelperUtil.CallbackListener() {
+            @Override
+            public void clickOk(String msg) {
+                if (msg.equals(HelperBridge.sStatusOvertimeApproved)) setNoOvertime();
+            }
+        });
     }
 
     @NonNull
@@ -186,9 +212,79 @@ public class OvertimeRequestFragment extends TiFragment<OvertimeRequestPresenter
         if(getValidationForm()){
             getPresenter().onSubmitClicked(
                     mSpinnerType.getSelectedItem(),
+                    mEtStartTime.getText().toString().split("\\s")[1],
+                    mEtEndTime.getText().toString().split("\\s")[1],
                     mEtReason.getText().toString());
         }
     }
+
+
+
+
+    @Override
+    @OnClick(R.id.overtime_edittext_starttime)
+    public void onPickDateTimeStarttimeClicked(View view) {
+
+        final String dateStart = mEtStartTime.getText().toString();
+        final String dateEnd = mEtEndTime.getText().toString();
+        new TimeWebRestAPI.OvertimePickDatetime(getActivity(), dateStart, new TimeWebRestAPI.OvertimePickDatetime.OnStatusCallback() {
+            @Override
+            public void showResult(String dateUser) {
+                //DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+                //String dateUser = df.format(date);
+                try {
+                    if (TimeWebRestAPI.dateIsInBeetween(dateStart, dateEnd, dateUser) && timeIsValid(dateStart, dateEnd, dateUser) ){
+                        mEtStartTime.setText(dateUser);
+                        mEtStartTime.setTextColor(Color.BLACK);
+                        showToast("Setting waktu BERHASIL");
+                    } else {
+                        showToast("Anda tidak dapat melakukan request melebihi batas waktu");
+                        mEtStartTime.setText(startTime);
+                        mEtStartTime.setTextColor(Color.GRAY);
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).datePicker();
+
+    }
+
+    private boolean timeIsValid(String dateStart, String dateEnd, String dateUser) throws ParseException {
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+        if (!TimeWebRestAPI.getDifference(df.parse(dateStart), df.parse(dateUser)).contains("-") && !TimeWebRestAPI.getDifference(df.parse(dateUser), df.parse(dateEnd)).contains("-")) return true;
+        return false;
+    }
+
+    @Override
+    @OnClick(R.id.overtime_edittext_endtime)
+    public void onPickDateTimeEndtimeClicked(View view) {
+        final String dateStart = mEtStartTime.getText().toString();
+        final String dateEnd = mEtEndTime.getText().toString();
+        new TimeWebRestAPI.OvertimePickDatetime(getActivity(), dateEnd, new TimeWebRestAPI.OvertimePickDatetime.OnStatusCallback() {
+            @Override
+            public void showResult(String dateUser) {
+                //DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
+                //String dateUser = df.format(date);
+                try {
+                    if (TimeWebRestAPI.dateIsInBeetween(dateStart, dateEnd, dateUser) && timeIsValid(dateStart, dateEnd, dateUser) ){
+                        mEtEndTime.setText(dateUser);
+                        mEtEndTime.setTextColor(Color.BLACK);
+                        showToast("Setting waktu BERHASIL");
+                    } else {
+                        showToast("Anda tidak dapat melakukan request melebihi batas waktu");
+                        mEtEndTime.setTextColor(Color.GRAY);
+                        mEtEndTime.setText(endTime);
+                    }
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).datePicker();
+    }
+
+
+
 
     @Override
     public void initializeOvertimeDates(ArrayList<OvertimeAvailableResponseModel> arrayList) {
@@ -239,11 +335,16 @@ public class OvertimeRequestFragment extends TiFragment<OvertimeRequestPresenter
         mArrayAdapterOvertimeTypes.notifyDataSetChanged();
     }
 
+    String startTime, endTime;
+
     @Override
     public void initializeOvertimeTimes(String startTime, String endTime) {
+        this.startTime = startTime;
+        this.endTime = endTime;
         mLinearTimeRange.setVisibility(View.VISIBLE);
         mEtStartTime.setText(startTime);
         mEtEndTime.setText(endTime);
+        llOvertime.setVisibility(View.VISIBLE);
         mEtReason.setVisibility(View.VISIBLE);
         mButtonSubmit.setVisibility(View.VISIBLE);
     }
@@ -253,4 +354,5 @@ public class OvertimeRequestFragment extends TiFragment<OvertimeRequestPresenter
         mEmptyInfoView.setVisibility(View.VISIBLE);
         hideHideableView();
     }
+
 }

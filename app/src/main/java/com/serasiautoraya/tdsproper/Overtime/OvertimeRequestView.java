@@ -1,5 +1,6 @@
 package com.serasiautoraya.tdsproper.Overtime;
 
+import android.content.Context;
 import android.view.View;
 
 import com.serasiautoraya.tdsproper.BaseInterface.BaseViewInterface;
@@ -24,6 +25,10 @@ public interface OvertimeRequestView extends BaseViewInterface, FormViewInterfac
 
     void onSubmitClicked(View view);
 
+    void onPickDateTimeStarttimeClicked(View view);
+
+    void onPickDateTimeEndtimeClicked(View view);
+
     void initializeOvertimeDates(ArrayList<OvertimeAvailableResponseModel> arrayList);
 
     void initializeOvertimeTypes(ArrayList<OvertimeAvailableTypeAdapter> arrayList);
@@ -31,4 +36,5 @@ public interface OvertimeRequestView extends BaseViewInterface, FormViewInterfac
     void initializeOvertimeTimes(String startTime, String endTime);
 
     void setNoOvertime();
+
 }

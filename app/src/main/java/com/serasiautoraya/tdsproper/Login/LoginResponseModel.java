@@ -11,6 +11,14 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginResponseModel {
 
+    @SerializedName("IsVersionValidate")
+    @Expose
+    private String IsVersionValidate;
+
+    @SerializedName("RequestExpense")
+    @Expose
+    private String RequestExpense;
+
     @SerializedName("PersonalId")
     @Expose
     private String PersonalId;
@@ -168,6 +176,14 @@ public class LoginResponseModel {
     private String ReportServiceHour;
 
 
+    public String getIsVersionValidate() {
+        return IsVersionValidate;
+    }
+
+    public String getRequestExpense() {
+        return RequestExpense;
+    }
+
     public String getRequestCiCo() {
         return RequestCiCo;
     }
@@ -301,9 +317,9 @@ public class LoginResponseModel {
     }
 
     public String getTransactionToken() {
-        Log.d("LOGGING ORDER", TransactionToken);
         return TransactionToken;
     }
+
 
     public String getAttendanceCico() {
         return AttendanceCico;

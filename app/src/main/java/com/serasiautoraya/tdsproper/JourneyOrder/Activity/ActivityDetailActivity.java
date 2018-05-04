@@ -324,6 +324,11 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
         finishActivity();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        setTempFragmentTarget(R.id.nav_active_order);
+    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {

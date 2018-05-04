@@ -19,6 +19,7 @@
                 android:id="@+id/expense_lin_availablegroup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:paddingBottom="30dp"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
@@ -136,10 +137,10 @@
         </LinearLayout>
     </ScrollView>
 
-    <include
+   <!-- <include
         android:id="@+id/layout_empty_info"
         layout="@layout/single_empty_info"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" />-->
 
 </LinearLayout>

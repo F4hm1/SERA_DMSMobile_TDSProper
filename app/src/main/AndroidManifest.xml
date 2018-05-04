@@ -28,7 +28,9 @@
         </activity>
         <activity
             android:name=".Dashboard.DashboardActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
         <activity
             android:name=".JourneyOrder.Activity.ActivityDetailActivity"
             android:label="Detail Aktifitas" >
@@ -141,6 +143,11 @@
                 <!--<category android:name="android.intent.category.LAUNCHER" />-->
             <!--</intent-filter>-->
         </activity>
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="c80f2d88395b147095134af3abfac5e4ff22886b"
+            />
     </application>
 
 </manifest>

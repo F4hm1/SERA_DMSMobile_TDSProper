@@ -25,7 +25,7 @@ public interface ExpenseRequestView extends BaseViewInterface, FormViewInterface
 
     void setNoAvailableExpense();
 
-    void initializeOvertimeDates(ArrayList<ExpenseAvailableOrderAdapter> expenseAvailableOrderResponseModelList);
+    void initializeOvertimeDates(ExpenseAvailableResponseModel expenseAvailableResponseModel);
 
     void showConfirmationSuccess(String message, String title);
 
@@ -42,5 +42,8 @@ public interface ExpenseRequestView extends BaseViewInterface, FormViewInterface
     void hideRequestGroupInput();
 
     void resetAmountView();
+
+    void changeActivityAction(String[] key, String[] value, Class targetActivity);
+
 
 }

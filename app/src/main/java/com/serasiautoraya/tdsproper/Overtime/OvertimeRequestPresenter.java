@@ -1,7 +1,9 @@
 package com.serasiautoraya.tdsproper.Overtime;
 
+import android.app.DatePickerDialog;
 import android.support.annotation.NonNull;
 import android.util.Log;
+import android.widget.DatePicker;
 
 import com.android.volley.error.VolleyError;
 import com.serasiautoraya.tdsproper.BaseInterface.RestCallBackInterfaceModel;
@@ -23,6 +25,7 @@ import org.json.JSONObject;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedHashMap;
 import java.util.Locale;
@@ -178,7 +181,7 @@ public class OvertimeRequestPresenter extends TiPresenter<OvertimeRequestView> {
         });
     }
 
-    public void  onSubmitClicked(Object itemSelected, String reason){
+    public void  onSubmitClicked(Object itemSelected, String overTimeStart, String overtimeEnd, String reason){
         OvertimeAvailableTypeAdapter overtimeAvailableTypeAdapter = (OvertimeAvailableTypeAdapter) itemSelected;
         OvertimeAvailableResponseModel overtimeAvailableResponseModel = overtimeAvailableTypeAdapter.getOvertimeAvailableResponseModel();
         mOvertimeSendModel = new OvertimeSendModel(
@@ -187,8 +190,8 @@ public class OvertimeRequestPresenter extends TiPresenter<OvertimeRequestView> {
                 HelperTransactionCode.WFSTATUS_PENDING,
                 overtimeAvailableResponseModel.getOvertimeTypeCode(),
                 overtimeAvailableResponseModel.getDate(),
-                overtimeAvailableResponseModel.getOvertimeStart(),
-                overtimeAvailableResponseModel.getOvertimeEnd(),
+                overTimeStart, //overtimeAvailableResponseModel.getOvertimeStart(),
+                overtimeEnd, //overtimeAvailableResponseModel.getOvertimeEnd(),
                 reason,
                 HelperBridge.sModelLoginResponse.getPersonalId(),
                 HelperTransactionCode.SUBMIT_TYPE_REQUEST_MOBILE,
@@ -208,7 +211,7 @@ public class OvertimeRequestPresenter extends TiPresenter<OvertimeRequestView> {
             public void callBackOnSuccess(JSONObject response) {
                 try {
                     getView().toggleLoading(false);
-                    getView().showStandardDialog(response.getString("responseText"), "Berhasil");
+                    getView().showStandardDialog(response.getString("responseText"), HelperBridge.sStatusOvertimeApproved);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -246,4 +249,24 @@ public class OvertimeRequestPresenter extends TiPresenter<OvertimeRequestView> {
     public void onTypeSelected(OvertimeAvailableTypeAdapter selectedItem, int i) {
         getView().initializeOvertimeTimes(selectedItem.getOvertimeAvailableResponseModel().getOvertimeStart(), selectedItem.getOvertimeAvailableResponseModel().getOvertimeEnd());
     }
+
+    public void getCurrentDateAndTime() {
+        final SimpleDateFormat dateFormat = new SimpleDateFormat(
+                "yyyy-MM-dd HH:mm", Locale.getDefault());
+        final Calendar calendar = Calendar.getInstance();
+        DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear,
+                                  int dayOfMonth) {
+                // TODO Auto-generated method stub
+                calendar.set(Calendar.YEAR, year);
+                calendar.set(Calendar.MONTH, monthOfYear);
+                calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+            }
+
+        };
+
+    }
+
+
 }

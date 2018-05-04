@@ -10,10 +10,15 @@ import com.serasiautoraya.tdsproper.BaseModel.BaseResponseModel;
 import com.serasiautoraya.tdsproper.BaseModel.Model;
 import com.serasiautoraya.tdsproper.BaseModel.TimeRESTResponseModel;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
+import com.serasiautoraya.tdsproper.Helper.HelperKey;
 import com.serasiautoraya.tdsproper.Helper.HelperTransactionCode;
 import com.serasiautoraya.tdsproper.Helper.HelperUrl;
+import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailActivity;
+import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailResponseModel;
+import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailSendModel;
 import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.AssignedOrderResponseModel;
 import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.AssignedOrderSendModel;
+import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.PlanOrderView;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.util.HttpsTrustManager;
 
@@ -35,10 +40,9 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
     private RestConnection mRestConnection;
     private ExpenseRequestSendModel mExpenseRequestSendModel;
     ExpenseAvailableResponseModel expenseAvailableResponseModel;
-    private String selectedOrderCode;
+    private String selectedOrderCode, tempAssignmentId, tempOrderCode;
     private int curentTotalAmount = 0;
 
-    private ArrayList<ExpenseAvailableOrderAdapter> expenseAvailableOrderAdapterList;
 
     public ExpenseRequestPresenter(RestConnection restConnection) {
         this.mRestConnection = restConnection;
@@ -98,7 +102,12 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
             expenseInputList.put(typeCode[i], new ExpenseInputModel(typeCode[i], typeName[i], "0"));
         }
 
-        getView().setExpenseInputForm(expenseInputList, typeCode);
+
+        try {
+            getView().setExpenseInputForm(expenseInputList, typeCode);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
@@ -141,6 +150,46 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
         });
     }
 
+
+    public void loadDetailOrder() {
+
+        ActivityDetailSendModel activityDetailSendModel =
+                new ActivityDetailSendModel(
+                        HelperBridge.sModelLoginResponse.getPersonalId(), tempOrderCode, Integer.valueOf(tempAssignmentId));
+
+        getView().toggleLoading(true);
+        final ExpenseRequestView expenseRequestView = getView();
+        mRestConnection.getData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.GET_ORDER_ACTIVITY, activityDetailSendModel.getHashMapType(), new RestCallBackInterfaceModel() {
+            @Override
+            public void callBackOnSuccess(BaseResponseModel response) {
+                HelperBridge.sActivityDetailResponseModel = Model.getModelInstance(response.getData()[0], ActivityDetailResponseModel.class);
+                String[] keywords = {HelperKey.KEY_INTENT_ASSIGNMENTID, HelperKey.KEY_INTENT_ORDERCODE,  HelperKey.KEY_INTENT_IS_EXPENSE};
+                String[] values = {HelperBridge.sActivityDetailResponseModel.getAssignmentId()+"", tempOrderCode,  HelperBridge.sActivityDetailResponseModel.getIsExpense()+""};
+                //planOrderView.changeActivityAction(HelperKey.KEY_INTENT_ORDERCODE, HelperBridge.sActivityDetailResponseModel.getAssignmentId() + "", ActivityDetailActivity.class);
+                expenseRequestView.toggleLoading(false);
+                expenseRequestView.changeActivityAction(keywords, values, ActivityDetailActivity.class);
+            }
+
+            @Override
+            public void callBackOnFail(String response) {
+                /*
+                * TODO change this!
+                * */
+                expenseRequestView.showToast(response);
+                expenseRequestView.toggleLoading(false);
+            }
+
+            @Override
+            public void callBackOnError(VolleyError error) {
+                /*
+                * TODO change this!
+                * */
+                expenseRequestView.showToast("Terjadi Kesalahan: " + error.toString());
+                expenseRequestView.toggleLoading(false);
+            }
+        });
+    }
+
     public void onRequestSubmitted() {
         getView().toggleLoading(true);
         mRestConnection.postData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.POST_EXPENSE, mExpenseRequestSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
@@ -172,7 +221,7 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
         });
     }
 
-    public void loadAvailableExpenseData() {
+    /*public void loadAvailableExpenseData() {
         getView().toggleLoadingInitialLoad(true);
         ExpenseAvailableOrderSendModel expenseAvailableOrderSendModel = new ExpenseAvailableOrderSendModel(
                 HelperBridge.sModelLoginResponse.getPersonalId()
@@ -198,9 +247,9 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
 
             @Override
             public void callBackOnFail(String response) {
-                /*
+                *//*
                 * TODO change this!
-                * */
+                * *//*
                 expenseRequestView.setNoAvailableExpense();
                 expenseRequestView.showToast(response);
                 expenseRequestView.toggleLoadingInitialLoad(false);
@@ -208,18 +257,21 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
 
             @Override
             public void callBackOnError(VolleyError error) {
-                /*
+                *//*
                 * TODO change this!
-                * */
+                * *//*
                 expenseRequestView.setNoAvailableExpense();
                 expenseRequestView.showToast("ERROR: " + error.toString());
                 expenseRequestView.toggleLoadingInitialLoad(false);
             }
         });
-    }
+    }*/
 
     public void onOrderSelected() {
         getView().toggleLoadingSearchingOrder(true);
+
+        tempAssignmentId = HelperBridge.sTempExpenseAssignmentId;
+        tempOrderCode = HelperBridge.sTempSelectedOrderCode;
 
         final ExpenseCheckingTripSendModel expenseCheckingTripSendModel =
                 new ExpenseCheckingTripSendModel(HelperBridge.sTempExpenseAssignmentId);
@@ -234,7 +286,7 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
                     expenseAvailableResponseModel = Model.getModelInstance(response.getData()[0], ExpenseAvailableResponseModel.class);
                     generateExpenseInputValue(expenseAvailableResponseModel);
                     selectedOrderCode = orderCode;
-                    getView().showToast(expenseAvailableResponseModel.getExpenseTypeCode() + expenseAvailableResponseModel.getExpenseTypeName());
+                    expenseRequestView.initializeOvertimeDates(expenseAvailableResponseModel);
                 }else{
                     getView().showToast("Data Expense tidak ditemukan");
                 }
@@ -264,7 +316,7 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
         });
     }
 
-    public void loadNoActualExpense() {
+    /*public void loadNoActualExpense() {
         curentTotalAmount = 0;
         getView().toggleLoading(true);
         final ExpenseRequestView expenseRequestView = getView();
@@ -300,9 +352,9 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
 
             @Override
             public void callBackOnFail(String response) {
-                /*
+                *//*
                 * TODO change this!
-                * */
+                * *//*
 //                assignedView.initializeTabs(isAnyOrderActive, mSharedPrefsModel.get(HelperKey.KEY_IS_UPDATE_LOCATION_ACTIVE, false));
                 expenseRequestView.showToast(response);
                 expenseRequestView.toggleLoading(false);
@@ -310,15 +362,15 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
 
             @Override
             public void callBackOnError(VolleyError error) {
-                /*
+                *//*
                 * TODO change this!
-                * */
+                * *//*
 //                assignedView.initializeTabs(isAnyOrderActive, mSharedPrefsModel.get(HelperKey.KEY_IS_UPDATE_LOCATION_ACTIVE, false));
                 expenseRequestView.showToast("ERROR: " + error.toString());
                 expenseRequestView.toggleLoading(false);
             }
         });
-    }
+    }*/
 
     public void calculateAmount(CharSequence charSequence) {
         try {

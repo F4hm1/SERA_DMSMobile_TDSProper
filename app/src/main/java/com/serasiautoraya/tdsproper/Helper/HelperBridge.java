@@ -3,6 +3,7 @@ package com.serasiautoraya.tdsproper.Helper;
 
 import android.graphics.Bitmap;
 
+import com.serasiautoraya.tdsproper.ExpensesRequest.ExpenseCheckingResponseModel;
 import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailResponseModel;
 import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.AssignedOrderResponseModel;
 import com.serasiautoraya.tdsproper.JourneyOrder.PodSubmit.PodStatusResponseModel;
@@ -68,6 +69,8 @@ public class HelperBridge {
 //            "UNJ Jakarta"
 //    );
 
+    public static ExpenseCheckingResponseModel sExpenseCheckingAvailableResponseModel;
+
     public static PodStatusResponseModel sPodStatusResponseModel;
 
     public static String sTempSelectedOrderCode = "";
@@ -80,6 +83,8 @@ public class HelperBridge {
 
     public static int sTempFragmentTarget = 0;
 
+    public static String sStatusOvertimeApproved = "Berhasil";
+
     public static TiActivity sCurrentDetailActivity = null;
 
     public static boolean sListOrderRetrievalSuccess = true;
@@ -87,4 +92,9 @@ public class HelperBridge {
     public static int sPlanOrderPositionClicked = -1;
 
     public static boolean isClickedFromPlanOrder;
+
+    public static boolean isPlanOrderShow;
+
+    public static String sTempExpenseAssignmentId = "";
+    public static String sTempOrderId = "";
 }

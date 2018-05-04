@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.serasiautoraya.tdsproper.BaseModel.SharedPrefsModel;
+import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.R;
 import com.serasiautoraya.tdsproper.util.HelperUtil;
@@ -43,6 +44,8 @@ public class AssignedFragment extends TiFragment<AssignedPresenter, AssignedView
     @BindView(R.id.viewpager_planactive_orders)
     ViewPager mViewPager;
 
+
+    ViewPagerAdapter adapter;
     private ProgressDialog mProgressDialog;
     private Activity mParentActivity = null;
 
@@ -106,16 +109,18 @@ public class AssignedFragment extends TiFragment<AssignedPresenter, AssignedView
     }
 
     private void setupViewPager(final ViewPager viewPager) {
-        ViewPagerAdapter adapter = new ViewPagerAdapter(getChildFragmentManager());
+        adapter = new ViewPagerAdapter(getChildFragmentManager());
         adapter.addFragment(new ActiveOrderFragment(), "Order Aktif");
         adapter.addFragment(new PlanOrderFragment(), "Rencana Order");
         viewPager.setAdapter(adapter);
+        mTabLayout.setupWithViewPager(mViewPager);
     }
 
     @Override
     public void initializeTabs(boolean isAnyOrderActive, boolean isUpdateLocationActive) {
         setupViewPager(mViewPager);
-        mTabLayout.setupWithViewPager(mViewPager);
+        mViewPager.setCurrentItem(HelperBridge.isPlanOrderShow ? adapter.getCount() - 1 : adapter.getCount() - 2);
+
 
         /*
         * TODO uncomment this

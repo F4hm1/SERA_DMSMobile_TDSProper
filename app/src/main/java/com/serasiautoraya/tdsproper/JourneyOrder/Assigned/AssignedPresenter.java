@@ -100,13 +100,14 @@ public class AssignedPresenter extends TiPresenter<AssignedView> {
         HelperBridge.sActiveOrdersList = new ArrayList<>();
         HelperBridge.sPlanOutstandingOrdersList = new ArrayList<>();
         isAnyOrderActive = false;
-
+        HelperBridge.isPlanOrderShow = true;
         for (AssignedOrderResponseModel assignedOrderResponseModel :
                 assignedOrderResponseModels) {
             Log.d("ASSIGNED_ORDER", assignedOrderResponseModel.getHashMapType().toString());
             if (assignedOrderResponseModel.getStatus() == HelperTransactionCode.ASSIGNED_STATUS_ONJOURNEY_IN) {
                 HelperBridge.sActiveOrdersList.add(assignedOrderResponseModel);
                 isAnyOrderActive = true;
+                HelperBridge.isPlanOrderShow = false;
             } else if (
                     assignedOrderResponseModel.getStatus() == HelperTransactionCode.ASSIGNED_STATUS_ACK_IN
                             || assignedOrderResponseModel.getStatus() == HelperTransactionCode.ASSIGNED_STATUS_NOTACK_IN) {

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -17,6 +18,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.serasiautoraya.tdsproper.BaseModel.SharedPrefsModel;
+import com.serasiautoraya.tdsproper.BuildConfig;
 import com.serasiautoraya.tdsproper.Helper.PermissionsHelper;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.R;
@@ -135,6 +137,14 @@ public class LoginActivity extends TiActivity<LoginPresenter, LoginView> impleme
     @Override
     public void startInitializeLocation() {
         LocationServiceUtil.getLocationManager(LoginActivity.this);
+    }
+
+    @Override
+    public void goToPlayStore() {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        //intent.setData(Uri.parse("market://details?id=" + BuildConfig.APPLICATION_ID));
+        intent.setData(Uri.parse("https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID));
+        startActivity(intent);
     }
 
     @Override

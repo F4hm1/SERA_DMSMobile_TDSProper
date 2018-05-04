@@ -1,7 +1,10 @@
 package com.serasiautoraya.tdsproper.ExpensesRequest;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Editable;
@@ -53,8 +56,8 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
     @BindView(R.id.expense_lin_inputgroup)
     LinearLayout mLinInputGroup;
 
-    @BindView(R.id.expense_lin_availablegroup)
-    LinearLayout mLinAvailableGroup;
+    /*@BindView(R.id.expense_lin_availablegroup)
+    LinearLayout mLinAvailableGroup;*/
 
     @BindView(R.id.expense_spinner_available)
     Spinner mSpinnerAvailable;
@@ -62,8 +65,8 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
     @BindView(R.id.expense_btn_submit)
     Button mButtonSubmit;
 
-    @BindView(R.id.layout_empty_info)
-    EmptyInfoView mEmptyInfoView;
+    /*@BindView(R.id.layout_empty_info)
+    EmptyInfoView mEmptyInfoView;*/
 
     @BindView(R.id.expense_sv_container)
     ScrollView mSvContainer;
@@ -75,6 +78,7 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
     private ProgressDialog mProgressDialog;
     private ArrayAdapter<ExpenseAvailableOrderAdapter> mAvailableOrderAdapterArrayAdapter;
     private HashMap<String, EditText> mHashEtAmount;
+    private Activity mParentActivity = null;
 
     List<EditText> etList = new ArrayList<>();
     private Long curentTotalAmount = 0L;
@@ -88,15 +92,23 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
 
     @Override
     public void initialize() {
-        mEmptyInfoView.setIcon(R.drawable.ic_empty_expense);
+       /* mEmptyInfoView.setIcon(R.drawable.ic_empty_expense);
         mEmptyInfoView.setText("Tidak terdapat expense yang dapat diajukan");
-        mEmptyInfoView.setVisibility(View.GONE);
-        mLinRequestGroup.setVisibility(View.GONE);
-        mLinAvailableGroup.setVisibility(View.GONE);
+        mEmptyInfoView.setVisibility(View.GONE);*/
+        mLinRequestGroup.setVisibility(View.VISIBLE);
+        //mLinAvailableGroup.setVisibility(View.VISIBLE);
         mSvContainer.setVisibility(View.VISIBLE);
         this.resetAmountView();
         //getPresenter().loadNoActualExpense();
         getPresenter().onOrderSelected();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof Activity) {
+            mParentActivity = (Activity) context;
+        }
     }
 
     @Override
@@ -238,17 +250,23 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
 
     @Override
     public void setNoAvailableExpense() {
-        mSvContainer.setVisibility(View.GONE);
+        /*mSvContainer.setVisibility(View.GONE);
         mEmptyInfoView.setVisibility(View.VISIBLE);
         mLinRequestGroup.setVisibility(View.GONE);
-        mLinAvailableGroup.setVisibility(View.GONE);
+        mLinAvailableGroup.setVisibility(View.GONE);*/
+
+        mSvContainer.setVisibility(View.VISIBLE);
+        mLinRequestGroup.setVisibility(View.VISIBLE);
+       // mLinAvailableGroup.setVisibility(View.VISIBLE);
+
     }
 
     @Override
-    public void initializeOvertimeDates(ArrayList<ExpenseAvailableOrderAdapter> expenseAvailableOrderResponseModelList) {
+    public void initializeOvertimeDates(ExpenseAvailableResponseModel expenseAvailableResponseModel) {
         mSvContainer.setVisibility(View.VISIBLE);
-        mLinAvailableGroup.setVisibility(View.VISIBLE);
-        if (mAvailableOrderAdapterArrayAdapter != null) {
+        //mLinAvailableGroup.setVisibility(View.VISIBLE);
+
+        /*if (mAvailableOrderAdapterArrayAdapter != null) {
             mAvailableOrderAdapterArrayAdapter.clear();
         }
 
@@ -270,7 +288,7 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
         });
 
         mAvailableOrderAdapterArrayAdapter.setNotifyOnChange(true);
-        mAvailableOrderAdapterArrayAdapter.notifyDataSetChanged();
+        mAvailableOrderAdapterArrayAdapter.notifyDataSetChanged();*/
     }
 
     @Override
@@ -279,13 +297,13 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        initialize();
+                        getPresenter().loadDetailOrder();
                     }
                 },
                 new DialogInterface.OnDismissListener() {
                     @Override
                     public void onDismiss(DialogInterface dialog) {
-                        initialize();
+                        //getPresenter().loadDetailOrder();
                     }
                 });
     }
@@ -308,7 +326,7 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
 
     @Override
     public void hideRequestGroupInput() {
-        mLinRequestGroup.setVisibility(View.GONE);
+        //mLinRequestGroup.setVisibility(View.GONE);
     }
 
     public void resetAmountView() {
@@ -317,6 +335,18 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
         }
         curentTotalAmount = 0L;
         setTotalExpense("Rp.0");
+    }
+
+    @Override
+    public void changeActivityAction(String[] key, String[] value, Class targetActivity) {
+        if (mParentActivity != null) {
+            Intent intent = new Intent(mParentActivity, targetActivity);
+            for (int i = 0; i < key.length; i++) {
+                intent.putExtra(key[i], value[i]);
+            }
+            startActivity(intent);
+            getActivity().getSupportFragmentManager().beginTransaction().remove(this).commit();
+        }
     }
 
 }

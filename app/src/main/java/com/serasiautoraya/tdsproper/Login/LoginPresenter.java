@@ -2,8 +2,10 @@ package com.serasiautoraya.tdsproper.Login;
 
 import android.annotation.SuppressLint;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.telephony.TelephonyManager;
+import android.text.TextUtils;
 import android.util.Log;
 
 import com.android.volley.error.VolleyError;
@@ -11,6 +13,7 @@ import com.google.firebase.iid.FirebaseInstanceId;
 import com.serasiautoraya.tdsproper.BaseInterface.RestCallbackInterfaceJSON;
 import com.serasiautoraya.tdsproper.BaseModel.Model;
 import com.serasiautoraya.tdsproper.BaseModel.SharedPrefsModel;
+import com.serasiautoraya.tdsproper.BuildConfig;
 import com.serasiautoraya.tdsproper.Dashboard.DashboardActivity;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperKey;
@@ -21,6 +24,7 @@ import com.serasiautoraya.tdsproper.util.HttpsTrustManager;
 
 import net.grandcentrix.thirtyinch.TiPresenter;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -66,21 +70,38 @@ public class LoginPresenter extends TiPresenter<LoginView> {
                 tokenFCM = FirebaseInstanceId.getInstance().getToken();
             }
 
-            LoginSendModel loginSendModel = new LoginSendModel(username, password, tokenFCM, deviceID, HelperKey.APPTYPE_TRAC);
+            LoginSendModel loginSendModel = new LoginSendModel(username, password, tokenFCM, deviceID, HelperKey.APPTYPE_TRAC, BuildConfig.VERSION_CODE + "");
             getView().toggleLoading(true);
             mRestConnection.postData("", HelperUrl.POST_LOGIN, loginSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
                 @Override
                 public void callBackOnSuccess(JSONObject response) {
                     try {
-                        JSONObject jsonObject = response.getJSONArray("data").getJSONObject(0);
-                        HelperBridge.sModelLoginResponse = Model.getModelInstanceFromString(jsonObject.toString(), LoginResponseModel.class);
-                        int updateLocationInterval = Math.round(Float.valueOf(HelperBridge.sModelLoginResponse.getLocationUpdateInterval()));
-                        mSharedPrefsModel.apply(HelperKey.HAS_LOGIN, true);
-                        mSharedPrefsModel.apply(HelperKey.KEY_USERNAME, fUsername);
-                        mSharedPrefsModel.apply(HelperKey.KEY_PASSWORD, fPassword);
-                        mSharedPrefsModel.apply(HelperKey.KEY_LOCATION_UPDATE_INTERVAL, updateLocationInterval);
-                        getView().toggleLoading(false);
-                        getView().changeActivity(DashboardActivity.class);
+                        JSONArray jsonArr = response.getJSONArray("data");
+                        if (jsonArr.toString().equals("[]")){
+                            getView().toggleLoading(false);
+                            getView().showToast("Terjadi kesalahan pada saat membaca data");
+                        } else {
+                            JSONObject jsonObject = response.getJSONArray("data").getJSONObject(0);
+                            HelperBridge.sModelLoginResponse = Model.getModelInstanceFromString(jsonObject.toString(), LoginResponseModel.class);
+                        }
+                        if (!TextUtils.isEmpty(HelperBridge.sModelLoginResponse.getIsVersionValidate()) && HelperBridge.sModelLoginResponse.getIsVersionValidate().equals("1")){
+                            int updateLocationInterval = Math.round(Float.valueOf(HelperBridge.sModelLoginResponse.getLocationUpdateInterval()));
+                            mSharedPrefsModel.apply(HelperKey.HAS_LOGIN, true);
+                            mSharedPrefsModel.apply(HelperKey.KEY_USERNAME, fUsername);
+                            mSharedPrefsModel.apply(HelperKey.KEY_PASSWORD, fPassword);
+                            mSharedPrefsModel.apply(HelperKey.KEY_LOCATION_UPDATE_INTERVAL, updateLocationInterval);
+                            getView().toggleLoading(false);
+                            getView().changeActivity(DashboardActivity.class);
+                        } else {
+                            getView().toggleLoading(false);
+                            getView().showToast("Aplikasi Harus Diperbaharui, download dan Install di Playstore");
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    getView().goToPlayStore();
+                                }
+                            }, 3000);
+                        }
                     } catch (JSONException e) {
                         e.printStackTrace();
                         getView().showToast("Terjadi kesalahan pada saat membaca data");
@@ -95,6 +116,12 @@ public class LoginPresenter extends TiPresenter<LoginView> {
                 * */
                     getView().showToast(response);
                     getView().toggleLoading(false);
+                    /*new Handler().postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            getView().goToPlayStore();
+                        }
+                    }, 3000);*/
                 }
 
                 @Override

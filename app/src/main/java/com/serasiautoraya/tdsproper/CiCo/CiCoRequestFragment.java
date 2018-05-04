@@ -2,15 +2,18 @@ package com.serasiautoraya.tdsproper.CiCo;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.Html;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -146,6 +149,7 @@ public class CiCoRequestFragment extends TiFragment<CiCoRequestPresenter, CiCoRe
             }
         });
     }
+
 
     @Override
     @OnClick(R.id.btn_cico_submit)

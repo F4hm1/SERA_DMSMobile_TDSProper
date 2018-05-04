@@ -304,6 +304,26 @@ public class HelperUtil {
                     }
                 });
         alertDialog.show();
+
+    }
+
+    public static void showSimpleAlertDialogFromOvertime(String msg, Context context, final String title, final CallbackListener callback) {
+        AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setTitle(title);
+        alertDialog.setMessage(msg);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "YA",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        callback.clickOk(title);
+                    }
+                });
+        alertDialog.show();
+
+    }
+
+    public interface CallbackListener{
+        void clickOk(String msg);
     }
 
 

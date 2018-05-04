@@ -15,6 +15,7 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -27,11 +28,14 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.crashlytics.android.Crashlytics;
 import com.serasiautoraya.tdsproper.Absence.AbsenceRequestFragment;
 import com.serasiautoraya.tdsproper.BaseModel.SharedPrefsModel;
 import com.serasiautoraya.tdsproper.ChangePassword.ChangePasswordActivity;
 import com.serasiautoraya.tdsproper.CiCo.CiCoFragment;
+import com.serasiautoraya.tdsproper.CiCo.CiCoRequestFragment;
 import com.serasiautoraya.tdsproper.ExpensesRequest.ExpenseRequestFragment;
+import com.serasiautoraya.tdsproper.Helper.HelperKey;
 import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.AssignedFragment;
 import com.serasiautoraya.tdsproper.NotificatonList.NotificationListActivity;
 import com.serasiautoraya.tdsproper.OLCTrip.OLCTripFragment;
@@ -40,6 +44,7 @@ import com.serasiautoraya.tdsproper.Overtime.OvertimeRequestFragment;
 import com.serasiautoraya.tdsproper.RequestHistory.RequestHistoryFragment;
 import com.serasiautoraya.tdsproper.WsInOutHistory.WsInOutFragment;
 import com.serasiautoraya.tdsproper.R;
+import com.serasiautoraya.tdsproper.util.HelperBridge;
 import com.serasiautoraya.tdsproper.util.HelperUtil;
 import com.serasiautoraya.tdsproper.CustomListener.TextViewTouchListener;
 import com.serasiautoraya.tdsproper.util.LocationServiceUtil;
@@ -50,6 +55,7 @@ import net.grandcentrix.thirtyinch.TiActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by Randi Dwi Nandra on 27/03/2017.
@@ -73,6 +79,8 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
     private int mFragmentSelectedID;
     private View mNavHeader;
 
+    private String mExpenseStatus;
+
     NetworkChangeReceiver networkChangeReceiver;
     Snackbar snackbarNetworkChange;
 
@@ -80,6 +88,7 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Fabric.with(this, new Crashlytics());
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_dashboard);
@@ -102,6 +111,7 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
                 relNoInternet.setVisibility(View.GONE);
             }
         };
+
     }
 
     @Override
@@ -109,6 +119,8 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
         super.onPause();
         unregisterReceiver(networkChangeReceiver);
     }
+
+
 
     @Override
     protected void onResume() {
@@ -222,8 +234,9 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
                 mNavigationView.setCheckedItem(R.id.nav_order_history);
                 return orderHistoryFragment;
             default:
-                mNavigationView.setCheckedItem(R.id.nav_active_order);
-                return new AssignedFragment();
+                    mNavigationView.setCheckedItem(R.id.nav_active_order);
+                    return new AssignedFragment();
+
         }
     }
 
@@ -308,10 +321,13 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
         mDrawer.setDrawerListener(toggle);
         toggle.syncState();
 
+
         mNavigationView.setNavigationItemSelectedListener(this);
 
         mHandler = new Handler();
         mNavigationView.setCheckedItem(R.id.nav_active_order);
+
+
 
         mNavHeader = mNavigationView.getHeaderView(0);
 
@@ -370,12 +386,13 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
     }
 
     @Override
-    public void toggleMenu(boolean requestCiCo, boolean reportCiCo, boolean requestAbsence, boolean reportAbsence, boolean requestOLCTrip, boolean reportOLCTrip, boolean requestOvertime, boolean reportOvertime, boolean reportServiceHour) {
+    public void toggleMenu(boolean requestCiCo, boolean reportCiCo, boolean requestAbsence, boolean reportAbsence, boolean requestOLCTrip, boolean reportOLCTrip, boolean requestOvertime, boolean reportOvertime, boolean reportServiceHour, boolean requestExpense) {
         Menu navMenu = mNavigationView.getMenu();
         navMenu.findItem(R.id.nav_cico_request).setVisible(requestCiCo);
         navMenu.findItem(R.id.nav_absence_request).setVisible(requestAbsence);
         navMenu.findItem(R.id.nav_olctrip_request).setVisible(requestOLCTrip);
         navMenu.findItem(R.id.nav_overtime_request).setVisible(requestOvertime);
+        navMenu.findItem(R.id.nav_expense_request).setVisible(requestExpense);
 
         if (reportAbsence == false && reportCiCo == false && reportOLCTrip == false && reportOvertime == false) {
             navMenu.findItem(R.id.nav_attendance_history).setVisible(false);
@@ -385,7 +402,6 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
         /*
         * TODO delete this (expense nav only disappear for phase 1 in 1 november 2017)
         * */
-//        navMenu.findItem(R.id.nav_expense_request).setVisible(false);
     }
 
 

@@ -37,7 +37,8 @@ public interface DashboardView extends BaseViewInterface {
             boolean reportOLCTrip,
             boolean requestOvertime,
             boolean reportOvertime,
-            boolean reportServiceHour
+            boolean reportServiceHour,
+            boolean requestExpense
     );
 }
 

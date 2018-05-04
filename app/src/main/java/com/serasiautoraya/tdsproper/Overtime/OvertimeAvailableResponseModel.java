@@ -1,7 +1,12 @@
 package com.serasiautoraya.tdsproper.Overtime;
 
+import android.icu.text.SimpleDateFormat;
+
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
+import java.util.Calendar;
+import java.util.Locale;
 
 /**
  * Created by Randi Dwi Nandra on 24/03/2017.
@@ -44,6 +49,15 @@ public class OvertimeAvailableResponseModel {
     @SerializedName("OvertimeTypeName")
     @Expose
     private String OvertimeTypeName;
+
+
+    public void setOvertimeStart(String overtimeStart) {
+        OvertimeStart = overtimeStart;
+    }
+
+    public void setOvertimeEnd(String overtimeEnd) {
+        OvertimeEnd = overtimeEnd;
+    }
 
     public String getDate() {
         return Date;
@@ -100,4 +114,8 @@ public class OvertimeAvailableResponseModel {
     public String toString() {
         return this.Date;
     }
+
+
+
+
 }
