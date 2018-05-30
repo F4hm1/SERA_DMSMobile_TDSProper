@@ -23,6 +23,8 @@ import com.serasiautoraya.tdsproper.JourneyOrder.PodSubmit.PodStatusResponseMode
 import com.serasiautoraya.tdsproper.JourneyOrder.PodSubmit.PodStatusSendModel;
 import com.serasiautoraya.tdsproper.JourneyOrder.PodSubmit.PodSubmitActivity;
 import com.serasiautoraya.tdsproper.JourneyOrder.StatusUpdateSendModel;
+import com.serasiautoraya.tdsproper.OLCTrip.OLCTripCheckingStatusSendModel;
+import com.serasiautoraya.tdsproper.OLCTrip.OlcTripCheckingResponseModel;
 import com.serasiautoraya.tdsproper.R;
 import com.serasiautoraya.tdsproper.RestClient.LocationModel;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
@@ -58,7 +60,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
         getView().initialize();
     }
 
-    public void onActionClicked(final Integer assignmentId, final String orderCode, final String statusIsExpense) {
+    public void onActionClicked(final Integer assignmentId, final String orderCode, final String statusIsExpense, final String statusIsTripOLC) {
 
         if (statusIsExpense.equals("true")){
 
@@ -75,33 +77,102 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
                     if (expenseCheckingResponseModels.get(0).getCheckingStatus().equals("1")){
 
-                        final LocationModel locationModel = mRestConnection.getCurrentLocation();
-                        if (locationModel.getLongitude().equalsIgnoreCase("null")) {
-                            getView().showToast("Aplikasi sedang mengambil lokasi (pastikan gps dan peket data tersedia), harap tunggu beberapa saat kemudian silahkan coba kembali.");
-                        } else {
-                            getView().toggleLoading(true);
-                            mRestConnection.getServerTime(new TimeRestCallBackInterface() {
+                        if (statusIsTripOLC.equals("true")){
+                            //TODO: SET OLC TRIP CHECKING API
+
+                            final OLCTripCheckingStatusSendModel olcTripCheckingStatusSendModel =
+                                    new OLCTripCheckingStatusSendModel(HelperBridge.sModelLoginResponse.getPersonalId()+"", orderCode);
+
+                            mRestConnection.getOlcTripChecking(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.GET_OLC_CHECKING, olcTripCheckingStatusSendModel.getHashMapType(), new RestCallBackInterfaceModel() {
                                 @Override
-                                public void callBackOnSuccess(TimeRESTResponseModel timeRESTResponseModel, String latitude, String longitude, String address) {
-                                    String[] timeSplitServer = timeRESTResponseModel.getTime().split(" ");
-                                    String[] timeSplitActivity = HelperBridge.sAssignedOrderResponseModel.getETD().split(" ");
-                                    String dateServer = timeSplitServer[0];
-                                    String dateActivity = timeSplitActivity[0];
-                                    if (HelperUtil.isDateBeforeOrEqual(HelperUtil.getUserFormDate(dateServer), HelperUtil.getUserFormDate(dateActivity))) {
-                                        onActionDateValid();
-                                    } else {
-                                        getView().showStandardDialog("Anda hanya bisa memulai perjalanan pada hari keberangkatan", "Perhatian");
+                                public void callBackOnSuccess(BaseResponseModel response) {
+                                    List<OlcTripCheckingResponseModel> olcTripCheckingResponseModels = new ArrayList<>();
+                                    for (int i = 0; i < response.getData().length; i++) {
+                                        olcTripCheckingResponseModels.add(Model.getModelInstance(response.getData()[i], OlcTripCheckingResponseModel.class));
                                     }
-                                    getView().toggleLoading(false);
+
+                                    if (olcTripCheckingResponseModels.get(0).getCheckingStatus().equals("1")){
+                                        final LocationModel locationModel = mRestConnection.getCurrentLocation();
+                                        if (locationModel.getLongitude().equalsIgnoreCase("null")) {
+                                            getView().showToast("Aplikasi sedang mengambil lokasi (pastikan gps dan peket data tersedia), harap tunggu beberapa saat kemudian silahkan coba kembali.");
+                                        } else {
+                                            getView().toggleLoading(true);
+                                            mRestConnection.getServerTime(new TimeRestCallBackInterface() {
+                                                @Override
+                                                public void callBackOnSuccess(TimeRESTResponseModel timeRESTResponseModel, String latitude, String longitude, String address) {
+                                                    String[] timeSplitServer = timeRESTResponseModel.getTime().split(" ");
+                                                    String[] timeSplitActivity = HelperBridge.sAssignedOrderResponseModel.getETD().split(" ");
+                                                    String dateServer = timeSplitServer[0];
+                                                    String dateActivity = timeSplitActivity[0];
+                                                    if (HelperUtil.isDateBeforeOrEqual(HelperUtil.getUserFormDate(dateServer), HelperUtil.getUserFormDate(dateActivity))) {
+                                                        onActionDateValid();
+                                                    } else {
+                                                        getView().showStandardDialog("Anda hanya bisa memulai perjalanan pada hari keberangkatan", "Perhatian");
+                                                    }
+                                                    getView().toggleLoading(false);
+                                                }
+
+                                                @Override
+                                                public void callBackOnFail(String message) {
+                                                    getView().toggleLoading(false);
+                                                    getView().showStandardDialog(message, "Perhatian");
+                                                }
+                                            });
+                                        }
+
+                                    } else {
+                                        //HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
+                                        //HelperBridge.sTempSelectedOrderCode = orderCode;
+                                        getView().setTempFragmentTarget(R.id.nav_olctrip_request);
+                                    }
                                 }
 
                                 @Override
-                                public void callBackOnFail(String message) {
-                                    getView().toggleLoading(false);
-                                    getView().showStandardDialog(message, "Perhatian");
+                                public void callBackOnFail(String response) {
+                                    getView().showToast(response);
+                                }
+
+                                @Override
+                                public void callBackOnError(VolleyError error) {
+                                    getView().showToast("FAIL: " + error.toString());
                                 }
                             });
+
+                        } else {
+
+                            final LocationModel locationModel = mRestConnection.getCurrentLocation();
+                            if (locationModel.getLongitude().equalsIgnoreCase("null")) {
+                                getView().showToast("Aplikasi sedang mengambil lokasi (pastikan gps dan peket data tersedia), harap tunggu beberapa saat kemudian silahkan coba kembali.");
+                            } else {
+                                getView().toggleLoading(true);
+                                mRestConnection.getServerTime(new TimeRestCallBackInterface() {
+                                    @Override
+                                    public void callBackOnSuccess(TimeRESTResponseModel timeRESTResponseModel, String latitude, String longitude, String address) {
+                                        String[] timeSplitServer = timeRESTResponseModel.getTime().split(" ");
+                                        String[] timeSplitActivity = HelperBridge.sAssignedOrderResponseModel.getETD().split(" ");
+                                        String dateServer = timeSplitServer[0];
+                                        String dateActivity = timeSplitActivity[0];
+                                        if (HelperUtil.isDateBeforeOrEqual(HelperUtil.getUserFormDate(dateServer), HelperUtil.getUserFormDate(dateActivity))) {
+                                            onActionDateValid();
+                                        } else {
+                                            getView().showStandardDialog("Anda hanya bisa memulai perjalanan pada hari keberangkatan", "Perhatian");
+                                        }
+                                        getView().toggleLoading(false);
+                                    }
+
+                                    @Override
+                                    public void callBackOnFail(String message) {
+                                        getView().toggleLoading(false);
+                                        getView().showStandardDialog(message, "Perhatian");
+                                    }
+                                });
+                            }
+
+
+
                         }
+
+
 
                     } else {
                         HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
@@ -131,33 +202,46 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
         } else {
 
-            final LocationModel locationModel = mRestConnection.getCurrentLocation();
-            if (locationModel.getLongitude().equalsIgnoreCase("null")) {
-                getView().showToast("Aplikasi sedang mengambil lokasi (pastikan gps dan peket data tersedia), harap tunggu beberapa saat kemudian silahkan coba kembali.");
-            } else {
-                getView().toggleLoading(true);
-                mRestConnection.getServerTime(new TimeRestCallBackInterface() {
-                    @Override
-                    public void callBackOnSuccess(TimeRESTResponseModel timeRESTResponseModel, String latitude, String longitude, String address) {
-                        String[] timeSplitServer = timeRESTResponseModel.getTime().split(" ");
-                        String[] timeSplitActivity = HelperBridge.sAssignedOrderResponseModel.getETD().split(" ");
-                        String dateServer = timeSplitServer[0];
-                        String dateActivity = timeSplitActivity[0];
-                        if (HelperUtil.isDateBeforeOrEqual(HelperUtil.getUserFormDate(dateServer), HelperUtil.getUserFormDate(dateActivity))) {
-                            onActionDateValid();
-                        } else {
-                            getView().showStandardDialog("Anda hanya bisa memulai perjalanan pada hari keberangkatan", "Perhatian");
-                        }
-                        getView().toggleLoading(false);
-                    }
 
-                    @Override
-                    public void callBackOnFail(String message) {
-                        getView().toggleLoading(false);
-                        getView().showStandardDialog(message, "Perhatian");
-                    }
-                });
+            if (statusIsTripOLC.equals("true")){
+                //TODO: SET OLC TRIP CHECKING API
+                Log.e("E","error");
+
+
+            } else {
+
+                final LocationModel locationModel = mRestConnection.getCurrentLocation();
+                if (locationModel.getLongitude().equalsIgnoreCase("null")) {
+                    getView().showToast("Aplikasi sedang mengambil lokasi (pastikan gps dan peket data tersedia), harap tunggu beberapa saat kemudian silahkan coba kembali.");
+                } else {
+                    getView().toggleLoading(true);
+                    mRestConnection.getServerTime(new TimeRestCallBackInterface() {
+                        @Override
+                        public void callBackOnSuccess(TimeRESTResponseModel timeRESTResponseModel, String latitude, String longitude, String address) {
+                            String[] timeSplitServer = timeRESTResponseModel.getTime().split(" ");
+                            String[] timeSplitActivity = HelperBridge.sAssignedOrderResponseModel.getETD().split(" ");
+                            String dateServer = timeSplitServer[0];
+                            String dateActivity = timeSplitActivity[0];
+                            if (HelperUtil.isDateBeforeOrEqual(HelperUtil.getUserFormDate(dateServer), HelperUtil.getUserFormDate(dateActivity))) {
+                                onActionDateValid();
+                            } else {
+                                getView().showStandardDialog("Anda hanya bisa memulai perjalanan pada hari keberangkatan", "Perhatian");
+                            }
+                            getView().toggleLoading(false);
+                        }
+
+                        @Override
+                        public void callBackOnFail(String message) {
+                            getView().toggleLoading(false);
+                            getView().showStandardDialog(message, "Perhatian");
+                        }
+                    });
+                }
+
+
+
             }
+
 
 
         }
