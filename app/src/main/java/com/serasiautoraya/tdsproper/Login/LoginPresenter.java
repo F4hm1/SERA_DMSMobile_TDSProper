@@ -17,6 +17,7 @@ import com.serasiautoraya.tdsproper.BuildConfig;
 import com.serasiautoraya.tdsproper.Dashboard.DashboardActivity;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperKey;
+import com.serasiautoraya.tdsproper.Helper.HelperTransactionCode;
 import com.serasiautoraya.tdsproper.Helper.HelperUrl;
 import com.serasiautoraya.tdsproper.Helper.PermissionsHelper;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
@@ -72,7 +73,7 @@ public class LoginPresenter extends TiPresenter<LoginView> {
 
             LoginSendModel loginSendModel = new LoginSendModel(username, password, tokenFCM, deviceID, HelperKey.APPTYPE_TRAC, BuildConfig.VERSION_CODE + "");
             getView().toggleLoading(true);
-            mRestConnection.postData("", HelperUrl.POST_LOGIN, loginSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
+            mRestConnection.postLoginData("", HelperUrl.POST_LOGIN, loginSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
                 @Override
                 public void callBackOnSuccess(JSONObject response) {
                     try {
@@ -100,7 +101,7 @@ public class LoginPresenter extends TiPresenter<LoginView> {
                                 public void run() {
                                     getView().goToPlayStore();
                                 }
-                            }, 3000);
+                            }, 1000);
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
@@ -114,14 +115,19 @@ public class LoginPresenter extends TiPresenter<LoginView> {
                 /*
                 * TODO change this!
                 * */
-                    getView().showToast(response);
                     getView().toggleLoading(false);
-                    /*new Handler().postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            getView().goToPlayStore();
-                        }
-                    }, 3000);*/
+                    String[] msg = response.split(":");
+                    if (msg[1].equals(HelperTransactionCode.TRUE_BINARY)){
+                        getView().showToast(msg[0]);
+                    } else {
+                        getView().showToast(msg[0]);
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                getView().goToPlayStore();
+                            }
+                        }, 1000);
+                    }
                 }
 
                 @Override

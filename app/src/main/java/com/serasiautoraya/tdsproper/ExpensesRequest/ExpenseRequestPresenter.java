@@ -99,7 +99,7 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
         HashMap<String, ExpenseInputModel> expenseInputList = new HashMap<>();
 
         for (int i = 0; i < typeCode.length; i++) {
-            expenseInputList.put(typeCode[i], new ExpenseInputModel(typeCode[i], typeName[i], "0"));
+            expenseInputList.put(typeCode[i], new ExpenseInputModel(typeCode[i], typeName[i], ""));
         }
 
 
@@ -163,8 +163,8 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
             @Override
             public void callBackOnSuccess(BaseResponseModel response) {
                 HelperBridge.sActivityDetailResponseModel = Model.getModelInstance(response.getData()[0], ActivityDetailResponseModel.class);
-                String[] keywords = {HelperKey.KEY_INTENT_ASSIGNMENTID, HelperKey.KEY_INTENT_ORDERCODE,  HelperKey.KEY_INTENT_IS_EXPENSE};
-                String[] values = {HelperBridge.sActivityDetailResponseModel.getAssignmentId()+"", tempOrderCode,  HelperBridge.sActivityDetailResponseModel.getIsExpense()+""};
+                String[] keywords = {HelperKey.KEY_INTENT_ASSIGNMENTID, HelperKey.KEY_INTENT_ORDERCODE,  HelperKey.KEY_INTENT_IS_EXPENSE, HelperKey.KEY_INTENT_IS_TRIP_OLC};
+                String[] values = {HelperBridge.sActivityDetailResponseModel.getAssignmentId()+"", tempOrderCode,  HelperBridge.sActivityDetailResponseModel.getIsExpense()+"", HelperBridge.sActivityDetailResponseModel.getTripOLC()+""};
                 //planOrderView.changeActivityAction(HelperKey.KEY_INTENT_ORDERCODE, HelperBridge.sActivityDetailResponseModel.getAssignmentId() + "", ActivityDetailActivity.class);
                 expenseRequestView.toggleLoading(false);
                 expenseRequestView.changeActivityAction(keywords, values, ActivityDetailActivity.class);

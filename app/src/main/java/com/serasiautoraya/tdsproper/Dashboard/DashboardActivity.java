@@ -39,6 +39,7 @@ import com.serasiautoraya.tdsproper.Helper.HelperKey;
 import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.AssignedFragment;
 import com.serasiautoraya.tdsproper.NotificatonList.NotificationListActivity;
 import com.serasiautoraya.tdsproper.OLCTrip.OLCTripFragment;
+import com.serasiautoraya.tdsproper.OLCTripByOrder.OLCTripByOrderFragment;
 import com.serasiautoraya.tdsproper.OrderHistory.OrderHistoryFragment;
 import com.serasiautoraya.tdsproper.Overtime.OvertimeRequestFragment;
 import com.serasiautoraya.tdsproper.RequestHistory.RequestHistoryFragment;
@@ -233,6 +234,10 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
                 OrderHistoryFragment orderHistoryFragment = new OrderHistoryFragment();
                 mNavigationView.setCheckedItem(R.id.nav_order_history);
                 return orderHistoryFragment;
+            case R.id.nav_olctrip_request_from_api:
+                OLCTripByOrderFragment olcTripByOrderFragment = new OLCTripByOrderFragment();
+                //mNavigationView.setCheckedItem(R.id.nav_olctrip_request_from_api);
+                return olcTripByOrderFragment;
             default:
                     mNavigationView.setCheckedItem(R.id.nav_active_order);
                     return new AssignedFragment();
@@ -393,6 +398,7 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
         navMenu.findItem(R.id.nav_olctrip_request).setVisible(requestOLCTrip);
         navMenu.findItem(R.id.nav_overtime_request).setVisible(requestOvertime);
         navMenu.findItem(R.id.nav_expense_request).setVisible(requestExpense);
+        navMenu.findItem(R.id.nav_olctrip_request_from_api).setVisible(false);
 
         if (reportAbsence == false && reportCiCo == false && reportOLCTrip == false && reportOvertime == false) {
             navMenu.findItem(R.id.nav_attendance_history).setVisible(false);

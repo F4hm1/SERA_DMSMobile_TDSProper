@@ -108,17 +108,20 @@ public class AssignedFragment extends TiFragment<AssignedPresenter, AssignedView
         return new AssignedPresenter(new RestConnection(getContext()), new SharedPrefsModel(getContext()));
     }
 
-    private void setupViewPager(final ViewPager viewPager) {
-        adapter = new ViewPagerAdapter(getChildFragmentManager());
-        adapter.addFragment(new ActiveOrderFragment(), "Order Aktif");
-        adapter.addFragment(new PlanOrderFragment(), "Rencana Order");
-        viewPager.setAdapter(adapter);
-        mTabLayout.setupWithViewPager(mViewPager);
+    private void setupViewPager() {
+        try {
+            adapter = new ViewPagerAdapter(getChildFragmentManager());
+            adapter.addFragment(new ActiveOrderFragment(), "Order Aktif");
+            adapter.addFragment(new PlanOrderFragment(), "Rencana Order");
+            mViewPager.setAdapter(adapter);
+            mTabLayout.setupWithViewPager(mViewPager);
+        } catch (Exception e) {}
+
     }
 
     @Override
     public void initializeTabs(boolean isAnyOrderActive, boolean isUpdateLocationActive) {
-        setupViewPager(mViewPager);
+        setupViewPager();
         mViewPager.setCurrentItem(HelperBridge.isPlanOrderShow ? adapter.getCount() - 1 : adapter.getCount() - 2);
 
 

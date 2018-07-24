@@ -10,6 +10,7 @@ import android.support.annotation.NonNull;
 import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
+import android.text.method.DigitsKeyListener;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,9 +33,12 @@ import com.serasiautoraya.tdsproper.util.HelperUtil;
 
 import net.grandcentrix.thirtyinch.TiFragment;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
@@ -64,6 +68,7 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
 
     @BindView(R.id.expense_btn_submit)
     Button mButtonSubmit;
+
 
     /*@BindView(R.id.layout_empty_info)
     EmptyInfoView mEmptyInfoView;*/
@@ -101,6 +106,8 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
         this.resetAmountView();
         //getPresenter().loadNoActualExpense();
         getPresenter().onOrderSelected();
+
+
     }
 
     @Override
@@ -156,14 +163,27 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
         HashMap<String, String> expenseResult = new HashMap<>();
         for (Map.Entry<String, EditText> entry : mHashEtAmount.entrySet()) {
             String expenseCode = entry.getKey();
-            String amount = entry.getValue().getText().toString().replace(".", "");
+            String amount = entry.getValue().getText().toString().replace(",", "");
             expenseResult.put(expenseCode, amount);
         }
         getPresenter().onSubmitClicked(expenseResult);
+
+        /*HashMap<String, String> expenseResult = new HashMap<>();
+        for (Map.Entry<String, EditText> entry : mHashEtAmount.entrySet()) {
+            String expenseCode = entry.getKey();
+            String amount = entry.getValue().getText().toString();
+            if (!amount.equalsIgnoreCase("")) {
+                amount = entry.getValue().getText().toString().replace(",", "");
+            } else {
+                amount = "0";
+            }
+            expenseResult.put(expenseCode, amount);
+        }
+        getPresenter().onSubmitClicked(expenseResult);*/
     }
 
     @Override
-    public void setExpenseInputForm(HashMap<String, ExpenseInputModel> expenseInputList, String[] typeCodeList) {
+    public void setExpenseInputForm(final HashMap<String, ExpenseInputModel> expenseInputList, final String[] typeCodeList) {
         mHashEtAmount = new HashMap<>();
         if (typeCodeList.length > 0) {
             mSvContainer.setVisibility(View.VISIBLE);
@@ -178,7 +198,8 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
         for (int i = 0; i < typeCodeList.length; i++) {
             View v = LayoutInflater.from(getContext()).inflate(R.layout.single_list_expenseinput, null);
             EditText etAmount = (EditText) v.findViewById(R.id.expense_input_et);
-            etAmount.setText(expenseInputList.get(typeCodeList[i]).getAmount());
+            //etAmount.setText(expenseInputList.get(typeCodeList[i]).getAmount());
+            etAmount.setKeyListener(DigitsKeyListener.getInstance("0123456789.,"));
             etList.add(etAmount);
             TextView tvInputLabel = (TextView) v.findViewById(R.id.expense_input_label);
             tvInputLabel.setText(expenseInputList.get(typeCodeList[i]).getNameType());
@@ -197,17 +218,36 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
                             curentTotalAmount = 0L;
                             for (EditText et : etList) {
                                 try {
-                                    String strIntAble = et.getText().toString().replace(".", "");
+                                    String strIntAble = et.getText().toString();
+                                    if (!strIntAble.equalsIgnoreCase("")) {
+                                        strIntAble = et.getText().toString().replace(",", "");
+                                    } else {
+                                        strIntAble = "0";
+                                    }
                                     Long addedAmount = Long.valueOf(strIntAble);
                                     curentTotalAmount += addedAmount;
                                     String yourFormattedString = String.format("%,d", curentTotalAmount);
-                                    setTotalExpense("Rp." + yourFormattedString);
+                                    setTotalExpense("Rp. " + yourFormattedString);
                                 } catch (Exception ex) {
                                     setTotalExpense("Angka yang anda masukan salah");
                                 }
                             }
+
+                            /*curentTotalAmount = 0L;
+                            for (EditText et : etList) {
+                                try {
+                                    String strIntAble = et.getText().toString().replace(",", "");
+                                    Long addedAmount = Long.valueOf(strIntAble);
+                                    curentTotalAmount += addedAmount;
+                                    String yourFormattedString = String.format("%,d", curentTotalAmount);
+                                    setTotalExpense("Rp. " + yourFormattedString);
+                                } catch (Exception ex) {
+                                    setTotalExpense("Angka yang anda masukan salah");
+                                }
+                            }*/
                         }
                     });
+
 
             final TextWatcher textWatcher = new TextWatcher() {
                 @Override
@@ -222,8 +262,52 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
 
                 @Override
                 public void afterTextChanged(Editable editable) {
+
                     et.removeTextChangedListener(this);
+
                     try {
+                        String originalString = et.getText().toString();
+
+                        Long longval;
+                        if (originalString.contains(",")) {
+                            originalString = originalString.replaceAll(",", "");
+                        }
+                        longval = Long.parseLong(originalString);
+
+                        DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+                        formatter.applyPattern("#,###,###,###");
+                        String formattedString = formatter.format(longval);
+
+                        //setting text after format to EditText
+                        et.setText(formattedString);
+                        et.setSelection(et.getText().length());
+                    } catch (NumberFormatException nfe) {
+                        nfe.printStackTrace();
+                    }
+
+                    et.addTextChangedListener(this);
+
+
+
+
+                    /*et.removeTextChangedListener(this);
+
+                    if(isEdiging) return;
+                    isEdiging = true;
+                    String str = editable.toString().replaceAll( "[^\\d]", "" );
+                    try {
+                        double s1 = Double.parseDouble(str);
+                        NumberFormat nf2 = NumberFormat.getInstance(Locale.ENGLISH);
+                        ((DecimalFormat)nf2).applyPattern("###,###,###");
+                        editable.replace(0, editable.length(), nf2.format(s1));
+                    } catch (Exception e) {
+                        Log.d("RXTEXT", "ERROR");
+                    }
+                    isEdiging = false;
+                    et.addTextChangedListener(this);*/
+
+
+                    /*try {
                         String strIntAble = et.getText().toString().replace(".", "");
                         String yourFormattedString = String.format("%,d", Long.parseLong(strIntAble));
                         et.setText(yourFormattedString);
@@ -231,13 +315,15 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
                     } catch (Exception ex) {
                         Log.d("RXTEXT", ex.getMessage());
                     }
-                    et.addTextChangedListener(this);
+                    et.addTextChangedListener(this);*/
                 }
             };
 
             et.addTextChangedListener(textWatcher);
         }
     }
+
+    boolean isEdiging;
 
     @Override
     public void toggleLoadingInitialLoad(boolean isLoading) {
@@ -334,7 +420,7 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
             et.setText("0");
         }
         curentTotalAmount = 0L;
-        setTotalExpense("Rp.0");
+        setTotalExpense("Rp. 0");
     }
 
     @Override

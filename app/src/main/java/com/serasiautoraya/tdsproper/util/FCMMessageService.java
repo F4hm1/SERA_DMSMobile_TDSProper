@@ -2,6 +2,7 @@ package com.serasiautoraya.tdsproper.util;
 
 import android.app.AlertDialog;
 import android.app.Notification;
+import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.ContentValues;
@@ -9,10 +10,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.TaskStackBuilder;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -61,6 +64,51 @@ public class FCMMessageService extends FirebaseMessagingService {
 //        showPopUpAlert(data.get("title"));
     }
 
+
+    /*public void initChannels(Context context) {
+        if (Build.VERSION.SDK_INT < 26) {
+            return;
+        }
+        NotificationManager notificationManager =
+                (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        NotificationChannel channel = new NotificationChannel("default",
+                "Channel name",
+                NotificationManager.IMPORTANCE_DEFAULT);
+        channel.setDescription("Channel description");
+        notificationManager.createNotificationChannel(channel);
+    }*/
+
+    public void showNotificationInclOreo(Context context, String title, String body, Intent intent) {
+        NotificationManager notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+
+        int notificationId = 1;
+        String channelId = "channel-01";
+        String channelName = "Oreo";
+        int importance = NotificationManager.IMPORTANCE_HIGH;
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel mChannel = new NotificationChannel(
+                    channelId, channelName, importance);
+            notificationManager.createNotificationChannel(mChannel);
+        }
+
+        NotificationCompat.Builder mBuilder = new NotificationCompat.Builder(context, channelId) //channel id
+                .setSmallIcon(R.mipmap.ic_launcher)
+                .setContentTitle(title)
+                .setContentText(body);
+
+        TaskStackBuilder stackBuilder = TaskStackBuilder.create(context);
+        stackBuilder.addNextIntent(intent);
+        PendingIntent resultPendingIntent = stackBuilder.getPendingIntent(
+                0,
+                PendingIntent.FLAG_UPDATE_CURRENT
+        );
+        mBuilder.setContentIntent(resultPendingIntent);
+
+        notificationManager.notify(notificationId, mBuilder.build());
+    }
+
+
     public void showNotification(Map<String, String> message)
     {
         SharedPrefsModel sharedPrefsModel = new SharedPrefsModel(getApplicationContext());
@@ -76,9 +124,24 @@ public class FCMMessageService extends FirebaseMessagingService {
         int iconColor = ContextCompat.getColor(getApplicationContext(), R.color.colorPrimaryDark);
         Bitmap bitmapIcon = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logoselog);
 
+
+
+        String channelId = "channel-01";
+        String channelName = "Oreo";
+        int importance = NotificationManager.IMPORTANCE_HIGH;
+
+        NotificationManager manager =   (NotificationManager)getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel mChannel = new NotificationChannel(
+                    channelId, channelName, importance);
+            manager.createNotificationChannel(mChannel);
+        }
+
         PendingIntent pendingIntent = PendingIntent.getActivity(this,0,i,PendingIntent.FLAG_UPDATE_CURRENT);
 
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setLargeIcon(bitmapIcon)
                 .setSmallIcon(R.drawable.logoselog)
@@ -95,9 +158,13 @@ public class FCMMessageService extends FirebaseMessagingService {
                 .setContentIntent(pendingIntent)
                 .setCategory(NotificationCompat.CATEGORY_MESSAGE);
 
-        NotificationManager manager =   (NotificationManager)getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
-//        Integer index = Integer.parseInt();
+
+
         manager.notify(sharedPrefsModel.get(HelperKey.KEY_NOTIF_ID, 0),builder.build());
+
+
+//        Integer index = Integer.parseInt();
+
         sharedPrefsModel.apply(HelperKey.KEY_NOTIF_ID, sharedPrefsModel.get(HelperKey.KEY_NOTIF_ID, 0) + 1);
 
         saveToDatabase(message);

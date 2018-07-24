@@ -2,6 +2,8 @@ package com.serasiautoraya.tdsproper.util;
 
 import android.Manifest;
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
@@ -95,9 +97,23 @@ public class GPSTrackerService extends Service implements LocationListener, Goog
         getLocationManager(AppInit.getAppContext());
 
         Intent i = new Intent(this, com.serasiautoraya.tdsproper.Login.LoginActivity.class);
+
+        String channelId = "channel-02";
+        String channelName = "PermanentOrderOngoing";
+        int importance = NotificationManager.IMPORTANCE_HIGH;
+
+        NotificationManager manager =   (NotificationManager)getApplicationContext().getSystemService(Context.NOTIFICATION_SERVICE);
+
+
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel mChannel = new NotificationChannel(
+                    channelId, channelName, importance);
+            manager.createNotificationChannel(mChannel);
+        }
+
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, i, PendingIntent.FLAG_UPDATE_CURRENT);
         Bitmap bitmapIcon = BitmapFactory.decodeResource(getApplicationContext().getResources(), R.drawable.logoselog);
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setLargeIcon(bitmapIcon)
                 .setSmallIcon(R.drawable.logoselog)

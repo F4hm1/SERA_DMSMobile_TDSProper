@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="thirtyinch-rx2-0.8.0-rc3">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/b5e7471d700b0397168bb52b92a7ec5aebc3531b/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/b5e7471d700b0397168bb52b92a7ec5aebc3531b/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.grandcentrix.thirtyinch/thirtyinch-rx2/0.8.0-rc3/477ff255bc1efa0635a9447e5bc3ba38d38bfd45/thirtyinch-rx2-0.8.0-rc3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

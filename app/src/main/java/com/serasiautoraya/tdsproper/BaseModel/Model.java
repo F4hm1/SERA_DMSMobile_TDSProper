@@ -8,6 +8,7 @@ import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -25,6 +26,18 @@ public class Model {
         Log.d("TAGSSS", getJSONType());
         Map<String,String> map = gson.fromJson(getJSONType(), stringStringMap);
         return new HashMap<String, String>(map);
+    }
+
+
+    public HashMap<String,Object> getHashMapTypeList(){
+//        Gson gson = new Gson();
+        GsonBuilder gsonBuilder = new GsonBuilder();
+        gsonBuilder.serializeNulls();
+        Gson gson = gsonBuilder.create();
+        Type stringStringMap = new TypeToken<Map<String, Object>>(){}.getType();
+        Log.d("TAGSSS", getJSONType());
+        Map<String,Object> map = gson.fromJson(getJSONType(), stringStringMap);
+        return new HashMap<String, Object>(map);
     }
 
     public String getJSONType(){

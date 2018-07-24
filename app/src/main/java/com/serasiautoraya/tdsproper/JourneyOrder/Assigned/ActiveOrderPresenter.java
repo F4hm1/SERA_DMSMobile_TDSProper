@@ -8,13 +8,14 @@ import com.serasiautoraya.tdsproper.BaseAdapter.SimpleAdapterModel;
 import com.serasiautoraya.tdsproper.BaseInterface.RestCallBackInterfaceModel;
 import com.serasiautoraya.tdsproper.BaseModel.BaseResponseModel;
 import com.serasiautoraya.tdsproper.BaseModel.Model;
-import com.serasiautoraya.tdsproper.Dashboard.DashboardActivity;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperKey;
 import com.serasiautoraya.tdsproper.Helper.HelperUrl;
 import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailActivity;
 import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailResponseModel;
 import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailSendModel;
+import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.ActiveOrderView;
+import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.AssignedOrderResponseModel;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.util.HttpsTrustManager;
 
@@ -87,8 +88,8 @@ public class ActiveOrderPresenter extends TiPresenter<ActiveOrderView> {
                 HelperBridge.sTempSelectedOrderCode = orderCode;
                 HelperBridge.sAssignedOrderResponseModel = assignedOrderResponseModel;
                 HelperBridge.isClickedFromPlanOrder = false;
-                String[] keywords = {HelperKey.KEY_INTENT_ASSIGNMENTID, HelperKey.KEY_INTENT_ORDERCODE, HelperKey.KEY_INTENT_IS_EXPENSE};
-                String[] values = {HelperBridge.sActivityDetailResponseModel.getAssignmentId()+"", orderCode, HelperBridge.sActivityDetailResponseModel.getIsExpense()+""};
+                String[] keywords = {HelperKey.KEY_INTENT_ASSIGNMENTID, HelperKey.KEY_INTENT_ORDERCODE, HelperKey.KEY_INTENT_IS_EXPENSE, HelperKey.KEY_INTENT_IS_TRIP_OLC};
+                String[] values = {HelperBridge.sActivityDetailResponseModel.getAssignmentId()+"", orderCode, HelperBridge.sActivityDetailResponseModel.getIsExpense()+"", HelperBridge.sActivityDetailResponseModel.getTripOLC()+""};
                 activeOrderView.changeActivityAction(keywords, values, ActivityDetailActivity.class);
                 activeOrderView.toggleLoading(false);
             }

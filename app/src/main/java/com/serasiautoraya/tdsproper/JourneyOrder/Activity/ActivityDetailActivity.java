@@ -25,8 +25,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.serasiautoraya.tdsproper.CustomView.MapJourneyOrder;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperKey;
-import com.serasiautoraya.tdsproper.RestClient.RestConnection;
+import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailView;
 import com.serasiautoraya.tdsproper.R;
+import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.util.HelperUtil;
 
 import net.grandcentrix.thirtyinch.TiActivity;
@@ -99,7 +100,7 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
     @BindView(R.id.order_button_noaction)
     Button mTvButtonNoAction;
 
-    private String mOrderCode, mIsExpense;
+    private String mOrderCode, mIsExpense, mIsTripOLC;
     private Integer mAssignmentId;
     private ProgressDialog mProgressDialog;
     private MapJourneyOrder mMapJourneyOrder;
@@ -117,6 +118,7 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
             mAssignmentId = Integer.valueOf(bundle.getString(HelperKey.KEY_INTENT_ASSIGNMENTID));
             mOrderCode = bundle.getString(HelperKey.KEY_INTENT_ORDERCODE);
             mIsExpense = bundle.getString(HelperKey.KEY_INTENT_IS_EXPENSE);
+            mIsTripOLC = bundle.getString(HelperKey.KEY_INTENT_IS_TRIP_OLC);
         }
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map_activitydetail);
         mMapJourneyOrder = new MapJourneyOrder(mapFragment, this);
@@ -174,7 +176,7 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
     @Override
     @OnClick(R.id.order_button_action)
     public void onActionClicked(View view) {
-        getPresenter().onActionClicked(mAssignmentId, mOrderCode, mIsExpense);
+        getPresenter().onActionClicked(mAssignmentId, mOrderCode, mIsExpense, mIsTripOLC);
     }
 
     @Override

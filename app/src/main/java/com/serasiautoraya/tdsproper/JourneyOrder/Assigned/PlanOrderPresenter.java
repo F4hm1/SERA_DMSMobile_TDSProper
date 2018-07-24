@@ -18,6 +18,8 @@ import com.serasiautoraya.tdsproper.JourneyOrder.AcknowledgeOrderSendModel;
 import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailActivity;
 import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailResponseModel;
 import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailSendModel;
+import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.AssignedOrderResponseModel;
+import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.PlanOrderView;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.util.HelperUtil;
 import com.serasiautoraya.tdsproper.util.HttpsTrustManager;
@@ -224,9 +226,8 @@ public class PlanOrderPresenter extends TiPresenter<PlanOrderView> {
                 HelperBridge.sActivityDetailResponseModel = Model.getModelInstance(response.getData()[0], ActivityDetailResponseModel.class);
                 HelperBridge.sTempSelectedOrderCode = orderId;
                 HelperBridge.sAssignedOrderResponseModel = assignedOrderResponseModel;
-                String[] keywords = {HelperKey.KEY_INTENT_ASSIGNMENTID, HelperKey.KEY_INTENT_ORDERCODE,  HelperKey.KEY_INTENT_IS_EXPENSE};
-                String[] values = {HelperBridge.sActivityDetailResponseModel.getAssignmentId()+"", orderCode,  HelperBridge.sActivityDetailResponseModel.getIsExpense()+""};
-                //planOrderView.changeActivityAction(HelperKey.KEY_INTENT_ORDERCODE, HelperBridge.sActivityDetailResponseModel.getAssignmentId() + "", ActivityDetailActivity.class);
+                String[] keywords = {HelperKey.KEY_INTENT_ASSIGNMENTID, HelperKey.KEY_INTENT_ORDERCODE,  HelperKey.KEY_INTENT_IS_EXPENSE, HelperKey.KEY_INTENT_IS_TRIP_OLC};
+                String[] values = {HelperBridge.sActivityDetailResponseModel.getAssignmentId()+"", orderCode,  HelperBridge.sActivityDetailResponseModel.getIsExpense()+"", HelperBridge.sActivityDetailResponseModel.getTripOLC()+""};
                 planOrderView.changeActivityAction(keywords, values, ActivityDetailActivity.class);
                 planOrderView.toggleLoading(false);
             }

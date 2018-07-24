@@ -1,6 +1,7 @@
 <resources>
-    <!--<string name="app_name">TDS Proper Training Version</string>-->
-    <string name="app_name">TDS Proper</string>
+    <string name="app_name">TDS Proper Training Version</string>
+    <!--<string name="app_name">TDS Proper Development</string>-->
+    <!--<string name="app_name">TDS Proper</string>-->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_logout">Keluar</string>
@@ -223,11 +224,23 @@
     </string-array>
 
     <!--OLC/Trip-->
-    <string name="olctrip_label_date">Tanggal OLC Trip</string>
+    <string name="olc_code_operation">PIC001</string>
+    <string name="olc_code_customer">PIC002</string>
+    <string name="olctrip_label_trip">Trip</string>
     <string name="olctrip_label_olc">OLC</string>
+    <string name="olctrip_label_olc_cust">TRIP</string>
+    <string name="olctrip_label_date">Tanggal OLC Trip</string>
     <string name="olctrip_label_tripamount">Jumlah Trip</string>
     <string name="olctrip_label_reason">Alasan/Keterangan</string>
     <string name="olctrip_label_submit">Kirim</string>
+    <string name="olctrip_label_header">OLC/TRIP</string>
+    <string name="olctrip_label_cust">Customer</string>
+    <string name="olctrip_label_ops">Operation</string>
+    <string name="err_msg_empty_olctrip_olcamount_cust">Harap isi kolom OLC Customer</string>
+    <string name="err_msg_empty_olctrip_tripamount_cust">Harap isi kolom Trip Customer</string>
+    <string name="err_msg_empty_olctrip_olcamount_ops">Harap isi kolom OLC Operation</string>
+    <string name="err_msg_empty_olctrip_tripamount_ops">Harap isi kolom Trip Operation</string>
+
     <string name="err_msg_empty_olctrip_keterangan">Harap isi kolom alasan</string>
     <string name="err_msg_empty_olctrip_olc">Harap pilih apakah anda OLC atau tidak</string>
     <string name="err_msg_empty_olctrip_date">Harap pilih tanggal</string>

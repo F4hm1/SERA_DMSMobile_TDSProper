@@ -61,7 +61,7 @@
                             card_view:cardElevation="3dp"
                             card_view:cardCornerRadius="2dp">
 
-                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            <com.serasiautoraya.tdsproper.CustomView.SquareImageView
                                 android:id="@+id/documents_iv_capture1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                             card_view:cardElevation="3dp"
                             card_view:cardCornerRadius="2dp">
 
-                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            <com.serasiautoraya.tdsproper.CustomView.SquareImageView
                                 android:id="@+id/documents_iv_capture2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -102,7 +102,7 @@
                             card_view:cardElevation="3dp"
                             card_view:cardCornerRadius="2dp">
 
-                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            <com.serasiautoraya.tdsproper.CustomView.SquareImageView
                                 android:id="@+id/documents_iv_capture3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -172,7 +172,7 @@
                             card_view:cardElevation="3dp"
                             card_view:cardCornerRadius="2dp">
 
-                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            <com.serasiautoraya.tdsproper.CustomView.SquareImageView
                                 android:id="@+id/documents_iv_capPOD1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -193,7 +193,7 @@
                             card_view:cardElevation="3dp"
                             card_view:cardCornerRadius="2dp">
 
-                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            <com.serasiautoraya.tdsproper.CustomView.SquareImageView
                                 android:id="@+id/documents_iv_capPOD2"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -213,7 +213,7 @@
                             card_view:cardElevation="3dp"
                             card_view:cardCornerRadius="2dp">
 
-                            <com.serasiautoraya.slimobiledrivertracking_training.MVP.CustomView.SquareImageView
+                            <com.serasiautoraya.tdsproper.CustomView.SquareImageView
                                 android:id="@+id/documents_iv_capPOD3"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="thirtyinch-test-0.8.0-rc3">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.android/build-cache/e956ea9f92d9fc3c4e72d411745bac1f7ea7a9ce/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/e956ea9f92d9fc3c4e72d411745bac1f7ea7a9ce/output/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.grandcentrix.thirtyinch/thirtyinch-test/0.8.0-rc3/c89f4751b11609b280fc48ca684e2af6f3a65553/thirtyinch-test-0.8.0-rc3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

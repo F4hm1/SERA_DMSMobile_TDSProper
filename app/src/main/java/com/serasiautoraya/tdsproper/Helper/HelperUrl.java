@@ -11,25 +11,25 @@ public class HelperUrl {
      */
 
     //Production
-    public static final String OCP_APIM_KEY = "8c25a9e79a3d4ba3a1e52ccbff541bc8";
+    //public static final String OCP_APIM_KEY = "8c25a9e79a3d4ba3a1e52ccbff541bc8";
 
     //UAT Test
-    //public static final String OCP_APIM_KEY = "29d4c537dd0840eeb72dfbb99fa7e43d";
+    public static final String OCP_APIM_KEY = "29d4c537dd0840eeb72dfbb99fa7e43d";
 
     /**
      * Host
      */
-            //UAT
+            //UAT OLD
 //    private static final String HOST = "http://seradmapimanagementdev.azure-api.net/";
 
             //UAT-Test
-    //private static final String HOST = "https://drivermanagementapimdev.azure-api.net/";
+    private static final String HOST = "https://drivermanagementapimdev.azure-api.net/";
 
             //Production
-    private static final String HOST = "https://dmapimanagement.azure-api.net/";
+    //private static final String HOST = "https://dmapimanagement.azure-api.net/";
 
             //Development
-//    private static final String HOST = "http://drivermanagementapidev.azurewebsites.net/";
+    //private static final String HOST = "http://drivermanagementapidev.azurewebsites.net/";
 
     public static final String GET_SERVER_LOCALTIME = "http://api.geonames.org/timezoneJSON";
 
@@ -71,7 +71,7 @@ public class HelperUrl {
 
     public static final String DELETE_OVERTIME = HOST + "attendance/overtime/";
 
-    public static final String POST_OLCTRIP = HOST + "attendance/olctrip/";
+    public static final String POST_OLCTRIP = HOST + "attendance/olctriporder/";
 
     public static final String DELETE_OLCTRIP = HOST + "attendance/olctrip/";
 
@@ -90,6 +90,8 @@ public class HelperUrl {
     public static final String GET_EXPENSE_INFO = HOST + "order/expenseinfo/";
 
     public static final String GET_EXPENSE_CHECKING = HOST + "order/expensechecking/";
+
+    public static final String GET_OLC_CHECKING = HOST + "attendance/olccheck/";
 
     public static final String GET_QUESTIONNAIRE = HOST + "training/questionnaire/";
 

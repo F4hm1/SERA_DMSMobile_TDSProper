@@ -61,6 +61,8 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
         getView().initialize();
     }
 
+
+
     public void onActionClicked(final Integer assignmentId, final String orderCode, final String statusIsExpense, final String statusIsTripOLC) {
 
         if (statusIsExpense.equalsIgnoreCase("true")){
@@ -79,7 +81,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                     if (expenseCheckingResponseModels.get(0).getCheckingStatus().equals("1")){
 
                         //TODO: OLC 1
-                       if (statusIsTripOLC.equals("true") && !TextUtils.isEmpty(statusIsTripOLC)){
+                        if (statusIsTripOLC.equals("true") && !TextUtils.isEmpty(statusIsTripOLC)){
 
                             final OLCTripCheckingStatusSendModel olcTripCheckingStatusSendModel =
                                     new OLCTripCheckingStatusSendModel(HelperBridge.sModelLoginResponse.getPersonalId()+"", orderCode);
@@ -185,18 +187,13 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
                 @Override
                 public void callBackOnFail(String response) {
-                    /*
-                    * TODO change this!
-                    * */
+
                     getView().showToast(response);
 
                 }
 
                 @Override
                 public void callBackOnError(VolleyError error) {
-                    /*
-                    * TODO change this!
-                    * */
                     getView().showToast("FAIL: " + error.toString());
                 }
             });
@@ -307,7 +304,6 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
 //        onActionDateValid();  RENDY
     }
-
 
     private void onActionDateValid() {
         if (HelperBridge.sActivityDetailResponseModel.getIsPOD().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY)) {

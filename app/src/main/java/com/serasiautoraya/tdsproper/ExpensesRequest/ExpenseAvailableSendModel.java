@@ -10,15 +10,15 @@ import com.serasiautoraya.tdsproper.BaseModel.Model;
 
 public class ExpenseAvailableSendModel extends Model {
 
-    @SerializedName("asignmentId")
+    @SerializedName("AssignmentId")
     @Expose
-    private Integer asignmentId;
+    private Integer assignmentId;
 
     public ExpenseAvailableSendModel(Integer assignmentId) {
-        this.asignmentId = assignmentId;
+        this.assignmentId = assignmentId;
     }
 
     public Integer getAssignmentId() {
-        return asignmentId;
+        return assignmentId;
     }
 }

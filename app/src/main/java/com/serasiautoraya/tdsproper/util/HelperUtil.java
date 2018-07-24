@@ -232,7 +232,7 @@ public class HelperUtil {
             e.printStackTrace();
         }
 
-        scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
+        //scaledBitmap.compress(Bitmap.CompressFormat.JPEG, 90, out);
 
 //        scaledBitmap = null;
         return scaledBitmap;
