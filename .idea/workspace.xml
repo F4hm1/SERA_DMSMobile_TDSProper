@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+<<<<<<< Updated upstream
   <component name="AndroidLayouts">
     <shared>
       <config />
@@ -602,6 +603,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
     </list>
+=======
+  <component name="ChangeListManager">
+    <list default="true" id="cbe5ffb0-f7a0-423b-8d4c-0aea76024ba2" name="Default" comment="Login Version added" />
+>>>>>>> Stashed changes
     <ignored path="SERA_DMSMobile_TDSProper.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -615,11 +620,14 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+<<<<<<< Updated upstream
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
@@ -635,6 +643,7 @@
       <file leaf-file-name="ActivityDetailActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailActivity.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="3550">
               <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
               <folding>
@@ -649,6 +658,12 @@
                 <element signature="e#9875#9876#0" expanded="false" />
                 <element signature="e#10050#10051#0" expanded="false" />
                 <element signature="e#10114#10115#0" expanded="false" />
+=======
+            <state relative-caret-position="4075">
+              <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="false" />
+>>>>>>> Stashed changes
               </folding>
             </state>
           </provider>
@@ -695,9 +710,17 @@
       <file leaf-file-name="HelperUtil.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/util/HelperUtil.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="5050">
               <caret line="239" column="0" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
               <folding />
+=======
+            <state relative-caret-position="4550">
+              <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+              <folding>
+                <marker date="1532405603741" expanded="true" signature="10937:10945" ph="{...}" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -705,8 +728,13 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="25">
               <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+=======
+            <state relative-caret-position="400">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -715,9 +743,20 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="575">
               <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
               <folding />
+=======
+            <state relative-caret-position="500">
+              <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+              <folding>
+                <marker date="1532405603819" expanded="true" signature="113:164" ph="{...}" />
+                <marker date="1532405603819" expanded="true" signature="137:164" ph="{...}" />
+                <marker date="1532405603819" expanded="true" signature="532:538" ph="{...}" />
+                <marker date="1532405603819" expanded="true" signature="532:540" ph="{...}" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -725,8 +764,13 @@
       <file leaf-file-name="DashboardPresenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Dashboard/DashboardPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="975">
               <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+=======
+            <state relative-caret-position="950">
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -736,8 +780,15 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Assigned/ActiveOrderFragment.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="3275">
+<<<<<<< Updated upstream
               <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
               <folding />
+=======
+              <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+              <folding>
+                <marker date="1532405603663" expanded="true" signature="4449:4455" ph="{...}" />
+              </folding>
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -745,11 +796,17 @@
       <file leaf-file-name="ActiveOrderPresenter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Assigned/ActiveOrderPresenter.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="1825">
               <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding>
                 <marker date="1530528743571" expanded="true" signature="4940:5025" ph="//..." />
               </folding>
+=======
+            <state relative-caret-position="2025">
+              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+              <folding />
+>>>>>>> Stashed changes
             </state>
           </provider>
         </entry>
@@ -757,8 +814,13 @@
       <file leaf-file-name="AssignedFragment.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Assigned/AssignedFragment.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
             <state relative-caret-position="2350">
               <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+=======
+            <state relative-caret-position="2450">
+              <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+>>>>>>> Stashed changes
               <folding />
             </state>
           </provider>
@@ -766,6 +828,7 @@
       </file>
     </leaf>
   </component>
+<<<<<<< Updated upstream
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -3030,6 +3093,8 @@
       </list>
     </option>
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="ProjectFrameBounds">
     <option name="x" value="-11" />
     <option name="y" value="-11" />
@@ -3120,16 +3185,20 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
             </PATH_ELEMENT>
           </PATH>
+<<<<<<< Updated upstream
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="SERA_DMSMobile_TDSProper" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+=======
+>>>>>>> Stashed changes
         </subPane>
       </pane>
     </panes>
   </component>
+<<<<<<< Updated upstream
   <component name="PropertiesComponent">
     <property name="device.picker.selection" value="ad7496340804" />
     <property name="android.project.structure.last.selected" value="app" />
@@ -3304,6 +3373,9 @@
       </Profilers>
       <method />
     </configuration>
+=======
+  <component name="RunManager">
+>>>>>>> Stashed changes
     <configuration default="true" type="Application" factoryName="Application">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" />
@@ -3319,6 +3391,7 @@
       <envs />
       <method />
     </configuration>
+<<<<<<< Updated upstream
     <configuration default="true" type="GradleRunConfiguration" factoryName="Gradle">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -3381,6 +3454,8 @@
       <envs />
       <method />
     </configuration>
+=======
+>>>>>>> Stashed changes
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -3417,6 +3492,7 @@
       <listeners />
       <method />
     </configuration>
+<<<<<<< Updated upstream
     <configuration default="true" type="TestNGTestDiscovery" factoryName="TestNG Test Discovery" changeList="All">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -3503,6 +3579,8 @@
         <item index="0" class="java.lang.String" itemvalue="Android JUnit.ExampleUnitTest" />
       </list>
     </recent_temporary>
+=======
+>>>>>>> Stashed changes
     <configuration name="&lt;template&gt;" type="Applet" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="HTML_FILE_NAME" />
@@ -3526,6 +3604,7 @@
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TaskManager">
+<<<<<<< Updated upstream
     <task active="true" id="Default" summary="Default task">
       <changelist id="cbe5ffb0-f7a0-423b-8d4c-0aea76024ba2" name="Default" comment="" />
       <created>1522229381542</created>
@@ -3595,6 +3674,13 @@
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="1942" height="1056" extended-state="0" />
     <editor active="false" />
+=======
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-11" y="-11" width="1942" height="1056" extended-state="0" />
+    <editor active="true" />
+>>>>>>> Stashed changes
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925338" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32802936" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -3605,13 +3691,21 @@
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.80293757" sideWeight="0.49567568" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925338" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925338" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
       <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32925338" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32925338" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> Stashed changes
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26864865" sideWeight="0.4247246" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+<<<<<<< Updated upstream
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24972972" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> Stashed changes
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32972974" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3665,6 +3759,7 @@
       <collection />
     </option>
   </component>
+<<<<<<< Updated upstream
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -3676,34 +3771,53 @@
     <MESSAGE value="Login Version added" />
     <option name="LAST_COMMIT_MESSAGE" value="Login Version added" />
   </component>
+=======
+>>>>>>> Stashed changes
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailPresenter.java</url>
+<<<<<<< Updated upstream
           <line>406</line>
+=======
+          <line>183</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailPresenter.java</url>
+<<<<<<< Updated upstream
           <line>361</line>
+=======
+          <line>138</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailPresenter.java</url>
+<<<<<<< Updated upstream
           <line>352</line>
+=======
+          <line>129</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="45" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>560</line>
+=======
+          <line>280</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
           <line>570</line>
           <properties />
@@ -3712,96 +3826,160 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestPresenter.java</url>
           <line>166</line>
+=======
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestPresenter.java</url>
+          <line>163</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="146" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>176</line>
+=======
+          <line>173</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/util/TimeWebRestAPI.java</url>
+<<<<<<< Updated upstream
           <line>421</line>
+=======
+          <line>118</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="174" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/CiCo/CiCoRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>73</line>
+=======
+          <line>66</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="179" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/CiCo/CiCoRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>69</line>
+=======
+          <line>62</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="180" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/CiCo/CiCoRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>82</line>
+=======
+          <line>75</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="181" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/CiCo/CiCoRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>91</line>
+=======
+          <line>84</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="182" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>221</line>
+=======
+          <line>218</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="186" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>230</line>
+=======
+          <line>227</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="187" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestFragment.java</url>
+<<<<<<< Updated upstream
           <line>354</line>
+=======
+          <line>253</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="197" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestFragment.java</url>
+<<<<<<< Updated upstream
           <line>113</line>
+=======
+          <line>92</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="199" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestFragment.java</url>
+<<<<<<< Updated upstream
           <line>347</line>
+=======
+          <line>246</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="200" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestFragment.java</url>
+<<<<<<< Updated upstream
           <line>91</line>
+=======
+          <line>71</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="201" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>212</line>
+=======
+          <line>209</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="206" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Overtime/OvertimeRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>208</line>
+=======
+          <line>205</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="207" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Login/LoginActivity.java</url>
+<<<<<<< Updated upstream
           <line>146</line>
+=======
+          <line>136</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="211" />
         </line-breakpoint>
@@ -3813,7 +3991,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/BaseModel/Model.java</url>
+<<<<<<< Updated upstream
           <line>55</line>
+=======
+          <line>42</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="215" />
         </line-breakpoint>
@@ -3837,30 +4019,47 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>189</line>
+=======
+          <line>187</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="222" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>193</line>
+=======
+          <line>191</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="223" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>205</line>
+=======
+          <line>203</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="224" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>213</line>
+=======
+          <line>211</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="225" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>601</line>
           <properties />
           <option name="timeStamp" value="230" />
@@ -3880,34 +4079,54 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
           <line>644</line>
+=======
+          <line>283</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="234" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>656</line>
+=======
+          <line>295</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="235" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>416</line>
+=======
+          <line>227</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="240" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>427</line>
+=======
+          <line>234</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="241" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>441</line>
+=======
+          <line>248</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="242" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
           <line>396</line>
           <properties />
@@ -3952,82 +4171,135 @@
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailPresenter.java</url>
           <line>374</line>
+=======
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailPresenter.java</url>
+          <line>151</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="253" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailPresenter.java</url>
+<<<<<<< Updated upstream
           <line>377</line>
+=======
+          <line>154</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="269" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailPresenter.java</url>
+<<<<<<< Updated upstream
           <line>379</line>
+=======
+          <line>156</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="270" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailPresenter.java</url>
+<<<<<<< Updated upstream
           <line>383</line>
+=======
+          <line>160</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="271" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailPresenter.java</url>
+<<<<<<< Updated upstream
           <line>398</line>
+=======
+          <line>175</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="272" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/ExpensesRequest/ExpenseRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>106</line>
+=======
+          <line>96</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="273" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/ExpensesRequest/ExpenseRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>108</line>
+=======
+          <line>98</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="274" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/ExpensesRequest/ExpenseRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>101</line>
+=======
+          <line>91</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="275" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/ExpensesRequest/ExpenseRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>286</line>
+=======
+          <line>229</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="280" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/ExpensesRequest/ExpenseRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>292</line>
+=======
+          <line>235</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="281" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/ExpensesRequest/ExpenseRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>303</line>
+=======
+          <line>246</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="282" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/ExpensesRequest/ExpenseRequestPresenter.java</url>
+<<<<<<< Updated upstream
           <line>312</line>
+=======
+          <line>255</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="283" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailPresenter.java</url>
+<<<<<<< Updated upstream
           <line>340</line>
+=======
+          <line>117</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="288" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
           <line>311</line>
           <properties />
@@ -4046,6 +4318,8 @@
           <option name="timeStamp" value="295" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+=======
+>>>>>>> Stashed changes
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/OLCTripByOrder/OLCTripByOrderPresenter.java</url>
           <line>87</line>
           <properties />
@@ -4095,19 +4369,31 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailActivity.java</url>
+<<<<<<< Updated upstream
           <line>178</line>
+=======
+          <line>172</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="310" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>648</line>
+=======
+          <line>287</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="318" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/RestClient/RestConnection.java</url>
+<<<<<<< Updated upstream
           <line>647</line>
+=======
+          <line>286</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="319" />
         </line-breakpoint>
@@ -4125,17 +4411,24 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Login/LoginPresenter.java</url>
+<<<<<<< Updated upstream
           <line>118</line>
+=======
+          <line>105</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="323" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+<<<<<<< Updated upstream
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Login/LoginPresenter.java</url>
           <line>119</line>
           <properties />
           <option name="timeStamp" value="324" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+=======
+>>>>>>> Stashed changes
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/activity/LoginActivity.java</url>
           <line>67</line>
           <properties />
@@ -4143,61 +4436,101 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Dashboard/DashboardPresenter.java</url>
+<<<<<<< Updated upstream
           <line>48</line>
+=======
+          <line>45</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="326" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Dashboard/DashboardPresenter.java</url>
+<<<<<<< Updated upstream
           <line>49</line>
+=======
+          <line>46</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="327" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Dashboard/DashboardActivity.java</url>
+<<<<<<< Updated upstream
           <line>237</line>
+=======
+          <line>219</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="328" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Dashboard/DashboardActivity.java</url>
+<<<<<<< Updated upstream
           <line>201</line>
+=======
+          <line>188</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="330" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Assigned/AssignedFragment.java</url>
+<<<<<<< Updated upstream
           <line>124</line>
+=======
+          <line>115</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="335" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Assigned/ActiveOrderFragment.java</url>
+<<<<<<< Updated upstream
           <line>57</line>
+=======
+          <line>55</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="343" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Assigned/ActiveOrderFragment.java</url>
+<<<<<<< Updated upstream
           <line>162</line>
+=======
+          <line>153</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="344" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Assigned/ActiveOrderPresenter.java</url>
+<<<<<<< Updated upstream
           <line>92</line>
+=======
+          <line>95</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="345" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailActivity.java</url>
+<<<<<<< Updated upstream
           <line>115</line>
+=======
+          <line>109</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="346" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Dashboard/DashboardActivity.java</url>
+<<<<<<< Updated upstream
           <line>241</line>
+=======
+          <line>223</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="347" />
         </line-breakpoint>
@@ -4293,7 +4626,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/util/HelperUtil.java</url>
+<<<<<<< Updated upstream
           <line>237</line>
+=======
+          <line>217</line>
+>>>>>>> Stashed changes
           <properties />
           <option name="timeStamp" value="366" />
         </line-breakpoint>
@@ -4339,12 +4676,15 @@
           <properties />
           <option name="timeStamp" value="373" />
         </line-breakpoint>
+<<<<<<< Updated upstream
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/util/HelperUtil.java</url>
           <line>234</line>
           <properties />
           <option name="timeStamp" value="374" />
         </line-breakpoint>
+=======
+>>>>>>> Stashed changes
       </breakpoints>
       <option name="time" value="375" />
     </breakpoint-manager>
@@ -4489,8 +4829,13 @@
         <state relative-caret-position="272">
           <caret line="133" column="50" selection-start-line="133" selection-start-column="50" selection-end-line="133" selection-end-column="50" />
           <folding>
+<<<<<<< Updated upstream
             <element signature="e#4463#4464#0" expanded="false" />
             <element signature="e#4534#4535#0" expanded="false" />
+=======
+            <element signature="e#4390#4391#0" expanded="false" />
+            <element signature="e#4461#4462#0" expanded="false" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
@@ -4674,16 +5019,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/Dashboard/DashboardPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="975">
           <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+=======
+        <state relative-caret-position="950">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Assigned/AssignedFragment.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="2350">
           <caret line="124" column="0" selection-start-line="124" selection-start-column="0" selection-end-line="124" selection-end-column="0" />
+=======
+        <state relative-caret-position="2450">
+          <caret line="115" column="0" selection-start-line="115" selection-start-column="0" selection-end-line="115" selection-end-column="0" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>
@@ -4691,23 +5046,37 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Assigned/ActiveOrderFragment.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3275">
+<<<<<<< Updated upstream
           <caret line="162" column="0" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
           <folding />
+=======
+          <caret line="153" column="0" selection-start-line="153" selection-start-column="0" selection-end-line="153" selection-end-column="0" />
+          <folding>
+            <marker date="1532405603663" expanded="true" signature="4449:4455" ph="{...}" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Assigned/ActiveOrderPresenter.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="1825">
           <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding>
             <marker date="1530528743571" expanded="true" signature="4940:5025" ph="//..." />
           </folding>
+=======
+        <state relative-caret-position="2025">
+          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+          <folding />
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/JourneyOrder/Activity/ActivityDetailActivity.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="3550">
           <caret line="178" column="0" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
           <folding>
@@ -4722,6 +5091,12 @@
             <element signature="e#9875#9876#0" expanded="false" />
             <element signature="e#10050#10051#0" expanded="false" />
             <element signature="e#10114#10115#0" expanded="false" />
+=======
+        <state relative-caret-position="4075">
+          <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="false" />
+>>>>>>> Stashed changes
           </folding>
         </state>
       </provider>
@@ -4762,24 +5137,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/serasiautoraya/tdsproper/util/HelperUtil.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="5050">
           <caret line="239" column="0" selection-start-line="239" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
           <folding />
+=======
+        <state relative-caret-position="4550">
+          <caret line="219" column="0" selection-start-line="219" selection-start-column="0" selection-end-line="219" selection-end-column="0" />
+          <folding>
+            <marker date="1532405603741" expanded="true" signature="10937:10945" ph="{...}" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="575">
           <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
           <folding />
+=======
+        <state relative-caret-position="500">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding>
+            <marker date="1532405603819" expanded="true" signature="113:164" ph="{...}" />
+            <marker date="1532405603819" expanded="true" signature="137:164" ph="{...}" />
+            <marker date="1532405603819" expanded="true" signature="532:538" ph="{...}" />
+            <marker date="1532405603819" expanded="true" signature="532:540" ph="{...}" />
+          </folding>
+>>>>>>> Stashed changes
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< Updated upstream
         <state relative-caret-position="25">
           <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
+=======
+        <state relative-caret-position="400">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+>>>>>>> Stashed changes
           <folding />
         </state>
       </provider>

@@ -5,6 +5,8 @@
       <root url="jar://$USER_HOME$/.android/build-cache/6dc5d04c0a4fd724087c2808aaee99b7cd3e69a0/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.android.support/recyclerview-v7/26.0.2/adff3e0e4504af242a5d9ab1d720f1feefb433f9/recyclerview-v7-26.0.2-sources.jar!/" />
+    </SOURCES>
   </library>
 </component>
