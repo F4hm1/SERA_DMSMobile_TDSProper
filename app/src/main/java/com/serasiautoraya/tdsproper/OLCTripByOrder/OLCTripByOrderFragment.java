@@ -16,6 +16,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.serasiautoraya.tdsproper.CustomDialog.DatePickerToEditTextDialog;
@@ -50,6 +51,12 @@ public class OLCTripByOrderFragment extends TiFragment<OLCTripByOrderPresenter, 
     EditText mEtTripAmountOps;
     @BindView(R.id.olctrip_btn_submit)
     Button mButtonSubmit;
+
+    @BindView(R.id.textview_desc_cust)
+    TextView tvDescCust;
+    @BindView(R.id.textview_desc_ops)
+    TextView tvDescOps;
+
 
     private DatePickerToEditTextDialog mDatePickerToEditTextDialog;
     private ProgressDialog mProgressDialog;

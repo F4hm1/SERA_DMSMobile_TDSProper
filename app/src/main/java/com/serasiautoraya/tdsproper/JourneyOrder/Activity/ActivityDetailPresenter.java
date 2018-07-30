@@ -348,7 +348,8 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                                 "",
                                 "",
                                 HelperBridge.sActivityDetailResponseModel.getJourneyId() + "",
-                                timeRESTResponseModel.getTime()
+                                timeRESTResponseModel.getTime(),
+                                String.valueOf(HelperBridge.sActivityDetailResponseModel.getTripOLC() ? 1 : 0)
                         );
                         getView().toggleLoading(false);
                         getView().showConfirmationDialog("Perhatian", HelperBridge.sActivityDetailResponseModel.getActivityName());

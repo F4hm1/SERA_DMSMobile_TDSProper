@@ -273,7 +273,8 @@ public class DocumentCapturePresenter extends TiPresenter<DocumentCaptureView> {
                                 mBitmapSignature == null ? "" : HelperUtil.encodeTobase64(mBitmapSignature),
                                 pODReason,
                                 HelperBridge.sActivityDetailResponseModel.getJourneyId() + "",
-                                timeRESTResponseModel.getTime()
+                                timeRESTResponseModel.getTime(),
+                                String.valueOf(HelperBridge.sActivityDetailResponseModel.getTripOLC() ? 1 : 0)
                         );
                         documentCaptureView.toggleLoading(false);
                         documentCaptureView.showConfirmationDialog(HelperBridge.sActivityDetailResponseModel.getActivityName());

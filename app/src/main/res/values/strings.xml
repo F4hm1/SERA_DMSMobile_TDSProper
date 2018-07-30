@@ -144,6 +144,11 @@
     <string name="cico_notes_1">Clock In adalah waktu bapak berada di pool untuk siap bekerja</string>
     <string name="cico_notes_2">Clock Out adalah waktu bapak berada di pool untuk selesai bekerja atau waktu pulang</string>
 
+    <!-- Klaim -->
+    <string name="klaim_description_customer">(Pengajuan OLC/TRIP <b>didalam</b> pelayanan Customer)</string>
+    <string name="klaim_description_operation">(Pengajuan OLC/TRIP <b>diluar</b> pelayanan Customer)</string>
+
+
     <!--Absence-->
     <string name="absence_label_startdate">Tanggal Mulai</string>
     <string name="absence_label_enddate">Tanggal Selesai</string>

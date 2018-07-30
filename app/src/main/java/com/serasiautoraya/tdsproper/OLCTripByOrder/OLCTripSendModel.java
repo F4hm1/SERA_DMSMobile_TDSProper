@@ -3,6 +3,7 @@ package com.serasiautoraya.tdsproper.OLCTripByOrder;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 import com.serasiautoraya.tdsproper.BaseModel.Model;
+import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 
 import java.util.List;
 
@@ -78,12 +79,20 @@ public class OLCTripSendModel extends Model {
     @Expose
     private String PassengerName;
 
+    @SerializedName("OLCMobileTimeStamp")
+    @Expose
+    private String OLCMobileTimeStamp;
+
+    @SerializedName("OLCMobileTimeStampUTC")
+    @Expose
+    private String OLCMobileTimeStampUTC;
+
 
     /*@SerializedName("Reason")
     @Expose
     private String Reason;*/
 
-    public OLCTripSendModel(String personalId, String personalCode, String WFStatus, String orderCode, List<OlcTripModel> listOfActualOLC, String ETA, String ETD, String date, String addBy, String submitType, String emailCustomer, String personalApprovalId, String personalApprovalEmail, String personalCoordinatorId, String personalCoordinatorEmail, String passengerName) {
+    public OLCTripSendModel(String personalId, String personalCode, String WFStatus, String orderCode, List<OlcTripModel> listOfActualOLC, String ETA, String ETD, String date, String addBy, String submitType, String emailCustomer, String personalApprovalId, String personalApprovalEmail, String personalCoordinatorId, String personalCoordinatorEmail, String passengerName, String olcMobileTime, String localToUTC) {
         PersonalId = personalId;
         PersonalCode = personalCode;
         this.WFStatus = WFStatus;
@@ -100,6 +109,17 @@ public class OLCTripSendModel extends Model {
         PersonalCoordinatorId = personalCoordinatorId;
         PersonalCoordinatorEmail = personalCoordinatorEmail;
         PassengerName = passengerName;
+        OLCMobileTimeStamp = olcMobileTime;
+        OLCMobileTimeStampUTC = localToUTC;
+    }
+
+
+    public String getOLCMobileTimeStampUTC() {
+        return OLCMobileTimeStampUTC;
+    }
+
+    public String getOLCMobileTimeStamp() {
+        return OLCMobileTimeStamp;
     }
 
     public String getOLCTripDate() {
