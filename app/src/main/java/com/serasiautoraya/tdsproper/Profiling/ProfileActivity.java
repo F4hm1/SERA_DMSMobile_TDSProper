@@ -41,8 +41,8 @@ public class ProfileActivity extends TiActivity<ProfilePresenter, ProfileView> i
     @BindView(R.id.text_profile_fullname)
     TextView mTvProfileFullname;
     //        @BindView(R.id.text_profile_training) TextView mTvProfileTraining;
-    @BindView(R.id.text_profile_usercostumer)
-    TextView mTvProfileUsercostumer;
+    /*@BindView(R.id.text_profile_usercostumer)
+    TextView mTvProfileUsercostumer;*/
     @BindView(R.id.text_profile_doo)
     TextView mTvProfileDoo;
     @BindView(R.id.text_profile_ktpexp)
@@ -145,7 +145,7 @@ public class ProfileActivity extends TiActivity<ProfilePresenter, ProfileView> i
         mTvProfileNrp.setKeyListener(null);
         mTvProfileFullname.setKeyListener(null);
 //        mTvProfileTraining.setKeyListener(null);
-        mTvProfileUsercostumer.setKeyListener(null);
+       // mTvProfileUsercostumer.setKeyListener(null);
         mTvProfileDoo.setKeyListener(null);
         mTvProfileKTPExp.setKeyListener(null);
         mTvProfileSIMExp.setKeyListener(null);
@@ -161,7 +161,7 @@ public class ProfileActivity extends TiActivity<ProfilePresenter, ProfileView> i
         mTvProfilePoolNameFp.setText(poolNameFp);
         mTvProfileNrp.setText(nrp);
         mTvProfileFullname.setText(fullname);
-        mTvProfileUsercostumer.setText(userCostumer);
+      //  mTvProfileUsercostumer.setText(userCostumer);
         mTvProfileDoo.setText(doo);
         mTvProfileKTPExp.setText(kTPExp);
         mTvProfileSIMExp.setText(sIMExp);
