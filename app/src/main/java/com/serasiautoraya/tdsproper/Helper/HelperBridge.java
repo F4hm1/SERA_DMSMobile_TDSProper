@@ -36,6 +36,8 @@ public class HelperBridge {
 
     public static Bitmap sBitmapSignature = null;
 
+    public static boolean sAutoProcessActivity = false;
+
     public static ActivityDetailResponseModel sActivityDetailResponseModel;
 
 //    public static ActivityDetailResponseModel sActivityDetailResponseModel = new ActivityDetailResponseModel(

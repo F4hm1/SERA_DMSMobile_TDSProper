@@ -32,6 +32,8 @@ import com.serasiautoraya.tdsproper.util.HelperUtil;
 
 import net.grandcentrix.thirtyinch.TiActivity;
 
+import java.util.HashMap;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -106,6 +108,8 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
     private MapJourneyOrder mMapJourneyOrder;
     private String mPhoneNumber = "";
 
+    Bundle bundle;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -113,7 +117,7 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_actionactivity);
         ButterKnife.bind(this);
-        Bundle bundle = getIntent().getExtras();
+        bundle = getIntent().getExtras();
         if (bundle != null) {
             mAssignmentId = Integer.valueOf(bundle.getString(HelperKey.KEY_INTENT_ASSIGNMENTID));
             mOrderCode = bundle.getString(HelperKey.KEY_INTENT_ORDERCODE);
@@ -126,7 +130,7 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
 
     @Override
     public void initialize() {
-        getPresenter().loadDetailOrderData(mOrderCode);
+        getPresenter().loadDetailOrderData(mOrderCode, bundle);
     }
 
     @Override

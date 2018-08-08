@@ -1,5 +1,6 @@
 package com.serasiautoraya.tdsproper.JourneyOrder.Activity;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
 import android.util.Log;
@@ -412,7 +413,17 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
         });
     }
 
-    public void loadDetailOrderData(final String orderCode) {
+
+    private String mAssignmentId, mOrderCode, mIsExpense, mIsTripOLC;
+
+    public void loadDetailOrderData(final String orderCode, Bundle data) {
+
+        if (data != null) {
+            mAssignmentId = data.getString(HelperKey.KEY_INTENT_ASSIGNMENTID);
+            mOrderCode = data.getString(HelperKey.KEY_INTENT_ORDERCODE);
+            mIsExpense = data.getString(HelperKey.KEY_INTENT_IS_EXPENSE);
+            mIsTripOLC = data.getString(HelperKey.KEY_INTENT_IS_TRIP_OLC);
+        }
 
         /*
         * TODO change this lines code below
@@ -596,6 +607,8 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                         HelperBridge.sAssignedOrderResponseModel.getRentDuration() + " " + HelperBridge.sAssignedOrderResponseModel.getUom() :
                         HelperBridge.sAssignedOrderResponseModel.getDestination()
         );
+
+        if (HelperBridge.sAutoProcessActivity) onActionClicked(Integer.parseInt(mAssignmentId), mOrderCode, mIsExpense, mIsTripOLC);
     }
 
     private void setMapRoute(double fromLat, double fromLng, String fromAddress) {

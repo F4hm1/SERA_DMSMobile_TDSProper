@@ -207,6 +207,7 @@ public class OLCTripByOrderPresenter extends TiPresenter<OLCTripByOrderView> {
 
         getView().toggleLoading(true);
         final OLCTripByOrderView olcTripByOrderView = getView();
+        Log.e("POST PARAMS OLC", activityDetailSendModel.getHashMapType().toString());
         mRestConnection.getData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.GET_ORDER_ACTIVITY, activityDetailSendModel.getHashMapType(), new RestCallBackInterfaceModel() {
             @Override
             public void callBackOnSuccess(BaseResponseModel response) {

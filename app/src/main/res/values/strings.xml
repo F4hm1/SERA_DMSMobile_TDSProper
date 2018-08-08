@@ -50,7 +50,7 @@
     <string name="title_overtime_request">Pengajuan Lembur</string>
     <string name="title_expense_request">Penyelesaian Biaya</string>
     <string name="title_ws_history">Riwayat Kehadiran</string>
-    <string name="title_history_attendance">Riwayat Pengajuan Kehadiran</string>
+    <string name="title_history_attendance">Riwayat Pengajuan</string>
     <string name="title_ganti_password">Ganti Kata Sandi</string>
     <string name="title_notification_list">Riwayat Notifikasi</string>
     <string name="title_logout">Keluar</string>
