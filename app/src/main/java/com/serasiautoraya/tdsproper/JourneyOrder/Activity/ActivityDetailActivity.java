@@ -250,6 +250,16 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
     }
 
     @Override
+    public void showOLCDialog(String message, String title) {
+        HelperUtil.showOLCAlertDialogCustomTitle(message, ActivityDetailActivity.this, title, new HelperUtil.OlcCallback() {
+            @Override
+            public void OK() {
+                getPresenter().showOLC(mOrderCode);
+            }
+        });
+    }
+
+    @Override
     public void finishActivity() {
         this.finish();
     }

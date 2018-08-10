@@ -47,6 +47,8 @@ public interface ActivityDetailView extends BaseViewInterface {
 
     void showConfirmationDialog(String title, String activity);
 
+    void showOLCDialog(String title, String activity);
+
     void finishActivity();
 
     void showConfirmationSuccess(String message, String title);

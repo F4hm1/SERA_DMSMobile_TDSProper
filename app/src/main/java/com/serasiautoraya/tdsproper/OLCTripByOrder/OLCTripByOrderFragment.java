@@ -189,8 +189,8 @@ public class OLCTripByOrderFragment extends TiFragment<OLCTripByOrderPresenter, 
         } catch (Exception e){}
         mSpinnerOpsOLC.setAdapter(adapter);
         mSpinnerCustOLC.setAdapter(adapter);
-        mSpinnerOpsOLC.getItemAtPosition(olcValue.size() - 1 );
-        mSpinnerCustOLC.getItemAtPosition(olcValue.size() - 1 );
+        mSpinnerOpsOLC.setSelection(olcValue.size() - 1 );
+        mSpinnerCustOLC.setSelection(olcValue.size() - 1 );
     }
 
     @Override

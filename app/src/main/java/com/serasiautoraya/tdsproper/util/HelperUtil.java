@@ -307,6 +307,26 @@ public class HelperUtil {
 
     }
 
+    public static void showOLCAlertDialogCustomTitle(String msg, Context context, String title, final OlcCallback callback) {
+        AlertDialog alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setTitle(title);
+        alertDialog.setMessage(msg);
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "YA",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        callback.OK();
+                        dialog.dismiss();
+                    }
+                });
+        alertDialog.show();
+
+    }
+
+
+    public interface OlcCallback {
+        void OK();
+    }
+
     public static void showSimpleAlertDialogFromOvertime(String msg, Context context, final String title, final CallbackListener callback) {
         AlertDialog alertDialog = new AlertDialog.Builder(context).create();
         alertDialog.setTitle(title);

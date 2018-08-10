@@ -50,6 +50,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
     private RestConnection mRestConnection;
     private ActivityDetailResponseModel mActivityDetailResponseModel;
     private StatusUpdateSendModel mStatusUpdateSendModel;
+    private boolean sAutoDirectExpense;
 
     public ActivityDetailPresenter(RestConnection restConnection) {
         this.mRestConnection = restConnection;
@@ -125,9 +126,8 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                                         }
 
                                     } else {
-                                        //HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
-                                        HelperBridge.sTempSelectedOrderCode = orderCode;
-                                        getView().setTempFragmentTarget(R.id.nav_olctrip_request_from_api);
+                                        sAutoDirectExpense = false;
+                                        getView().showOLCDialog("Anda belum mengisi OLC/TRIP, setelah ini anda akan diarahkan ke halaman OLC/TRIP.\nMohon segera lengkapi pengisian OLC/TRIP.", "Perhatian");
                                     }
                                 }
 
@@ -179,9 +179,11 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
 
                     } else {
-                        HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
+                        sAutoDirectExpense = true;
+                        getView().showOLCDialog("Anda belum mengisi ExpenseRequest, setelah ini anda akan diarahkan ke halaman ExpenseRequest.\nMohon segera lengkapi pengisian ExpenseRequest.", "Perhatian");
+                        /*HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
                         HelperBridge.sTempSelectedOrderCode = orderCode;
-                        getView().setTempFragmentTarget(R.id.nav_expense_request);
+                        getView().setTempFragmentTarget(R.id.nav_expense_request);*/
                     }
 
                 }
@@ -201,10 +203,8 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
         } else {
 
-
             //TODO: OLC 2
             if (statusIsTripOLC.equalsIgnoreCase("true") && !TextUtils.isEmpty(statusIsTripOLC)){
-
 
                 final OLCTripCheckingStatusSendModel olcTripCheckingStatusSendModel =
                         new OLCTripCheckingStatusSendModel(HelperBridge.sModelLoginResponse.getPersonalId()+"", orderCode);
@@ -247,9 +247,11 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                             }
 
                         } else {
+                            sAutoDirectExpense = false;
+                            getView().showOLCDialog("Anda belum mengisi OLC/TRIP, setelah ini anda akan diarahkan ke halaman OLC/TRIP.\nMohon segera lengkapi pengisian OLC/TRIP.", "Perhatian");
                             //HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
-                            HelperBridge.sTempSelectedOrderCode = orderCode;
-                            getView().setTempFragmentTarget(R.id.nav_olctrip_request_from_api);
+                            /*HelperBridge.sTempSelectedOrderCode = orderCode;
+                            getView().setTempFragmentTarget(R.id.nav_olctrip_request_from_api);*/
                         }
                     }
 
@@ -294,8 +296,6 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                     });
                 }
 
-
-
             }
 
 
@@ -304,6 +304,12 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
 
 //        onActionDateValid();  RENDY
+    }
+
+
+    public void showOLC(String orderCode){
+        HelperBridge.sTempSelectedOrderCode = orderCode;
+        getView().setTempFragmentTarget(sAutoDirectExpense ? R.id.nav_expense_request : R.id.nav_olctrip_request_from_api);
     }
 
     private void onActionDateValid() {
@@ -608,7 +614,10 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                         HelperBridge.sAssignedOrderResponseModel.getDestination()
         );
 
-        if (HelperBridge.sAutoProcessActivity) onActionClicked(Integer.parseInt(mAssignmentId), mOrderCode, mIsExpense, mIsTripOLC);
+        if (HelperBridge.sAutoProcessActivity) {
+            onActionClicked(Integer.parseInt(mAssignmentId), mOrderCode, mIsExpense, mIsTripOLC);
+            HelperBridge.sAutoProcessActivity = false;
+        }
     }
 
     private void setMapRoute(double fromLat, double fromLng, String fromAddress) {
