@@ -307,7 +307,8 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
     }
 
 
-    public void showOLC(String orderCode){
+    public void showOLC(String orderCode, int assignmentId){
+        HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
         HelperBridge.sTempSelectedOrderCode = orderCode;
         getView().setTempFragmentTarget(sAutoDirectExpense ? R.id.nav_expense_request : R.id.nav_olctrip_request_from_api);
     }

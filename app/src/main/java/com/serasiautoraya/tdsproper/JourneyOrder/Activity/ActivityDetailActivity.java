@@ -254,7 +254,7 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
         HelperUtil.showOLCAlertDialogCustomTitle(message, ActivityDetailActivity.this, title, new HelperUtil.OlcCallback() {
             @Override
             public void OK() {
-                getPresenter().showOLC(mOrderCode);
+                getPresenter().showOLC(mOrderCode, mAssignmentId);
             }
         });
     }
