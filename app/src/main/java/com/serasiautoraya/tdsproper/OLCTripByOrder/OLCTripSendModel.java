@@ -87,12 +87,16 @@ public class OLCTripSendModel extends Model {
     @Expose
     private String OLCMobileTimeStampUTC;
 
+    @SerializedName("TimeActualCurrent")
+    @Expose
+    private String TimeActualCurrent;
+
 
     /*@SerializedName("Reason")
     @Expose
     private String Reason;*/
 
-    public OLCTripSendModel(String personalId, String personalCode, String WFStatus, String orderCode, List<OlcTripModel> listOfActualOLC, String ETA, String ETD, String date, String addBy, String submitType, String emailCustomer, String personalApprovalId, String personalApprovalEmail, String personalCoordinatorId, String personalCoordinatorEmail, String passengerName, String olcMobileTime, String localToUTC) {
+    public OLCTripSendModel(String personalId, String personalCode, String WFStatus, String orderCode, List<OlcTripModel> listOfActualOLC, String ETA, String ETD, String date, String addBy, String submitType, String emailCustomer, String personalApprovalId, String personalApprovalEmail, String personalCoordinatorId, String personalCoordinatorEmail, String passengerName, String olcMobileTime, String localToUTC, String timeActualCurrent) {
         PersonalId = personalId;
         PersonalCode = personalCode;
         this.WFStatus = WFStatus;
@@ -111,8 +115,13 @@ public class OLCTripSendModel extends Model {
         PassengerName = passengerName;
         OLCMobileTimeStamp = olcMobileTime;
         OLCMobileTimeStampUTC = localToUTC;
+        TimeActualCurrent = timeActualCurrent;
     }
 
+
+    public String getTimeActualCurrent() {
+        return TimeActualCurrent;
+    }
 
     public String getOLCMobileTimeStampUTC() {
         return OLCMobileTimeStampUTC;

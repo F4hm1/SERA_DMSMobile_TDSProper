@@ -127,7 +127,11 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
                                     } else {
                                         sAutoDirectExpense = false;
-                                        getView().showOLCDialog("Anda belum mengisi OLC/TRIP, setelah ini anda akan diarahkan ke halaman OLC/TRIP.\nMohon segera lengkapi pengisian OLC/TRIP.", "Perhatian");
+                                        getView().showOLCDialog("Anda akan diarahkan ke halaman pengajuan OLC/TRIP terlebih dahulu sebelum Selesai Rental." +
+                                                " \n" + " \n" +
+                                                "Silahkan lengkapi pengisian OLC/TRIP sesuai aktual. Jika TIDAK ADA OLC/TRIP, isi kolom dengan angka 0 (NOL)." +
+                                                " \n" + " \n" +
+                                                "Tekan “YA” jika anda sudah memahami", "Perhatian");
                                     }
                                 }
 
@@ -180,7 +184,11 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
                     } else {
                         sAutoDirectExpense = true;
-                        getView().showOLCDialog("Anda belum mengisi ExpenseRequest, setelah ini anda akan diarahkan ke halaman ExpenseRequest.\nMohon segera lengkapi pengisian ExpenseRequest.", "Perhatian");
+                        getView().showOLCDialog("Anda akan diarahkan terlebih dahulu ke halaman Pengajuan Expense sebelum Selesai Order." +
+                                " \n" +  " \n" +
+                                "Silahkan lengkapi pengisian Expense sesuai aktual. Jika TIDAK ADA Expense, isi kolom dengan angka 0 (NOL)." +
+                                " \n" + " \n" +
+                                "Tekan “YA” jika anda sudah memahami", "Perhatian");
                         /*HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
                         HelperBridge.sTempSelectedOrderCode = orderCode;
                         getView().setTempFragmentTarget(R.id.nav_expense_request);*/
@@ -248,7 +256,11 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
                         } else {
                             sAutoDirectExpense = false;
-                            getView().showOLCDialog("Anda belum mengisi OLC/TRIP, setelah ini anda akan diarahkan ke halaman OLC/TRIP.\nMohon segera lengkapi pengisian OLC/TRIP.", "Perhatian");
+                            getView().showOLCDialog("Anda akan diarahkan ke halaman pengajuan OLC/TRIP terlebih dahulu sebelum Selesai Rental." +
+                                    " \n" + " \n" +
+                                    "Silahkan lengkapi pengisian OLC/TRIP sesuai aktual. Jika TIDAK ADA OLC/TRIP, isi kolom dengan angka 0 (NOL)." +
+                                    " \n" + " \n" +
+                                    "Tekan “YA” jika anda sudah memahami", "Perhatian");
                             //HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
                             /*HelperBridge.sTempSelectedOrderCode = orderCode;
                             getView().setTempFragmentTarget(R.id.nav_olctrip_request_from_api);*/

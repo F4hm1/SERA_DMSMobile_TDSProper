@@ -147,7 +147,8 @@ public class OLCTripByOrderPresenter extends TiPresenter<OLCTripByOrderView> {
                         HelperBridge.sModelLoginResponse.getPersonalCoordinatorEmail(),
                         HelperBridge.sAssignedOrderResponseModel.getPassengerName(),
                         timeRESTResponseModel.getTime(),
-                        RestConnection.getUTCTimeStamp(timeRESTResponseModel)
+                        RestConnection.getUTCTimeStamp(timeRESTResponseModel),
+                        HelperBridge.sActivityDetailResponseModel.getTimeActualCurrent()
                 );
                 Log.d("OLCTRIP", "APPROVAL: "+ HelperBridge.sModelLoginResponse.getPersonalApprovalId()+" \n"+
                         HelperBridge.sModelLoginResponse.getPersonalApprovalEmail()+" \n"+

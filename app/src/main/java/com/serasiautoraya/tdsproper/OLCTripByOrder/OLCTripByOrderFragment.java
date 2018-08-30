@@ -44,14 +44,14 @@ public class OLCTripByOrderFragment extends TiFragment<OLCTripByOrderPresenter, 
 
     @BindView(R.id.olctrip_spinner_olc_cust)
     Spinner mSpinnerCustOLC;
-    @BindView(R.id.olctrip_spinner_olc_ops)
-    Spinner mSpinnerOpsOLC;
+    /*@BindView(R.id.olctrip_spinner_olc_ops)
+    Spinner mSpinnerOpsOLC;*/
     /*@BindView(R.id.documents_et_olc_cust)
     EditText mEtOlcAmountCust;*/
     @BindView(R.id.documents_et_trip_cust)
     EditText mEtTripAmountCust;
-    /*@BindView(R.id.documents_et_olc_ops)
-    EditText mEtOlcAmountOps;*/
+    @BindView(R.id.documents_et_olc_ops)
+    EditText mEtOlcAmountOps;
     @BindView(R.id.documents_et_trip_ops)
     EditText mEtTripAmountOps;
     @BindView(R.id.olctrip_btn_submit)
@@ -123,7 +123,7 @@ public class OLCTripByOrderFragment extends TiFragment<OLCTripByOrderPresenter, 
                 }
             }
         });
-        /*mEtOlcAmountOps.addTextChangedListener(new TextWatcher() {
+        mEtOlcAmountOps.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -145,7 +145,7 @@ public class OLCTripByOrderFragment extends TiFragment<OLCTripByOrderPresenter, 
                     }
                 }
             }
-        });*/
+        });
         mEtTripAmountOps.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -182,15 +182,15 @@ public class OLCTripByOrderFragment extends TiFragment<OLCTripByOrderPresenter, 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         ArrayList<CharSequence> olcValue = new ArrayList<>();
         try {
-            for (int i = 0; i < HelperBridge.sActivityDetailResponseModel.getMaxOLC(); i++) {
+            for (Integer i = 0; i <= HelperBridge.sActivityDetailResponseModel.getMaxOLC(); i++) {
                 olcValue.add(i+"");
             }
             adapter.addAll(olcValue);
         } catch (Exception e){}
-        mSpinnerOpsOLC.setAdapter(adapter);
+        //mSpinnerOpsOLC.setAdapter(adapter);
         mSpinnerCustOLC.setAdapter(adapter);
-        mSpinnerOpsOLC.setSelection(olcValue.size() - 1 );
-        mSpinnerCustOLC.setSelection(olcValue.size() - 1 );
+        //mSpinnerOpsOLC.setSelection(olcValue.size() - 1 );
+        mSpinnerCustOLC.setSelection(olcValue.size() - 1);
     }
 
     @Override
@@ -263,14 +263,14 @@ public class OLCTripByOrderFragment extends TiFragment<OLCTripByOrderPresenter, 
             errText = getResources().getString(R.string.err_msg_empty_olctrip_tripamount_cust);
             showToast(errText);
             result = false;
-        }else if(TextUtils.isEmpty(mEtTripAmountOps.getText().toString())){
-            focusView = mEtTripAmountOps;
-            errText = getResources().getString(R.string.err_msg_empty_olctrip_tripamount_ops);
+        } else if(TextUtils.isEmpty(mEtOlcAmountOps.getText().toString())){
+            focusView = mEtOlcAmountOps;
+            errText = getResources().getString(R.string.err_msg_empty_olctrip_olcamount_ops);
             showToast(errText);
             result = false;
-        } else if(mSpinnerOpsOLC.getSelectedItem().toString().equalsIgnoreCase("Pilih")){
-            focusView = mSpinnerOpsOLC;
-            errText = getResources().getString(R.string.err_msg_empty_olctrip_olc);
+        } else if(TextUtils.isEmpty(mEtTripAmountOps.getText().toString())){
+            focusView = mEtTripAmountOps;
+            errText = getResources().getString(R.string.err_msg_empty_olctrip_tripamount_ops);
             showToast(errText);
             result = false;
         } else if(mSpinnerCustOLC.getSelectedItem().toString().equalsIgnoreCase("Pilih")){
@@ -349,7 +349,7 @@ public class OLCTripByOrderFragment extends TiFragment<OLCTripByOrderPresenter, 
                     mEtReason.getText().toString());*/
             List<OLCTripSendModel.OlcTripModel> olcTripModelList = new ArrayList<>();
             olcTripModelList.add(new OLCTripSendModel.OlcTripModel(getString(R.string.olc_code_customer), mSpinnerCustOLC.getSelectedItem().toString(), mEtTripAmountCust.getText().toString()));
-            olcTripModelList.add(new OLCTripSendModel.OlcTripModel(getString(R.string.olc_code_operation), mSpinnerOpsOLC.getSelectedItem().toString(), mEtTripAmountOps.getText().toString()));
+            olcTripModelList.add(new OLCTripSendModel.OlcTripModel(getString(R.string.olc_code_operation), mEtOlcAmountOps.getText().toString(), mEtTripAmountOps.getText().toString()));
             getPresenter().onSubmitClicked(
                     //mDatePickerToEditTextDialog.getDateServerFormat(),
                     olcTripModelList);

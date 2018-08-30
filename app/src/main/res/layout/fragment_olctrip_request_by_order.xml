@@ -186,14 +186,14 @@
                                 android:textSize="16sp"
                                 android:text="OLC"/>
 
-                            <Spinner
+                            <!--<Spinner
                                 android:paddingLeft="5dp"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1.2"
-                                android:id="@+id/olctrip_spinner_olc_ops" />
+                                android:id="@+id/olctrip_spinner_olc_ops" />-->
 
-                            <!--<EditText
+                            <EditText
                                 android:id="@+id/documents_et_olc_ops"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -202,7 +202,7 @@
                                 android:maxLength="3"
                                 android:inputType="number"
                                 android:digits="0123456789"
-                                android:hint=""/>-->
+                                android:hint=""/>
 
                         </LinearLayout>
 
