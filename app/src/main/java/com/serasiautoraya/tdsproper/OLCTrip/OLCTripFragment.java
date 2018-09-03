@@ -15,6 +15,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.serasiautoraya.tdsproper.Dashboard.DashboardActivity;
+import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.R;
 import com.serasiautoraya.tdsproper.CustomDialog.DatePickerToEditTextDialog;
@@ -157,6 +159,12 @@ public class OLCTripFragment extends TiFragment<OLCTripPresenter, OLCTripView> i
                     mEtTripAmount.getText().toString(),
                     mEtReason.getText().toString());
         }
+    }
+
+    @Override
+    public void changeFragment() {
+        HelperBridge.sTempFragmentTarget = R.id.nav_active_order;
+        ((DashboardActivity)getActivity()).changeFragment(((DashboardActivity) getActivity()).getActiveFragment(R.id.nav_active_order));
     }
 
     private void initializeSpinnersContent(){

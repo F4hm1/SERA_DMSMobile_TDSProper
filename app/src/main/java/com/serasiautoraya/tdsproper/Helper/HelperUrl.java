@@ -71,6 +71,8 @@ public class HelperUrl {
 
     public static final String DELETE_OVERTIME = HOST + "attendance/overtime/";
 
+    public static final String POST_OLCTRIP_SIDEMENU = HOST + "attendance/olctrip/";
+
     public static final String POST_OLCTRIP = HOST + "attendance/olctriporder/";
 
     public static final String DELETE_OLCTRIP = HOST + "attendance/olctrip/";

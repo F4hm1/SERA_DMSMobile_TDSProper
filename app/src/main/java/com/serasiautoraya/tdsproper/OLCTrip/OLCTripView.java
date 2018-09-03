@@ -15,4 +15,6 @@ public interface OLCTripView extends BaseViewInterface, FormViewInterface{
 
     void onSubmitClicked(View view);
 
+    void changeFragment();
+
 }

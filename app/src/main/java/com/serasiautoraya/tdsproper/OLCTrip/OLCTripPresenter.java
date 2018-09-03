@@ -8,6 +8,7 @@ import com.serasiautoraya.tdsproper.BaseInterface.RestCallbackInterfaceJSON;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperTransactionCode;
 import com.serasiautoraya.tdsproper.Helper.HelperUrl;
+import com.serasiautoraya.tdsproper.JourneyOrder.Activity.ActivityDetailActivity;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 
 import net.grandcentrix.thirtyinch.TiPresenter;
@@ -50,6 +51,7 @@ public class OLCTripPresenter extends TiPresenter<OLCTripView> {
                 HelperBridge.sModelLoginResponse.getPersonalCoordinatorId(),
                 HelperBridge.sModelLoginResponse.getPersonalCoordinatorEmail()
         );
+        Log.d("OLC",mOlcTripSendModel.getHashMapType().toString() );
         Log.d("OLCTRIP", "APPROVAL: "+ HelperBridge.sModelLoginResponse.getPersonalApprovalId()+" \n"+
                 HelperBridge.sModelLoginResponse.getPersonalApprovalEmail()+" \n"+
                 HelperBridge.sModelLoginResponse.getPersonalCoordinatorId()+" \n"+
@@ -59,12 +61,13 @@ public class OLCTripPresenter extends TiPresenter<OLCTripView> {
 
     public void onRequestSubmitted(){
         getView().toggleLoading(true);
-        mRestConnection.postData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.POST_OLCTRIP, mOlcTripSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
+        mRestConnection.postData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.POST_OLCTRIP_SIDEMENU, mOlcTripSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
             @Override
             public void callBackOnSuccess(JSONObject response) {
                 try {
                     getView().toggleLoading(false);
                     getView().showStandardDialog(response.getString("responseText"), "Berhasil");
+                    getView().changeFragment();
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }

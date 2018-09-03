@@ -1,6 +1,7 @@
 package com.serasiautoraya.tdsproper.ExpensesRequest;
 
 import android.support.annotation.NonNull;
+import android.util.Log;
 
 import com.android.volley.error.VolleyError;
 import com.serasiautoraya.tdsproper.BaseInterface.RestCallBackInterfaceModel;
@@ -288,7 +289,7 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
                     selectedOrderCode = orderCode;
                     expenseRequestView.initializeOvertimeDates(expenseAvailableResponseModel);
                 }else{
-                    getView().showToast("Data Expense tidak ditemukan");
+                    getView().showToast("Data Expense tidak ditemukan" + response.getResponseText());
                 }
                 getView().hideRequestGroupInput();
                 getView().resetAmountView();
