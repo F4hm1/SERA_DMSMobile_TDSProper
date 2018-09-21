@@ -1,13 +1,8 @@
 package com.serasiautoraya.tdsproper.Overtime;
 
-import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
-import android.app.TimePickerDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.Color;
-import android.icu.text.DateFormat;
-import android.icu.text.SimpleDateFormat;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputLayout;
@@ -19,32 +14,33 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
 
 import com.serasiautoraya.tdsproper.CustomView.EmptyInfoView;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
-import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.R;
+import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.util.HelperUtil;
 import com.serasiautoraya.tdsproper.util.TimeWebRestAPI;
 
 import net.grandcentrix.thirtyinch.TiFragment;
 
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+
+//import android.icu.text.DateFormat;
+//import android.icu.text.SimpleDateFormat;
 
 /**
  * Created by Randi Dwi Nandra on 03/06/2017.
@@ -233,13 +229,14 @@ public class OvertimeRequestFragment extends TiFragment<OvertimeRequestPresenter
                 //DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
                 //String dateUser = df.format(date);
                 try {
-                    if (TimeWebRestAPI.dateIsInBeetween(dateStart, dateEnd, dateUser) && timeIsValid(dateStart, dateEnd, dateUser) ){
+                    if (TimeWebRestAPI.dateIsInBeetween(HelperBridge.startDateTime, HelperBridge.endDateTime, dateUser)
+                            && timeIsValid(HelperBridge.startDateTime, HelperBridge.endDateTime, dateUser) ){
                         mEtStartTime.setText(dateUser);
                         mEtStartTime.setTextColor(Color.BLACK);
                         showToast("Setting waktu BERHASIL");
                     } else {
                         showToast("Anda tidak dapat melakukan request melebihi batas waktu");
-                        mEtStartTime.setText(startTime);
+                        mEtStartTime.setText(HelperBridge.startDateTime);
                         mEtStartTime.setTextColor(Color.GRAY);
                     }
                 } catch (ParseException e) {
@@ -267,14 +264,15 @@ public class OvertimeRequestFragment extends TiFragment<OvertimeRequestPresenter
                 //DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.getDefault());
                 //String dateUser = df.format(date);
                 try {
-                    if (TimeWebRestAPI.dateIsInBeetween(dateStart, dateEnd, dateUser) && timeIsValid(dateStart, dateEnd, dateUser) ){
+                    if (TimeWebRestAPI.dateIsInBeetween(HelperBridge.startDateTime, HelperBridge.endDateTime, dateUser)
+                            && timeIsValid(HelperBridge.startDateTime, HelperBridge.endDateTime, dateUser) ){
                         mEtEndTime.setText(dateUser);
                         mEtEndTime.setTextColor(Color.BLACK);
                         showToast("Setting waktu BERHASIL");
                     } else {
                         showToast("Anda tidak dapat melakukan request melebihi batas waktu");
                         mEtEndTime.setTextColor(Color.GRAY);
-                        mEtEndTime.setText(endTime);
+                        mEtEndTime.setText(HelperBridge.endDateTime);
                     }
                 } catch (ParseException e) {
                     e.printStackTrace();
@@ -335,12 +333,14 @@ public class OvertimeRequestFragment extends TiFragment<OvertimeRequestPresenter
         mArrayAdapterOvertimeTypes.notifyDataSetChanged();
     }
 
-    String startTime, endTime;
+    //String startTime, endTime;
 
     @Override
     public void initializeOvertimeTimes(String startTime, String endTime) {
-        this.startTime = startTime;
-        this.endTime = endTime;
+        //this.startTime = startTime;
+        //this.endTime = endTime;
+        HelperBridge.startDateTime = startTime;
+        HelperBridge.endDateTime = endTime;
         mLinearTimeRange.setVisibility(View.VISIBLE);
         mEtStartTime.setText(startTime);
         mEtEndTime.setText(endTime);

@@ -5,12 +5,7 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
-import android.icu.text.DateFormat;
-import android.icu.text.DecimalFormat;
-import android.icu.text.SimpleDateFormat;
-import android.icu.util.Calendar;
 import android.widget.DatePicker;
-import android.widget.EditText;
 import android.widget.TimePicker;
 
 import com.android.volley.Request;
@@ -18,15 +13,22 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.error.VolleyError;
 import com.android.volley.request.GsonRequest;
-import com.serasiautoraya.tdsproper.R;
 import com.serasiautoraya.tdsproper.CustomListener.ServerCallBack;
+import com.serasiautoraya.tdsproper.R;
 import com.serasiautoraya.tdsproper.model.ModelTimeRESTResponse;
 import com.serasiautoraya.tdsproper.model.VolleyUtil;
 
+import java.text.DecimalFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Locale;
+
+//import android.icu.text.DecimalFormat;
+//import android.icu.text.SimpleDateFormat;
+//import android.icu.util.Calendar;
 
 /**
  * Created by Randi Dwi Nandra on 18/01/2017.
@@ -332,27 +334,28 @@ public class TimeWebRestAPI {
 
     public static boolean dateIsInBeetween(String dateStart, String dateEnd, String dateUser){
         try {
-            String string1 = dateStart;
-            String[] splited1 = string1.split("\\s+");
-            Date time1 = new SimpleDateFormat("HH:mm").parse(splited1[1]);
+            /*String string1 = dateStart;
+            String[] splited1 = string1.split("\\s+");*/
+            Date time1 = new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(dateStart);
             Calendar calendar1 = Calendar.getInstance();
             calendar1.setTime(time1);
             calendar1.add(Calendar.DATE, 1);
 
-            String string2 = dateEnd;
-            String[] splited2 = string2.split("\\s+");
-            Date time2 = new SimpleDateFormat("HH:mm").parse(splited2[1]);
+            /*String string2 = dateEnd;
+            String[] splited2 = string2.split("\\s+");*/
+            Date time2 = new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(dateEnd);
             Calendar calendar2 = Calendar.getInstance();
             calendar2.setTime(time2);
             calendar2.add(Calendar.DATE, 1);
 
-            String[] splited3 = dateUser.split("\\s+");
-            Date d = new SimpleDateFormat("HH:mm").parse(splited3[1]);
+//            String[] splited3 = dateUser.split("\\s+");
+            Date d = new SimpleDateFormat("yyyy-MM-dd HH:mm").parse(dateUser);
             Calendar calendar3 = Calendar.getInstance();
             calendar3.setTime(d);
             calendar3.add(Calendar.DATE, 1);
 
             Date x = calendar3.getTime();
+
             if (( x.after(calendar1.getTime()) || x.equals(calendar1.getTime()) ) && ( x.before(calendar2.getTime()) || x.equals(calendar2.getTime()) ) ) {
                 //checkes whether the current time is between 14:49:00 and 20:11:13.
                 return true;

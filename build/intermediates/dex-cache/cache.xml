@@ -12,6 +12,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\3e4b3a2d74c7c19241756123741eca4bf6ad8375\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="cd69608d341cba9d1d5af32a1edf9e207558c312">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_7bc4fff04e772893c4005fd2997366c8385f2c0e.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\FLASHY\.android\build-cache\899ecd3ea8874febc130d0bce12e05ac86beb035\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -27,195 +36,6 @@
         revision="26.0.2"
         sha1="44a694d4095be84c2888764b1f7256b385c030ad">
         <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_449ee199e5a053adeaaece1b04c53c21e5bef87f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_199041d4091097754d485f7e2a00b3e2ba22403e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\f6c05d0df78d1d2885d2f0a63ecc835630676a9a\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_3d735df88d0938835d2cec32ce189daaa4c2cfe3.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\6dc5d04c0a4fd724087c2808aaee99b7cd3e69a0\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="94d358351559620a2c3d2ba3ac04d03a59a61bb3">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_0f873faa3fc5407648c4fa8263415597c3992f06.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\18a6b18da60d3c27f2437bf5565673e94c23ac8d\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_acf2ea33a87c044b9465f6dd6a901fbd369697e4.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\abd726c121dabcb041887396544c37ac030b92bd\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="28cb30c89c8e501ded77e960407731df6c54b844">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_42fbb395b005d93b3acb3678994e173f8e17de60.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\f2664fb9e5238834853949508690d4c1425dec55\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="97cd0ab3ffad045a162fc1a413fe6abc58e199c4">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_5dd727e272556285d17254e762b540e523dd358b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\ec02c295e6c9ae7e57101c0bc6a5756c50de4af2\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_ac81ca7cf87d2f1d74f5d30fc629cd20dc91165f.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\2076be459a362c4b966f27576f0a03875f3301a2\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_2ddae402be773123a756ad4d19cc0cc1affadb1d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\cb02647b6657974579b2b1c18187d587d37675ef\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="ffc09f4e5bdebe068e5101f587dadc42b60fbfe4">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_b8baffa88fe86acda9de6ee3573cf04320e21ea5.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\d28d181b1cd821fa264155a221c0132126551c1e\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="12d4dc071962e5c5b1cf04ec110888673e280607">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_f2404abc457ded88222321455f128f0e8fdb3836.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\45c9bbbad0bdd90bb56f2e6566580324a0ac26d9\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="138b5e3a5341bb37117b13f327de68f81f9f0669">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_67d27ce43a39f3a09a3114a011892eb495b817ac.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\3184d0cf908d0c9c1bb45e6b49117a8b1125d835\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_50ea056429c7d8af142901c4453882a68198f95b.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\33a6cb3cd619c9abcf08ca2ef1594dff6136fb0e\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_ca2f738dde290909b849be088f68f336ddb0df4e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\e44519ae91e4e2b978f3e7ccb46892aadaa646d6\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="f9f219b8a8acc35922ab06f4ff29769041481b4b">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_6132f4f77ad5d93aa4bbedc06f7bbbccdbe80332.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\8009d3ef3d11613adf33ae985589eb693b6ddfa8\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_1a4c5baf7b4ff0b33c66d60fc6768282d7d88bce.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\cac8c7b901d9ce17a93c16bcdc6bd3696de70187\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="5a743d0934e90e7f26d75a2463142c4b884b2981">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_611ef207c2590349d2406d23c604011bbfc8c186.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\e11ff5345d4abe321b79372a0363a481c95ccd08\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="48a969b476c5c4bd8cabfe295428ff222bc68b8e">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_5a40bfb1cdab35b0393a08ec5a45781387e15a7e.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\butterknife-annotations-8.5.1_31d2d5a645b0a86585586f9f1a00d1658bb73c4c.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\1e7c328aa5a0c7670e55946145f57e2f4a6d29ac\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_ae7e6b98aa3e82074cbe0b332facc7b9e47bceba.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.0\748f0546d5c3c27f1aef07270ffea0c45f0c42a4\rxjava-1.1.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="748f0546d5c3c27f1aef07270ffea0c45f0c42a4">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\rxjava-1.1.0_66646d08c872cfea16892b84fcf29fbfa2e44872.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\3e4b3a2d74c7c19241756123741eca4bf6ad8375\output\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="26.0.2"
-        sha1="cd69608d341cba9d1d5af32a1edf9e207558c312">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_7bc4fff04e772893c4005fd2997366c8385f2c0e.jar" />
     </item>
     <item
         is-multidex="false"
@@ -255,12 +75,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\FLASHY\.gradle\caches\modules-2\files-2.1\com.squareup.picasso\picasso\2.5.2\7446d06ec8d4f7ffcc53f1da37c95f200dcb9387\picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\picasso-2.5.2_199041d4091097754d485f7e2a00b3e2ba22403e.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\FLASHY\.android\build-cache\b78b6382c6ef6bd538e02a5f8e86e9e4508c97cc\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="3cef25b344d6893e5e2d9b1ae38d180955e9d3ef">
         <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_bac85b87407c9d3d6491b482563aecb6479b7d54.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\f6c05d0df78d1d2885d2f0a63ecc835630676a9a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_3d735df88d0938835d2cec32ce189daaa4c2cfe3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\6dc5d04c0a4fd724087c2808aaee99b7cd3e69a0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="94d358351559620a2c3d2ba3ac04d03a59a61bb3">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_0f873faa3fc5407648c4fa8263415597c3992f06.jar" />
     </item>
     <item
         is-multidex="false"
@@ -291,12 +138,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\Users\FLASHY\.android\build-cache\993b05490526baff64efcb0875191dbd5a89f6fe\output\jars\classes.jar"
+        jar="C:\Users\FLASHY\.android\build-cache\18a6b18da60d3c27f2437bf5565673e94c23ac8d\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
-        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
-        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_49547cd4a6bc5c6cc7744a52335442ca1349a9ee.jar" />
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_acf2ea33a87c044b9465f6dd6a901fbd369697e4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -309,12 +156,39 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\993b05490526baff64efcb0875191dbd5a89f6fe\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_49547cd4a6bc5c6cc7744a52335442ca1349a9ee.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\FLASHY\.android\build-cache\232c1d4856a2a4140af1d33e649330f6b30f008d\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
         <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_d1efac4a2850d6beab45c231e46d61424bdd27db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\abd726c121dabcb041887396544c37ac030b92bd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="28cb30c89c8e501ded77e960407731df6c54b844">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_42fbb395b005d93b3acb3678994e173f8e17de60.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\f2664fb9e5238834853949508690d4c1425dec55\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="97cd0ab3ffad045a162fc1a413fe6abc58e199c4">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_5dd727e272556285d17254e762b540e523dd358b.jar" />
     </item>
     <item
         is-multidex="false"
@@ -336,6 +210,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\ec02c295e6c9ae7e57101c0bc6a5756c50de4af2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_ac81ca7cf87d2f1d74f5d30fc629cd20dc91165f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\2076be459a362c4b966f27576f0a03875f3301a2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_2ddae402be773123a756ad4d19cc0cc1affadb1d.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\FLASHY\.android\build-cache\cb26c9fbfe210484f8b56429ec8e5cf07932327c\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
@@ -354,6 +246,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\cb02647b6657974579b2b1c18187d587d37675ef\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="ffc09f4e5bdebe068e5101f587dadc42b60fbfe4">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_b8baffa88fe86acda9de6ee3573cf04320e21ea5.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\FLASHY\.gradle\caches\modules-2\files-2.1\com.android.support\support-annotations\26.0.2\8b68a849722b44f584e2d68c451c5e3844c10380\support-annotations-26.0.2.jar"
         jumboMode="false"
         optimize="true"
@@ -363,12 +264,66 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\d28d181b1cd821fa264155a221c0132126551c1e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="12d4dc071962e5c5b1cf04ec110888673e280607">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_f2404abc457ded88222321455f128f0e8fdb3836.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\45c9bbbad0bdd90bb56f2e6566580324a0ac26d9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="138b5e3a5341bb37117b13f327de68f81f9f0669">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_67d27ce43a39f3a09a3114a011892eb495b817ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\3184d0cf908d0c9c1bb45e6b49117a8b1125d835\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_50ea056429c7d8af142901c4453882a68198f95b.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\FLASHY\.android\build-cache\f7638c56dfb19cc84d95d6dad7c94a905ee18f9d\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="d4c4b83de2f6412072d2a29b1b7a5b03edaad5ff">
         <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_003c6d151f4686101229192dcf5f97f17973268c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\33a6cb3cd619c9abcf08ca2ef1594dff6136fb0e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_ca2f738dde290909b849be088f68f336ddb0df4e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\e44519ae91e4e2b978f3e7ccb46892aadaa646d6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="f9f219b8a8acc35922ab06f4ff29769041481b4b">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_6132f4f77ad5d93aa4bbedc06f7bbbccdbe80332.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\8009d3ef3d11613adf33ae985589eb693b6ddfa8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="19f281a785ca0eb5f6799fc7bf7ca199a9ca1e8b">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_1a4c5baf7b4ff0b33c66d60fc6768282d7d88bce.jar" />
     </item>
     <item
         is-multidex="false"
@@ -399,12 +354,57 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\cac8c7b901d9ce17a93c16bcdc6bd3696de70187\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="5a743d0934e90e7f26d75a2463142c4b884b2981">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_611ef207c2590349d2406d23c604011bbfc8c186.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\e11ff5345d4abe321b79372a0363a481c95ccd08\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="48a969b476c5c4bd8cabfe295428ff222bc68b8e">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_5a40bfb1cdab35b0393a08ec5a45781387e15a7e.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\FLASHY\.android\build-cache\addf4aff99be03b3d65ae998208b68748ff9d72c\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"
         revision="26.0.2"
         sha1="b4a446c110c5a9f3a62907367d5eea4d4062c36a">
         <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_100f1a14c0bb01de87221e86b68becbac290f06a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife-annotations\8.5.1\bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc\butterknife-annotations-8.5.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="bb67dad90bab7cd77a8f7f1b8442b47e3a2326bc">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\butterknife-annotations-8.5.1_31d2d5a645b0a86585586f9f1a00d1658bb73c4c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.gradle\caches\modules-2\files-2.1\io.reactivex\rxjava\1.1.0\748f0546d5c3c27f1aef07270ffea0c45f0c42a4\rxjava-1.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="748f0546d5c3c27f1aef07270ffea0c45f0c42a4">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\rxjava-1.1.0_66646d08c872cfea16892b84fcf29fbfa2e44872.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\FLASHY\.android\build-cache\1e7c328aa5a0c7670e55946145f57e2f4a6d29ac\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.2"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="D:\16. SERA\SERA_DMSMobile_TDSProper\app\build\intermediates\pre-dexed\debug\classes_ae7e6b98aa3e82074cbe0b332facc7b9e47bceba.jar" />
     </item>
     <item
         is-multidex="false"

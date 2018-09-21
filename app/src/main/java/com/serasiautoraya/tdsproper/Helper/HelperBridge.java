@@ -99,4 +99,8 @@ public class HelperBridge {
 
     public static String sTempExpenseAssignmentId = "";
     public static String sTempOrderId = "";
+
+    public static String startDateTime = "";
+    public static String endDateTime = "";
+
 }

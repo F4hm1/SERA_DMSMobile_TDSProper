@@ -1,5 +1,7 @@
 package com.serasiautoraya.tdsproper.CiCo;
 
+import android.util.Log;
+
 import com.android.volley.error.VolleyError;
 import com.serasiautoraya.tdsproper.BaseInterface.RestCallbackInterfaceJSON;
 import com.serasiautoraya.tdsproper.BaseInterface.TimeRestCallBackInterface;
@@ -34,6 +36,7 @@ public class  CiCoRealtimePresenter extends TiPresenter<CiCoRealtimeView> {
 
     public void onSubmitCiCo(){
         getView().toggleLoading(true);
+        Log.e("CICO REQ", mCiCoRealtimeSendModel.getHashMapType().toString());
         mRestConnection.postData(HelperBridge.sModelLoginResponse.getTransactionToken(), mUrlSubmit, mCiCoRealtimeSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
             @Override
             public void callBackOnSuccess(JSONObject response) {

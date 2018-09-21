@@ -662,6 +662,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
 
     public void onRequestSubmitActivity() {
         getView().toggleLoading(true);
+        Log.e("STATUS_UPDATE", mStatusUpdateSendModel.getHashMapType().toString());
         mRestConnection.putData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.PUT_STATUS_UPDATE, mStatusUpdateSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
             @Override
             public void callBackOnSuccess(JSONObject response) {

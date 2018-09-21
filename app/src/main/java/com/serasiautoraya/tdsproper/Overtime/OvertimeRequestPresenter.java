@@ -40,6 +40,7 @@ public class OvertimeRequestPresenter extends TiPresenter<OvertimeRequestView> {
     private RestConnection mRestConnection;
     private OvertimeSendModel mOvertimeSendModel;
     private ArrayList<OvertimeAvailableResponseModel> overtimeAvailableResponseModelList;
+    private String startTime, endTime;
 
     public OvertimeRequestPresenter(RestConnection restConnection) {
         this.mRestConnection = restConnection;
@@ -131,14 +132,14 @@ public class OvertimeRequestPresenter extends TiPresenter<OvertimeRequestView> {
     }
 
     public void loadRequestHistoryData(String startDate, String endDate) {
-        startDate = HelperUtil.getServerFormDate(startDate);
-        endDate = HelperUtil.getServerFormDate(endDate);
+        //startDate = HelperUtil.getServerFormDate(startDate);
+        //endDate = HelperUtil.getServerFormDate(endDate);
 
         getView().toggleLoadingInitialLoad(true);
         OvertimeAvailableSendModel overtimeAvailableSendModel = new OvertimeAvailableSendModel(
                 HelperBridge.sModelLoginResponse.getPersonalId(),
-                startDate,
-                endDate
+                HelperUtil.getServerFormDate(startDate),
+                HelperUtil.getServerFormDate(endDate)
         );
 
         final OvertimeRequestView overtimeRequestView = getView();
@@ -206,6 +207,7 @@ public class OvertimeRequestPresenter extends TiPresenter<OvertimeRequestView> {
 
     public void onRequestSubmitted() {
         getView().toggleLoading(true);
+        Log.e("Overtime Post", mOvertimeSendModel.getHashMapType().toString());
         mRestConnection.postData(HelperBridge.sModelLoginResponse.getTransactionToken(), HelperUrl.POST_OVERTIME, mOvertimeSendModel.getHashMapType(), new RestCallbackInterfaceJSON() {
             @Override
             public void callBackOnSuccess(JSONObject response) {
@@ -247,6 +249,8 @@ public class OvertimeRequestPresenter extends TiPresenter<OvertimeRequestView> {
     }
 
     public void onTypeSelected(OvertimeAvailableTypeAdapter selectedItem, int i) {
+        this.startTime = selectedItem.getOvertimeAvailableResponseModel().getOvertimeStart();
+        this.endTime = selectedItem.getOvertimeAvailableResponseModel().getOvertimeEnd();
         getView().initializeOvertimeTimes(selectedItem.getOvertimeAvailableResponseModel().getOvertimeStart(), selectedItem.getOvertimeAvailableResponseModel().getOvertimeEnd());
     }
 
