@@ -66,7 +66,7 @@ public class PODCapturePresenter extends TiPresenter<PODCaptureView> {
             photo = this.createTemporaryFile("temp_pod_sli", ".jpg");
             photo.delete();
         } catch (Exception e) {
-            getView().showToast("Harap cek memory anda! Tidak bisa melakukan pengambilan gambar!");
+            getView().showToast("Harap cek memory Anda! Tidak bisa melakukan pengambilan gambar!");
             return;
         }
 
@@ -147,7 +147,7 @@ public class PODCapturePresenter extends TiPresenter<PODCaptureView> {
                 /*
                 * TODO change this, jadikan value nya dari string values!
                 * */
-                getView().showToast("Gagal melakukan pengajuan ketidakhadiran, silahkan periksa koneksi anda kemudian coba kembali");
+                getView().showToast("Gagal melakukan pengajuan ketidakhadiran, silahkan periksa koneksi Anda kemudian coba kembali");
                 getView().hideProgressBar(containerId);
                 Log.d("PODES", "Error: " + error.getMessage());
             }
@@ -219,7 +219,7 @@ public class PODCapturePresenter extends TiPresenter<PODCaptureView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 podCaptureView.toggleLoading(false);
-                podCaptureView.showStandardDialog("Gagal melakukan ack order, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                podCaptureView.showStandardDialog("Gagal melakukan ack order, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }

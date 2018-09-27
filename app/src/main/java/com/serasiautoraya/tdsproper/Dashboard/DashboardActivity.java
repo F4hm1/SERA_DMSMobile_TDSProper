@@ -36,6 +36,7 @@ import com.serasiautoraya.tdsproper.CiCo.CiCoFragment;
 import com.serasiautoraya.tdsproper.CiCo.CiCoRequestFragment;
 import com.serasiautoraya.tdsproper.ExpensesRequest.ExpenseRequestFragment;
 import com.serasiautoraya.tdsproper.Helper.HelperKey;
+import com.serasiautoraya.tdsproper.Helper.HelperTransactionCode;
 import com.serasiautoraya.tdsproper.JourneyOrder.Assigned.AssignedFragment;
 import com.serasiautoraya.tdsproper.NotificatonList.NotificationListActivity;
 import com.serasiautoraya.tdsproper.OLCTrip.OLCTripFragment;
@@ -330,9 +331,13 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
         mNavigationView.setNavigationItemSelectedListener(this);
 
         mHandler = new Handler();
-        mNavigationView.setCheckedItem(R.id.nav_active_order);
+        /*if (com.serasiautoraya.tdsproper.Helper.HelperBridge.sModelLoginResponse.getOrderActive().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY)) {
+            mNavigationView.setCheckedItem(R.id.nav_cico_request);
+        } else {
+            mNavigationView.setCheckedItem(R.id.nav_active_order);
+        }*/
 
-
+        mNavigationView.setCheckedItem(com.serasiautoraya.tdsproper.Helper.HelperBridge.sModelLoginResponse.getOrderActive().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY) ? R.id.nav_cico_request : R.id.nav_active_order);
 
         mNavHeader = mNavigationView.getHeaderView(0);
 
@@ -391,7 +396,7 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
     }
 
     @Override
-    public void toggleMenu(boolean requestCiCo, boolean reportCiCo, boolean requestAbsence, boolean reportAbsence, boolean requestOLCTrip, boolean reportOLCTrip, boolean requestOvertime, boolean reportOvertime, boolean reportServiceHour, boolean requestExpense) {
+    public void toggleMenu(boolean requestCiCo, boolean reportCiCo, boolean requestAbsence, boolean reportAbsence, boolean requestOLCTrip, boolean reportOLCTrip, boolean requestOvertime, boolean reportOvertime, boolean reportServiceHour, boolean requestExpense, boolean orderActive) {
         Menu navMenu = mNavigationView.getMenu();
         navMenu.findItem(R.id.nav_cico_request).setVisible(requestCiCo);
         navMenu.findItem(R.id.nav_absence_request).setVisible(requestAbsence);
@@ -399,6 +404,8 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
         navMenu.findItem(R.id.nav_overtime_request).setVisible(requestOvertime);
         navMenu.findItem(R.id.nav_expense_request).setVisible(requestExpense);
         navMenu.findItem(R.id.nav_olctrip_request_from_api).setVisible(false);
+        navMenu.findItem(R.id.nav_active_order).setVisible(!orderActive);
+
 
         if (reportAbsence == false && reportCiCo == false && reportOLCTrip == false && reportOvertime == false) {
             navMenu.findItem(R.id.nav_attendance_history).setVisible(false);

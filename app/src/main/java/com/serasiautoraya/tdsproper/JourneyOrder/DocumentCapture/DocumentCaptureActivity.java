@@ -245,7 +245,7 @@ public class DocumentCaptureActivity extends TiActivity<DocumentCapturePresenter
 
     @Override
     public void showConfirmationDialog(String activityName) {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin semua dokumen telah terpenuhi, dan akan melakukan proses " +
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin semua dokumen telah terpenuhi, dan akan melakukan proses " +
                 "<b>" + activityName + "</b>" + "?");
 
         HelperUtil.showConfirmationAlertDialog(textMsg, DocumentCaptureActivity.this, new DialogInterface.OnClickListener() {

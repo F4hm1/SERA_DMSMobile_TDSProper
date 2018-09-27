@@ -5,7 +5,7 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_logout">Keluar</string>
-    <string name="warn_msg_exit">Apakah anda yakin akan keluar aplikasi?</string>
+    <string name="warn_msg_exit">Apakah Anda yakin akan keluar aplikasi?</string>
 
     <string name="bulan_01">Januari</string>
     <string name="bulan_02">Februari</string>
@@ -39,7 +39,7 @@
 
 
     <!--Permission-->
-    <string name="err_msg_general">Terjadi kesalahan, harap periksa koneksi anda, kemudian coba kembali</string>
+    <string name="err_msg_general">Terjadi kesalahan, harap periksa koneksi Anda, kemudian coba kembali</string>
 
     <!--Menu Tittle-->
     <string name="title_active_order">Order Aktif</string>
@@ -67,7 +67,7 @@
     <string name="err_msg_empty_username">Harap isi username</string>
     <string name="err_msg_empty_password">Harap isi kata sandi</string>
     <string name="err_msg_wrong_login">Username dan Kata Sandi tidak cocok</string>
-    <string name="err_msg_not_authorizad">Tidak bisa masuk, anda tidak memiliki akses.</string>
+    <string name="err_msg_not_authorizad">Tidak bisa masuk, Anda tidak memiliki akses.</string>
     <string name="success_msg_login">Berhasil masuk aplikasi, harap tunggu.</string>
 
     <!--Login Progress-->
@@ -118,7 +118,7 @@
     <string name="success_msg_cico">Clock In/Out sukses.</string>
     <string name="err_msg_empty_cico_keterangan">Harap isi kolom alasan</string>
     <string name="err_msg_empty_cico_transactiontype">Harap pilih tipe transaksi</string>
-    <string name="err_msg_empty_cico_reason">Harap pilih alasan anda</string>
+    <string name="err_msg_empty_cico_reason">Harap pilih alasan Anda</string>
     <string name="err_msg_empty_cico_date">Harap isi tanggal</string>
     <string name="err_msg_empty_cico_time">Harap isi waktu</string>
     <string name="err_msg_wrong_cico_date">Tanggal tidak valid atau melebihi max hari request</string>
@@ -185,19 +185,19 @@
     <string name="cp_label_pass">Kata sandi baru</string>
     <string name="cp_label_passconf">Ulangi kata sandi baru</string>
     <string name="cp_label_submit">Kirim</string>
-    <string name="success_msg_cp">Kata sandi anda berhasil diganti</string>
-    <string name="err_msg_wrong_cp_passlamasalah">Kata sandi lama anda salah</string>
-    <string name="err_msg_wrong_cp_passbarunotmatch">Kata sandi baru anda tidak cocok</string>
-    <string name="err_msg_empty_cp_oldpass">Harap isi kata sandi lama anda</string>
-    <string name="err_msg_empty_cp_pass">Harap isi kata sandi baru anda</string>
-    <string name="err_msg_empty_cp_confpass">Harap isi kembali kata sandi baru anda</string>
+    <string name="success_msg_cp">Kata sandi Anda berhasil diganti</string>
+    <string name="err_msg_wrong_cp_passlamasalah">Kata sandi lama Anda salah</string>
+    <string name="err_msg_wrong_cp_passbarunotmatch">Kata sandi baru Anda tidak cocok</string>
+    <string name="err_msg_empty_cp_oldpass">Harap isi kata sandi lama Anda</string>
+    <string name="err_msg_empty_cp_pass">Harap isi kata sandi baru Anda</string>
+    <string name="err_msg_empty_cp_confpass">Harap isi kembali kata sandi baru Anda</string>
 
     <!--Fatigue Interview-->
-    <string name="fi_quest_1">Apakah anda <b>dalam kondisi sehat</b>?</string>
-    <string name="fi_quest_2">Apakah anda <b>tidak dalam pengaruh obat / sedang mengkonsumsi obat</b> yang menyebabkan mengantuk (misalnya obat flu/batuk)?</string>
-    <string name="fi_quest_3">Apakah anda <b>tidak mengkonsumsi alkohol</b>?</string>
-    <string name="fi_quest_4">Apakah anda <b>tidak mengkonsumsi obat-obatan terlarang</b> (Narkoba)?</string>
-    <string name="fi_quest_5">Apakah anda <b>siap untuk bertugas mengemudi</b>?</string>
+    <string name="fi_quest_1">Apakah Anda <b>dalam kondisi sehat</b>?</string>
+    <string name="fi_quest_2">Apakah Anda <b>tidak dalam pengaruh obat / sedang mengkonsumsi obat</b> yang menyebabkan mengantuk (misalnya obat flu/batuk)?</string>
+    <string name="fi_quest_3">Apakah Anda <b>tidak mengkonsumsi alkohol</b>?</string>
+    <string name="fi_quest_4">Apakah Anda <b>tidak mengkonsumsi obat-obatan terlarang</b> (Narkoba)?</string>
+    <string name="fi_quest_5">Apakah Anda <b>siap untuk bertugas mengemudi</b>?</string>
     <string name="fi_dialog_quest_1">Dalam kondisi sehat</string>
     <string name="fi_dialog_quest_2">Tidak dalam pengaruh obat / sedang mengkonsumsi obat yang menyebabkan mengantuk</string>
     <string name="fi_dialog_quest_3">Tidak mengkonsumsi alkohol</string>
@@ -247,7 +247,7 @@
     <string name="err_msg_empty_olctrip_tripamount_ops">Harap isi kolom Trip Operation</string>
 
     <string name="err_msg_empty_olctrip_keterangan">Harap isi kolom alasan</string>
-    <string name="err_msg_empty_olctrip_olc">Harap pilih apakah anda OLC atau tidak</string>
+    <string name="err_msg_empty_olctrip_olc">Harap pilih apakah Anda OLC atau tidak</string>
     <string name="err_msg_empty_olctrip_date">Harap pilih tanggal</string>
     <string name="err_msg_empty_olctrip_trip">Harap masukan jumlah trip (ketik 0 jika tidak melakukan)</string>
     <string name="err_msg_wrong_olctrip_date">Tanggal tidak valid atau melebihi max hari request</string>
@@ -316,7 +316,7 @@
     <string name="order_title_cargodesc">Deskripsi Kargo</string>
 
     <string name="documents_podreason_spinner_reason">Alasan tidak melampirkan bukti foto POD:</string>
-    <string name="err_msg_empty_overtime_keterangan">Harap isi dengan alasa/keterangan anda lembur</string>
+    <string name="err_msg_empty_overtime_keterangan">Harap isi dengan alasa/keterangan Anda lembur</string>
     <string-array name="documents_podreason_array">
         <item>Pilih</item>
         <item>Tertahan oleh customer</item>

@@ -148,7 +148,7 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
 
     @Override
     public void showConfirmationDialog() {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin jumlah yang anda masukan sudah benar?");
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin jumlah yang Anda masukan sudah benar?");
         HelperUtil.showConfirmationAlertDialog(textMsg, getContext(), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -229,7 +229,7 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
                                     String yourFormattedString = String.format("%,d", curentTotalAmount);
                                     setTotalExpense("Rp. " + yourFormattedString);
                                 } catch (Exception ex) {
-                                    setTotalExpense("Angka yang anda masukan salah");
+                                    setTotalExpense("Angka yang Anda masukan salah");
                                 }
                             }
 
@@ -242,7 +242,7 @@ public class ExpenseRequestFragment extends TiFragment<ExpenseRequestPresenter, 
                                     String yourFormattedString = String.format("%,d", curentTotalAmount);
                                     setTotalExpense("Rp. " + yourFormattedString);
                                 } catch (Exception ex) {
-                                    setTotalExpense("Angka yang anda masukan salah");
+                                    setTotalExpense("Angka yang Anda masukan salah");
                                 }
                             }*/
                         }

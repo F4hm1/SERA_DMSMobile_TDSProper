@@ -92,7 +92,7 @@ public class ChangePasswordActivity extends TiActivity<ChangePasswordPresenter, 
 
     @Override
     public void showConfirmationDialog() {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan "+
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin akan "+
                 "<b>"+" mengganti kata sandi"+"</b>"+"?");
 
         HelperUtil.showConfirmationAlertDialog(textMsg, ChangePasswordActivity.this, new DialogInterface.OnClickListener() {

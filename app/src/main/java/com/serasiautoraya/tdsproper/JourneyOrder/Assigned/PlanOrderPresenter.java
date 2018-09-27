@@ -203,7 +203,7 @@ public class PlanOrderPresenter extends TiPresenter<PlanOrderView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 planOrderView.toggleLoading(false);
-                planOrderView.showStandardDialog("Gagal melakukan ack order, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                planOrderView.showStandardDialog("Gagal melakukan ack order, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }

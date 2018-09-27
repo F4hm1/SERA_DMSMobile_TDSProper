@@ -134,7 +134,7 @@ public class AbsenceRequestFragment extends TiFragment<AbsenceRequestPresenter, 
 
     @Override
     public void showConfirmationDialog() {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan melakukan pengajuan ketidakhadiran pada "+
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin akan melakukan pengajuan ketidakhadiran pada "+
                 "<b>"+mEtDateStart.getText().toString()+" - "+mEtDateEnd.getText().toString()+"</b>"+"?");
 
         HelperUtil.showConfirmationAlertDialog(textMsg, getContext(), new DialogInterface.OnClickListener() {

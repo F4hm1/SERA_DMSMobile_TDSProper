@@ -134,7 +134,7 @@ public class OLCTripFragment extends TiFragment<OLCTripPresenter, OLCTripView> i
 
     @Override
     public void showConfirmationDialog() {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan melakukan pengajuan "+
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin akan melakukan pengajuan "+
                 "<b>"+"OLC/Trip"+"</b>"+" pada "+
                 "<b>"+ mEtDate.getText().toString()+"</b>"+"?");
         HelperUtil.showConfirmationAlertDialog(textMsg, getContext(), new DialogInterface.OnClickListener() {

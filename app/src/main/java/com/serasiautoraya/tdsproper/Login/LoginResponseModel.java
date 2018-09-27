@@ -176,6 +176,15 @@ public class LoginResponseModel {
     private String ReportServiceHour;
 
 
+    @SerializedName("OrderActive")
+    @Expose
+    private String OrderActive;
+
+
+    public String getOrderActive() {
+        return OrderActive;
+    }
+
     public String getIsVersionValidate() {
         return IsVersionValidate;
     }

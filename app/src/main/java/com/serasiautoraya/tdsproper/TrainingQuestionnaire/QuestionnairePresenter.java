@@ -147,7 +147,7 @@ public class QuestionnairePresenter extends TiPresenter<QuestionnaireView> {
                 * */
 
                 getView().toggleLoading(false);
-                getView().showStandardDialog("Gagal menyimpan hasil kuesioner, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                getView().showStandardDialog("Gagal menyimpan hasil kuesioner, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }

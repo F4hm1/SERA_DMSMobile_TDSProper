@@ -80,7 +80,7 @@ public class CiCoRequestHistoryPresenter extends TiPresenter<CiCoRequestHistoryV
                         * TODO change this, jadikan value nya dari string values!
                         * */
                         getView().toggleLoading(false);
-                        getView().showStandardDialog("Gagal membatalkan pengajuan cico, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                        getView().showStandardDialog("Gagal membatalkan pengajuan cico, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
                     }
                 });
     }

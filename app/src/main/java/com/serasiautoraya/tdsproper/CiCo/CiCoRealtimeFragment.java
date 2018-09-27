@@ -79,7 +79,7 @@ public class CiCoRealtimeFragment extends TiFragment<CiCoRealtimePresenter, CiCo
 
     @Override
     public void showConfirmationDialog(String type, String timeZone, String dateMessage, String monthMessage, String yearMessage, String timeMessage) {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan melakukan "+
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin akan melakukan "+
                 "<b>"+type+"</b>"+" pada "+
                 "<b>"+dateMessage + " " + HelperUtil.getMonthName(monthMessage, getContext()) + " " + yearMessage+"</b>"+" pukul "+
                 "<b>"+timeMessage+" "+timeZone+"</b>"+"?");

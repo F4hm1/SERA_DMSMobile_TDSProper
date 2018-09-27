@@ -82,7 +82,7 @@ public class OvertimeRequestHistoryPresenter extends TiPresenter<OvertimeRequest
                         * TODO change this, jadikan value nya dari string values!
                         * */
                         getView().toggleLoading(false);
-                        getView().showStandardDialog("Gagal membatalkan pengajuan Overtime, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                        getView().showStandardDialog("Gagal membatalkan pengajuan Overtime, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
                     }
                 });
     }

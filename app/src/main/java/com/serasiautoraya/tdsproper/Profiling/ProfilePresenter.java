@@ -114,7 +114,7 @@ public class ProfilePresenter extends TiPresenter<ProfileView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 profileView.toggleProgressDriverStatusUpdate(false);
-                profileView.showStandardDialog("Gagal melakukan perubahan status, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                profileView.showStandardDialog("Gagal melakukan perubahan status, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }

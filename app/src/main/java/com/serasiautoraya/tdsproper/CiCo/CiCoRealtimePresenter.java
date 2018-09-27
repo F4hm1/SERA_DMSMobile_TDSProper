@@ -69,7 +69,7 @@ public class  CiCoRealtimePresenter extends TiPresenter<CiCoRealtimeView> {
                 * TODO change this!
                 * */
                 getView().toggleLoading(false);
-                getView().showStandardDialog("Gagal melakukan cico, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                getView().showStandardDialog("Gagal melakukan cico, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }

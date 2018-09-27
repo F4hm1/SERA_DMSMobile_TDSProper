@@ -115,8 +115,12 @@ public class WsInOutPresenter extends TiPresenter<WsInOutView> {
                 } else {
                     orderHistoryView.toggleEmptyInfo(true);
                 }
+                /*wsInOutResponseModels = wsInOutResponseModelsTemp;
+                mSimpleAdapterModel.setItemList(getSortedOrderByDate(wsInOutResponseModels));*/
+
                 wsInOutResponseModels = wsInOutResponseModelsTemp;
-                mSimpleAdapterModel.setItemList(getSortedOrderByDate(wsInOutResponseModels));
+                mSimpleAdapterModel.setItemList(wsInOutResponseModels);
+
                 orderHistoryView.refreshRecyclerView();
                 orderHistoryView.toggleLoading(false);
             }

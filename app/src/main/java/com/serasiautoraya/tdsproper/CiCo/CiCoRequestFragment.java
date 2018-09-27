@@ -139,7 +139,7 @@ public class CiCoRequestFragment extends TiFragment<CiCoRequestPresenter, CiCoRe
 
     @Override
     public void showConfirmationDialog() {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan melakukan pengajuan " +
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin akan melakukan pengajuan " +
                 "<b>" + mSpinnerTransactionType.getSelectedItem().toString() + "</b>" + " pada " +
                 "<b>" + mEtDate.getText().toString() + ", pukul " + mEtTime.getText() + "</b>" + "?");
         HelperUtil.showConfirmationAlertDialog(textMsg, getContext(), new DialogInterface.OnClickListener() {

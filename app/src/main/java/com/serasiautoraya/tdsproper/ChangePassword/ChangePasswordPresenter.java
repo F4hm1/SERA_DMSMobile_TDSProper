@@ -80,7 +80,7 @@ public class ChangePasswordPresenter extends TiPresenter<ChangePasswordView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                         getView().toggleLoading(false);
-                        getView().showStandardDialog("Gagal melakukan penggantian kata sandi, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                        getView().showStandardDialog("Gagal melakukan penggantian kata sandi, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
                     }
                 });
     }

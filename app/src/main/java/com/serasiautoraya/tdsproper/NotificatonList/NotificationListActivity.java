@@ -126,7 +126,7 @@ public class NotificationListActivity extends TiActivity<NotificationListPresent
 
     @Override
     public void showDeleteConfirmationDialog(String notificationDate) {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan <b>menghapus riwayat notifikasi</b>"+
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin akan <b>menghapus riwayat notifikasi</b>"+
                 " pada <b>" + notificationDate + "</b>?");
 
         HelperUtil.showConfirmationAlertDialog(textMsg, NotificationListActivity.this, new DialogInterface.OnClickListener() {

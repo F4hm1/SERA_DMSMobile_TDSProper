@@ -69,7 +69,7 @@ public class HistoryRequestListAdapter extends RecyclerView.Adapter<HistoryReque
         holder.mCancel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan <b>membatalkan pengajuan " +
+                CharSequence textMsg = Html.fromHtml("Apakah Anda yakin akan <b>membatalkan pengajuan " +
                         historyRequestSingleList.getInformation() + "</b> pada tanggal <b>" + historyRequestSingleList.getDate() + "</b>?");
 
                 HelperUtil.showConfirmationAlertDialog(textMsg, context, new DialogInterface.OnClickListener() {

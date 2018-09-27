@@ -38,7 +38,8 @@ public class DashboardPresenter extends TiPresenter<DashboardView> {
                 HelperBridge.sModelLoginResponse.getRequestOvertime().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY),
                 HelperBridge.sModelLoginResponse.getReportOvertime().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY),
                 HelperBridge.sModelLoginResponse.getReportServiceHour().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY),
-                HelperBridge.sModelLoginResponse.getRequestExpense().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY)
+                HelperBridge.sModelLoginResponse.getRequestExpense().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY),
+                HelperBridge.sModelLoginResponse.getOrderActive().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY)
         );
 //        Calendar calendar = Calendar.getInstance();
 //        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(HelperKey.SERVER_DATE_FORMAT);
@@ -46,8 +47,15 @@ public class DashboardPresenter extends TiPresenter<DashboardView> {
 //        if(mSharedPrefsModel.get(HelperKey.KEY_LAST_CLOCKIN, "").equalsIgnoreCase(dateToday)
 //                && !mSharedPrefsModel.get(HelperKey.KEY_LAST_FATIGUE_INTERVIEW, "").equalsIgnoreCase(dateToday)){
         //getView().changeFragment(getView().getActiveFragment(HelperBridge.sTempFragmentTarget));
-        getView().changeFragment(getView().getActiveFragment(HelperBridge.sTempFragmentTarget));
-        HelperBridge.sTempFragmentTarget = 0;
+        /*if (HelperBridge.sModelLoginResponse.getOrderActive().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY)){
+            getView().changeFragment(getView().getActiveFragment(R.id.nav_cico_request));
+        } else {
+            getView().changeFragment(getView().getActiveFragment(HelperBridge.sTempFragmentTarget));
+        }*/
+
+        getView().changeFragment(getView().getActiveFragment(HelperBridge.sModelLoginResponse.getOrderActive().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY) ? R.id.nav_cico_request : HelperBridge.sTempFragmentTarget));
+
+        HelperBridge.sTempFragmentTarget = HelperBridge.sModelLoginResponse.getOrderActive().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY) ? R.id.nav_cico_request : 0;
         getView().setDrawerProfile(HelperBridge.sModelLoginResponse.getFullname(), HelperBridge.sModelLoginResponse.getCompany(), HelperBridge.sModelLoginResponse.getPhotoFront());
         if (!HelperBridge.sModelLoginResponse.getIsNeedFatigueInterview().equalsIgnoreCase("0")) {
             getView().changeActivity(FatigueActivity.class);

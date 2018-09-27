@@ -231,7 +231,7 @@ public class OvertimeRequestPresenter extends TiPresenter<OvertimeRequestView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 getView().toggleLoading(false);
-                getView().showStandardDialog("Gagal melakukan pengajuan lembur, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                getView().showStandardDialog("Gagal melakukan pengajuan lembur, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }

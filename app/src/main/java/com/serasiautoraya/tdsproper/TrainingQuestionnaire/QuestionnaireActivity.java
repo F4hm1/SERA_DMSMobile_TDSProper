@@ -102,7 +102,7 @@ public class QuestionnaireActivity extends TiActivity<QuestionnairePresenter, Qu
 
     @Override
     public void showConfirmationDialog() {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin untuk mengirim hasil kuesioner ini?");
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin untuk mengirim hasil kuesioner ini?");
         HelperUtil.showConfirmationAlertDialog(textMsg, QuestionnaireActivity.this, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

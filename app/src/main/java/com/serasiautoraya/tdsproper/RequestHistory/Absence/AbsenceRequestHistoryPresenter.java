@@ -82,7 +82,7 @@ public class AbsenceRequestHistoryPresenter extends TiPresenter<AbsenceRequestHi
                     * TODO change this, jadikan value nya dari string values!
                     * */
                         getView().toggleLoading(false);
-                        getView().showStandardDialog("Gagal membatalkan pengajuan ketidakhadiran, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                        getView().showStandardDialog("Gagal membatalkan pengajuan ketidakhadiran, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
                     }
                 }
         );

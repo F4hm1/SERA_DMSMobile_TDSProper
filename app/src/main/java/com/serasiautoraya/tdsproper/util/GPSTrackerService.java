@@ -36,9 +36,9 @@ import com.serasiautoraya.tdsproper.BaseModel.SharedPrefsModel;
 import com.serasiautoraya.tdsproper.Helper.HelperBridge;
 import com.serasiautoraya.tdsproper.Helper.HelperUrl;
 import com.serasiautoraya.tdsproper.LocationUpdate.LocationUpdateSendModel;
+import com.serasiautoraya.tdsproper.Login.LoginActivity;
 import com.serasiautoraya.tdsproper.RestClient.RestConnection;
 import com.serasiautoraya.tdsproper.R;
-import com.serasiautoraya.tdsproper.activity.LoginActivity;
 import com.serasiautoraya.tdsproper.util.HelperKey;
 
 import org.json.JSONObject;

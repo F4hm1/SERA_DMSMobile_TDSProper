@@ -38,7 +38,8 @@ public interface DashboardView extends BaseViewInterface {
             boolean requestOvertime,
             boolean reportOvertime,
             boolean reportServiceHour,
-            boolean requestExpense
+            boolean requestExpense,
+            boolean orderActive
     );
 }
 

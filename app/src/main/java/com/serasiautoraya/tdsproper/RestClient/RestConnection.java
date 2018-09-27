@@ -495,14 +495,14 @@ public class RestConnection<F> {
 
                             restcall.callBackOnSuccess(response, latitude, longitude, address);
                         } else {
-                            restcall.callBackOnFail("Terjadi kesalahan, harap periksa koneksi anda, kemudian coba kembali");
+                            restcall.callBackOnFail("Terjadi kesalahan, harap periksa koneksi Anda, kemudian coba kembali");
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        restcall.callBackOnFail("Terjadi kesalahan, harap periksa koneksi anda, kemudian coba kembali");
+                        restcall.callBackOnFail("Terjadi kesalahan, harap periksa koneksi Anda, kemudian coba kembali");
                     }
                 }
         );

@@ -194,7 +194,7 @@ public class OLCTripByOrderPresenter extends TiPresenter<OLCTripByOrderView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 getView().toggleLoading(false);
-                getView().showStandardDialog("Gagal melakukan pengajuan OLC/Trip, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                getView().showStandardDialog("Gagal melakukan pengajuan OLC/Trip, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }

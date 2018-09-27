@@ -123,7 +123,7 @@ public class CiCoRequestHistoryFragment extends TiFragment<CiCoRequestHistoryPre
                 /*
         * TODO Change format date to user format
         * */
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan <b>membatalkan pengajuan Clock In/Out</b>"+
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin akan <b>membatalkan pengajuan Clock In/Out</b>"+
                 " pada <b>" + HelperUtil.getUserFormDate(requestDate) + "</b>?");
 
         HelperUtil.showConfirmationAlertDialog(textMsg, getContext(), new DialogInterface.OnClickListener() {

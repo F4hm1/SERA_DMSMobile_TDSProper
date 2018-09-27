@@ -76,7 +76,7 @@ public class FatiguePresenter extends TiPresenter<FatigueView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 getView().toggleLoading(false);
-                getView().showStandardDialog("Gagal mengirim data fatigue interview, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                getView().showStandardDialog("Gagal mengirim data fatigue interview, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }

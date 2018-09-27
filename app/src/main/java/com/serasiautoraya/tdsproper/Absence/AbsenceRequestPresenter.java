@@ -83,7 +83,7 @@ public class AbsenceRequestPresenter extends TiPresenter<AbsenceRequestView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 getView().toggleLoading(false);
-                getView().showStandardDialog("Gagal melakukan pengajuan ketidakhadiran, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                getView().showStandardDialog("Gagal melakukan pengajuan ketidakhadiran, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }

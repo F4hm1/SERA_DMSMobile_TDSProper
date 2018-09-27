@@ -131,7 +131,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                                                 " \n" + " \n" +
                                                 "Silahkan lengkapi pengisian OLC/TRIP sesuai aktual. Jika TIDAK ADA OLC/TRIP, isi kolom dengan angka 0 (NOL)." +
                                                 " \n" + " \n" +
-                                                "Tekan “YA” jika anda sudah memahami", "Perhatian");
+                                                "Tekan “YA” jika Anda sudah memahami", "Perhatian");
                                     }
                                 }
 
@@ -188,7 +188,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                                 " \n" +  " \n" +
                                 "Silahkan lengkapi pengisian Expense sesuai aktual. Jika TIDAK ADA Expense, isi kolom dengan angka 0 (NOL)." +
                                 " \n" + " \n" +
-                                "Tekan “YA” jika anda sudah memahami", "Perhatian");
+                                "Tekan “YA” jika Anda sudah memahami", "Perhatian");
                         /*HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
                         HelperBridge.sTempSelectedOrderCode = orderCode;
                         getView().setTempFragmentTarget(R.id.nav_expense_request);*/
@@ -260,7 +260,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                                     " \n" + " \n" +
                                     "Silahkan lengkapi pengisian OLC/TRIP sesuai aktual. Jika TIDAK ADA OLC/TRIP, isi kolom dengan angka 0 (NOL)." +
                                     " \n" + " \n" +
-                                    "Tekan “YA” jika anda sudah memahami", "Perhatian");
+                                    "Tekan “YA” jika Anda sudah memahami", "Perhatian");
                             //HelperBridge.sTempExpenseAssignmentId = String.valueOf(assignmentId);
                             /*HelperBridge.sTempSelectedOrderCode = orderCode;
                             getView().setTempFragmentTarget(R.id.nav_olctrip_request_from_api);*/
@@ -686,7 +686,7 @@ public class ActivityDetailPresenter extends TiPresenter<ActivityDetailView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 getView().toggleLoading(false);
-                getView().showStandardDialog("Gagal melakukan update status, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                getView().showStandardDialog("Gagal melakukan update status, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
 

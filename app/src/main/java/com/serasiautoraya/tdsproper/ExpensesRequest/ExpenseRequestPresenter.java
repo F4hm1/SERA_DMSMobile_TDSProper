@@ -217,7 +217,7 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 getView().toggleLoading(false);
-                getView().showStandardDialog("Gagal menyimpan data expense, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                getView().showStandardDialog("Gagal menyimpan data expense, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }
@@ -379,7 +379,7 @@ public class ExpenseRequestPresenter extends TiPresenter<ExpenseRequestView> {
             curentTotalAmount += addedAmount;
             getView().setTotalExpense(curentTotalAmount + "");
         } catch (Exception ex) {
-            getView().setTotalExpense("Angka yang anda masukan salah");
+            getView().setTotalExpense("Angka yang Anda masukan salah");
         }
     }
 }

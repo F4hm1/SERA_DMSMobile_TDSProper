@@ -239,7 +239,7 @@ public class ActivityDetailActivity extends TiActivity<ActivityDetailPresenter, 
 
     @Override
     public void showConfirmationDialog(String title, String activity) {
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan melakukan aktifitas " +
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin akan melakukan aktifitas " +
                 "<b>" + activity.toString() + "</b>" + "?");
         HelperUtil.showConfirmationAlertDialog(textMsg, ActivityDetailActivity.this, new DialogInterface.OnClickListener() {
             @Override

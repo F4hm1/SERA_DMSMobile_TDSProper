@@ -88,7 +88,7 @@ public class DocumentCapturePresenter extends TiPresenter<DocumentCaptureView> {
             photo = this.createTemporaryFile("temp_bukti_sli", ".jpg");
             photo.delete();
         } catch (Exception e) {
-            getView().showToast("Harap cek memory anda! Tidak bisa melakukan pengambilan gambar!");
+            getView().showToast("Harap cek memory Anda! Tidak bisa melakukan pengambilan gambar!");
             return;
         }
 
@@ -320,7 +320,7 @@ public class DocumentCapturePresenter extends TiPresenter<DocumentCaptureView> {
                 * TODO change this, jadikan value nya dari string values!
                 * */
                 documentCaptureView.toggleLoading(false);
-                documentCaptureView.showStandardDialog("Gagal melakukan update status, silahkan periksa koneksi anda kemudian coba kembali", "Perhatian");
+                documentCaptureView.showStandardDialog("Gagal melakukan update status, silahkan periksa koneksi Anda kemudian coba kembali", "Perhatian");
             }
         });
     }

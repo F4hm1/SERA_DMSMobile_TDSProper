@@ -124,7 +124,7 @@ implements AbsenceRequestHistoryView{
         /*
         * TODO Change format date to user format
         * */
-        CharSequence textMsg = Html.fromHtml("Apakah anda yakin akan <b>membatalkan pengajuan ketidakhadiran</b>"+
+        CharSequence textMsg = Html.fromHtml("Apakah Anda yakin akan <b>membatalkan pengajuan ketidakhadiran</b>"+
                 " pada <b>" + HelperUtil.getUserFormDate(requestDate) + "</b>?");
 
         HelperUtil.showConfirmationAlertDialog(textMsg, getContext(), new DialogInterface.OnClickListener() {

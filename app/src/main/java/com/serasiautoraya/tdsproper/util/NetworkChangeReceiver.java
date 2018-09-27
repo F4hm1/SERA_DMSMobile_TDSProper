@@ -17,7 +17,7 @@ public abstract class NetworkChangeReceiver extends BroadcastReceiver {
         boolean IsConnected = NetworkUtil.getConnectivityStatusString(context);
         Log.d("INTERNET ISSUE", "Connected: " + IsConnected);
 //        View rootView = ((Activity) context).getWindow().getDecorView();
-//        snackbar = Snackbar.make(rootView, "Koneksi internet anda bermasalah", Snackbar.LENGTH_INDEFINITE);
+//        snackbar = Snackbar.make(rootView, "Koneksi internet Anda bermasalah", Snackbar.LENGTH_INDEFINITE);
         if (!IsConnected) {
 //            Toast.makeText(context, "Internet Connection is lost", Toast.LENGTH_LONG).show();
             onDisconnect();
