@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">TDS Proper Training Version</string>
+    <!--<string name="app_name">TDS Proper Training Version</string>-->
     <!--<string name="app_name">TDS Proper Development</string>-->
-    <!--<string name="app_name">TDS Proper</string>-->
+    <string name="app_name">TDS Proper</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_logout">Keluar</string>

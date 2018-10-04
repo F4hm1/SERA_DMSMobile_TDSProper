@@ -337,7 +337,9 @@ public class DashboardActivity extends TiActivity<DashboardPresenter, DashboardV
             mNavigationView.setCheckedItem(R.id.nav_active_order);
         }*/
 
-        mNavigationView.setCheckedItem(com.serasiautoraya.tdsproper.Helper.HelperBridge.sModelLoginResponse.getOrderActive().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY) ? R.id.nav_cico_request : R.id.nav_active_order);
+        mNavigationView.setCheckedItem(R.id.nav_active_order);
+
+        //mNavigationView.setCheckedItem(com.serasiautoraya.tdsproper.Helper.HelperBridge.sModelLoginResponse.getOrderActive().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY) ? R.id.nav_cico_request : R.id.nav_active_order);
 
         mNavHeader = mNavigationView.getHeaderView(0);
 

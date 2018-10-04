@@ -55,7 +55,10 @@ public class DashboardPresenter extends TiPresenter<DashboardView> {
 
         getView().changeFragment(getView().getActiveFragment(HelperBridge.sModelLoginResponse.getOrderActive().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY) ? R.id.nav_cico_request : HelperBridge.sTempFragmentTarget));
 
+
+
         HelperBridge.sTempFragmentTarget = HelperBridge.sModelLoginResponse.getOrderActive().equalsIgnoreCase(HelperTransactionCode.TRUE_BINARY) ? R.id.nav_cico_request : 0;
+
         getView().setDrawerProfile(HelperBridge.sModelLoginResponse.getFullname(), HelperBridge.sModelLoginResponse.getCompany(), HelperBridge.sModelLoginResponse.getPhotoFront());
         if (!HelperBridge.sModelLoginResponse.getIsNeedFatigueInterview().equalsIgnoreCase("0")) {
             getView().changeActivity(FatigueActivity.class);
